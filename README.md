@@ -19,6 +19,7 @@ and Framer Motion.
 - **SEO ready:** dynamic Open Graph image, `Person` JSON-LD, sitemap, robots, copper favicon
 - **Accessible:** keyboard focus rings, skip-to-content link, respects `prefers-reduced-motion`
 - **Fast:** optimized WebP imagery, Vercel Analytics
+- **AI chatbot:** a 24/7 assistant (Groq + Llama) that answers visitor questions about Ahmed using his portfolio data
 
 ## ⚙️ Configuration
 
@@ -30,6 +31,32 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
 Defaults to `https://ahmed-raza.vercel.app` if unset (see `src/data/portfolio.ts`).
+
+## 🤖 AI Chatbot
+
+A floating assistant (bottom-right) answers visitor questions about Ahmed 24/7. It runs
+on [Groq](https://groq.com/) (free, very fast) and is grounded in the portfolio data —
+update `src/data/portfolio.ts` and the bot stays in sync automatically.
+
+**Setup:**
+
+1. Get a free API key at [console.groq.com](https://console.groq.com) → **API Keys** → **Create API Key**.
+2. Create a `.env.local` file in the project root and add your key:
+   ```bash
+   GROQ_API_KEY=gsk_your_key_here
+   ```
+3. Restart the dev server (`npm run dev`). The chat button activates automatically.
+
+**On Vercel:** add `GROQ_API_KEY` under **Project → Settings → Environment Variables**, then redeploy.
+
+**How it works:**
+- `src/components/ChatWidget.tsx` — the chat UI (streaming replies)
+- `src/app/api/chat/route.ts` — server route that calls Groq (key stays server-side)
+- `src/lib/chatContext.ts` — builds the system prompt from portfolio data
+
+The model is `llama-3.3-70b-versatile` by default; override with `GROQ_MODEL`. The endpoint
+validates input, caps conversation length, and applies a basic rate limit. Only public info
+(the same details shown on the site) is shared — never add private/sensitive data.
 
 ## 🧱 Tech Stack
 

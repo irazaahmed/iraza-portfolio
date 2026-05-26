@@ -29,7 +29,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6, y: 12 }}
           transition={{ duration: 0.25 }}
-          className="glow-copper fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-copper/50 bg-copper text-black transition-all hover:bg-copper-dark hover:glow-copper-strong"
+          className="glow-copper fixed bottom-6 left-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-copper/50 bg-copper text-black transition-all hover:bg-copper-dark hover:glow-copper-strong"
         >
           <ArrowUp size={20} />
         </motion.button>
