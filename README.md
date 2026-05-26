@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ahmed Raza — Portfolio Website
 
-## Getting Started
+A premium dark-tech portfolio for **Ahmed Raza** — Islamic Scholar, Team Lead Translation,
+AI Solutions Expert, and Full Stack Developer. Built with Next.js (App Router), Tailwind CSS,
+and Framer Motion.
 
-First, run the development server:
+## ✨ Features
+
+- Dark **and** light themes sharing the same copper-orange (`#E97A2C`) accent — switch via a navbar toggle (Light / Dark / System), persisted with `next-themes`
+- Subtle grid overlay that adapts to the active theme
+- Animated typewriter hero cycling through professional roles
+- Fade-in-on-scroll animations powered by Framer Motion
+- Fully responsive, mobile-first layout (320px → ultra-wide)
+- Scroll progress bar + active-section navbar highlighting (scroll-spy)
+- Animated stat counters and language proficiency bars
+- Sections: Hero · About · What I Do Now · Experience Timeline · Projects · Skills ·
+  Education & Certifications · Contact · Footer
+- All content lives in one typed data file for easy updates
+- **SEO ready:** dynamic Open Graph image, `Person` JSON-LD, sitemap, robots, copper favicon
+- **Accessible:** keyboard focus rings, skip-to-content link, respects `prefers-reduced-motion`
+- **Fast:** optimized WebP imagery, Vercel Analytics
+
+## ⚙️ Configuration
+
+Set your deployed URL so SEO metadata (OG image, sitemap, canonical) uses absolute links:
+
+```bash
+# .env.local
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+Defaults to `https://ahmed-raza.vercel.app` if unset (see `src/data/portfolio.ts`).
+
+## 🧱 Tech Stack
+
+- [Next.js 16](https://nextjs.org/) (App Router)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/) — animations
+- [Lucide React](https://lucide.dev/) — icons
+- TypeScript
+
+## 🚀 Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## 🗂️ Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx        # Root layout, Inter font, metadata
+│   ├── page.tsx          # Composes all sections in order
+│   └── globals.css       # Theme tokens, grid overlay, glow utilities
+├── components/           # One file per UI section / helper
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── CurrentPositions.tsx
+│   ├── Experience.tsx
+│   ├── Projects.tsx
+│   ├── Skills.tsx
+│   ├── Education.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   ├── Reveal.tsx        # Scroll-reveal animation wrapper
+│   └── SectionHeading.tsx
+└── data/
+    └── portfolio.ts      # ✏️ All site content — edit here
+public/
+├── ahmed.jpg             # Profile photo
+└── Ahmed_Raza_CV.pdf     # Downloadable CV
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✏️ Updating Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All text, links, jobs, projects, skills, and education entries are stored as typed
+constants in [`src/data/portfolio.ts`](src/data/portfolio.ts). Edit that file to update
+the site — no component changes required.
 
-## Deploy on Vercel
+## 🎨 Theme
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Color tokens and effects (grid overlay, copper glow, scrollbar) are defined in
+[`src/app/globals.css`](src/app/globals.css) using Tailwind v4's `@theme` block:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Token                 | Value     | Use                   |
+| --------------------- | --------- | --------------------- |
+| `--color-bg`          | `#0A0A0A` | Page background       |
+| `--color-copper`      | `#E97A2C` | Primary accent / glow |
+| `--color-copper-dark` | `#D97426` | Secondary accent      |
+| `--color-fg`          | `#FFFFFF` | Primary text          |
+| `--color-muted`       | `#A0A0A0` | Secondary text        |
+
+---
+
+**Ahmed Raza © 2025 — Execution Over Words**
