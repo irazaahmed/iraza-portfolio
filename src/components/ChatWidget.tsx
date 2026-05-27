@@ -24,11 +24,30 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [viewport, setViewport] = useState<{ height: number; top: number } | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, open]);
+
+  // Keep the panel sized to the visible area so the mobile keyboard never
+  // pushes the input (or close button) off-screen. visualViewport shrinks/
+  // shifts when the on-screen keyboard opens; we mirror it via CSS vars that
+  // only the mobile layout consumes (desktop uses fixed sm: classes).
+  useEffect(() => {
+    if (!open || typeof window === "undefined") return;
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const update = () => setViewport({ height: vv.height, top: vv.offsetTop });
+    update();
+    vv.addEventListener("resize", update);
+    vv.addEventListener("scroll", update);
+    return () => {
+      vv.removeEventListener("resize", update);
+      vv.removeEventListener("scroll", update);
+    };
+  }, [open]);
 
   async function send(text: string) {
     const trimmed = text.trim();
@@ -108,21 +127,37 @@ export default function ChatWidget() {
           <motion.div
             role="dialog"
             aria-label="Chat with Ahmed's assistant"
-            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 24, scale: 0.96 }}
+            exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 z-[70] flex h-[70vh] max-h-[560px] w-[calc(100vw-3rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-copper/40 bg-bg-soft shadow-2xl glow-copper"
+            style={
+              viewport
+                ? ({
+                    "--vv-height": `${viewport.height}px`,
+                    "--vv-top": `${viewport.top}px`,
+                  } as React.CSSProperties)
+                : undefined
+            }
+            className="fixed inset-x-0 top-[var(--vv-top,0px)] z-[70] flex h-[var(--vv-height,100dvh)] w-full flex-col overflow-hidden rounded-none border border-copper/40 bg-bg-soft shadow-2xl glow-copper sm:inset-x-auto sm:right-6 sm:top-auto sm:bottom-24 sm:h-[70vh] sm:max-h-[560px] sm:w-[calc(100vw-3rem)] sm:max-w-sm sm:rounded-2xl"
           >
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-border bg-copper/10 px-4 py-3">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-copper text-black">
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-copper text-black">
                 <Sparkles size={18} />
               </span>
               <div className="min-w-0">
                 <p className="text-sm font-semibold text-fg">Ahmed&rsquo;s Assistant</p>
-                <p className="text-xs text-copper">Online · asks answered 24/7</p>
+                <p className="text-xs text-copper">Online · answers 24/7</p>
               </div>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close chat"
+                className="ml-auto inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-muted transition-colors hover:bg-fg/10 hover:text-fg"
+              >
+                <X size={18} />
+              </button>
             </div>
 
             {/* Messages */}
