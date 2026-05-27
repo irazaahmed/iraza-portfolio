@@ -5,7 +5,7 @@
 
 /** Public site URL — override via NEXT_PUBLIC_SITE_URL when deploying. */
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://irazaahmed.me";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.irazaahmed.me";
 
 export const profile = {
   name: "Ahmed Raza",
