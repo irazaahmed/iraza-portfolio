@@ -58,6 +58,26 @@ The model is `llama-3.3-70b-versatile` by default; override with `GROQ_MODEL`. T
 validates input, caps conversation length, and applies a basic rate limit. Only public info
 (the same details shown on the site) is shared — never add private/sensitive data.
 
+## ✍️ Writing a Blog Post
+
+Each post is a single Markdown file in [`content/blog/`](content/blog). To publish a new
+article, create `content/blog/my-post-slug.md` (the file name becomes the URL:
+`/blog/my-post-slug`) with frontmatter at the top:
+
+```markdown
+---
+title: "My Post Title"
+date: "2026-06-01"
+excerpt: "A one-line summary shown on the card and used for SEO."
+tags: ["AI", "Next.js"]
+---
+
+Your article content in **Markdown** — headings, lists, links, code blocks, etc.
+```
+
+Commit and push — Vercel rebuilds and the post appears automatically on the homepage
+**Blog** section, the `/blog` list, and the sitemap (reading time is calculated for you).
+
 ## 🧱 Tech Stack
 
 - [Next.js 16](https://nextjs.org/) (App Router)
