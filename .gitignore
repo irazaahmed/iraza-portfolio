@@ -13,6 +13,9 @@
 Ahmed_Raza_CV.docx
 /Ahmed_Raza_CV.docx
 
+# Root-level CV copy (the served one lives in public/)
+/Ahmed_Raza_CV.pdf
+
 # testing
 /coverage
 
