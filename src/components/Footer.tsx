@@ -30,7 +30,7 @@ export default function Footer() {
           })}
         </div>
         <p className="text-sm text-muted">
-          Ahmed Raza <span className="text-copper">©</span> 2025
+          Ahmed Raza <span className="text-copper">©</span> 2026
         </p>
         <p className="text-xs uppercase tracking-[0.3em] text-copper/70">
           Execution Over Words

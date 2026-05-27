@@ -99,6 +99,26 @@ body::before {
   background: #e97a2c;
 }
 
+/* Blog horizontal scroller — slim, always-visible copper scrollbar */
+.blog-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: #e97a2c var(--border);
+}
+.blog-scroller::-webkit-scrollbar {
+  height: 8px;
+}
+.blog-scroller::-webkit-scrollbar-track {
+  background: var(--border);
+  border-radius: 999px;
+}
+.blog-scroller::-webkit-scrollbar-thumb {
+  background: #e97a2c;
+  border-radius: 999px;
+}
+.blog-scroller::-webkit-scrollbar-thumb:hover {
+  background: #d97426;
+}
+
 /* Typewriter caret blink */
 @keyframes blink {
   0%, 49% { opacity: 1; }
