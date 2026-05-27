@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ahmed Raza" }],
   alternates: { canonical: "/" },
+  verification: {
+    google: "dB_ZqeUfYuOAQBFR8qYgWp43mN9teYMPgUkdUBXmNQI",
+  },
   openGraph: {
     title,
     description,
