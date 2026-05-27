@@ -12,7 +12,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const title = "Ahmed Raza — Islamic Scholar & AI Solutions Expert";
+const title = "Ahmed Raza - AI Solutions Expert";
 const description =
   "Portfolio of Ahmed Raza — bridging authentic Islamic knowledge with cutting-edge AI technology. Team Lead Translation at Dawat-e-Islami, Founder of Cybrum Solutions, full-stack developer.";
 
