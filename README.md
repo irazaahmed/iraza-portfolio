@@ -1,178 +1,135 @@
-# Ahmed Raza — Portfolio Website
+# Ahmed Raza — Portfolio
 
-A premium dark-tech portfolio for **Ahmed Raza** — Islamic Scholar, Team Lead Translation,
-AI Solutions Expert, and Full Stack Developer. Built with Next.js (App Router), Tailwind CSS,
-and Framer Motion.
+> **Bridging authentic Islamic knowledge with cutting-edge AI technology.**
 
-## ✨ Features
+🔗 **Live site:** [www.irazaahmed.me](https://www.irazaahmed.me)
 
-- Dark **and** light themes sharing the same copper-orange (`#E97A2C`) accent — switch via a navbar toggle (Light / Dark / System), persisted with `next-themes`
-- Subtle grid overlay that adapts to the active theme
-- Animated typewriter hero cycling through professional roles
-- Fade-in-on-scroll animations powered by Framer Motion
-- Fully responsive, mobile-first layout (320px → ultra-wide)
-- Scroll progress bar + active-section navbar highlighting (scroll-spy)
-- Animated stat counters and language proficiency bars
-- Sections: Hero · About · What I Do Now · Experience Timeline · Projects · Skills ·
-  Education & Certifications · Contact · Footer
-- All content lives in one typed data file for easy updates
-- **SEO ready:** dynamic Open Graph image, `Person` JSON-LD, sitemap, robots, copper favicon
-- **Accessible:** keyboard focus rings, skip-to-content link, respects `prefers-reduced-motion`
-- **Fast:** optimized WebP imagery, Vercel Analytics
-- **AI chatbot:** a 24/7 assistant (Groq + Llama) that answers visitor questions about Ahmed Raza using his portfolio data
-
-## ⚙️ Configuration
-
-Set your deployed URL so SEO metadata (OG image, sitemap, canonical) uses absolute links:
-
-```bash
-# .env.local
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-```
-
-Defaults to `https://ahmed-raza.vercel.app` if unset (see `src/data/portfolio.ts`).
-
-## 🤖 AI Chatbot
-
-A floating assistant (bottom-right) answers visitor questions about Ahmed Raza 24/7. It runs
-on [Groq](https://groq.com/) (free, very fast) and is grounded in the portfolio data —
-update `src/data/portfolio.ts` and the bot stays in sync automatically.
-
-**Setup:**
-
-1. Get a free API key at [console.groq.com](https://console.groq.com) → **API Keys** → **Create API Key**.
-2. Create a `.env.local` file in the project root and add your key:
-   ```bash
-   GROQ_API_KEY=gsk_your_key_here
-   ```
-3. Restart the dev server (`npm run dev`). The chat button activates automatically.
-
-**On Vercel:** add `GROQ_API_KEY` under **Project → Settings → Environment Variables**, then redeploy.
-
-**How it works:**
-- `src/components/ChatWidget.tsx` — the chat UI (streaming replies)
-- `src/app/api/chat/route.ts` — server route that calls Groq (key stays server-side)
-- `src/lib/chatContext.ts` — builds the system prompt from portfolio data
-
-The model is `llama-3.3-70b-versatile` by default; override with `GROQ_MODEL`. The endpoint
-validates input, caps conversation length, and applies a basic rate limit. Only public info
-(the same details shown on the site) is shared — never add private/sensitive data.
-
-## ✍️ Writing a Blog Post
-
-Each post is a single Markdown file in [`content/blog/`](content/blog). To publish a new
-article, create `content/blog/my-post-slug.md` (the file name becomes the URL:
-`/blog/my-post-slug`) with frontmatter at the top:
-
-```markdown
----
-title: "My Post Title"
-date: "2026-06-01"
-excerpt: "A one-line summary shown on the card and used for SEO."
-tags: ["AI", "Next.js"]
----
-
-Your article content in **Markdown** — headings, lists, links, code blocks, etc.
-```
-
-Commit and push — Vercel rebuilds and the post appears automatically on the homepage
-**Blog** section, the `/blog` list, and the sitemap (reading time is calculated for you).
-
-### 🌐 Translations (English / Roman Urdu / اردو)
-
-Each article can ship in up to three languages. Add translation files next to the
-English one using a language suffix on the slug:
-
-| Language     | Filename                                  | URL                                  |
-| ------------ | ----------------------------------------- | ------------------------------------ |
-| English      | `my-post-slug.md`                         | `/blog/my-post-slug`                 |
-| Roman Urdu   | `my-post-slug.ro.md`                      | `/blog/my-post-slug?lang=ro`         |
-| Urdu         | `my-post-slug.ur.md`                      | `/blog/my-post-slug?lang=ur`         |
-
-Each translation has its own frontmatter (translated `title`, `excerpt`, `tags`) — the
-file body is just the article in that language. A language switcher renders
-automatically above every article and only highlights the languages that actually
-have a file. Urdu pages render right-to-left in the **Noto Nastaliq Urdu** font
-(the free Nastaliq face that mirrors *Jameel Noori Nastaleeq*'s readability).
-
-## 🧱 Tech Stack
-
-- [Next.js 16](https://nextjs.org/) (App Router)
-- [Tailwind CSS v4](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/) — animations
-- [Lucide React](https://lucide.dev/) — icons
-- TypeScript
-
-## 🚀 Getting Started
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📦 Build for Production
-
-```bash
-npm run build
-npm run start
-```
-
-## 🗂️ Project Structure
-
-```
-src/
-├── app/
-│   ├── layout.tsx        # Root layout, Inter font, metadata
-│   ├── page.tsx          # Composes all sections in order
-│   └── globals.css       # Theme tokens, grid overlay, glow utilities
-├── components/           # One file per UI section / helper
-│   ├── Navbar.tsx
-│   ├── Hero.tsx
-│   ├── About.tsx
-│   ├── CurrentPositions.tsx
-│   ├── Experience.tsx
-│   ├── Projects.tsx
-│   ├── Skills.tsx
-│   ├── Education.tsx
-│   ├── Contact.tsx
-│   ├── Footer.tsx
-│   ├── Reveal.tsx        # Scroll-reveal animation wrapper
-│   └── SectionHeading.tsx
-└── data/
-    └── portfolio.ts      # ✏️ All site content — edit here
-public/
-├── ahmed.jpg             # Profile photo
-└── Ahmed_Raza_CV.pdf     # Downloadable CV
-```
-
-## ✏️ Updating Content
-
-All text, links, jobs, projects, skills, and education entries are stored as typed
-constants in [`src/data/portfolio.ts`](src/data/portfolio.ts). Edit that file to update
-the site — no component changes required.
-
-## 🎨 Theme
-
-Color tokens and effects (grid overlay, copper glow, scrollbar) are defined in
-[`src/app/globals.css`](src/app/globals.css) using Tailwind v4's `@theme` block:
-
-| Token                 | Value     | Use                   |
-| --------------------- | --------- | --------------------- |
-| `--color-bg`          | `#0A0A0A` | Page background       |
-| `--color-copper`      | `#E97A2C` | Primary accent / glow |
-| `--color-copper-dark` | `#D97426` | Secondary accent      |
-| `--color-fg`          | `#FFFFFF` | Primary text          |
-| `--color-muted`       | `#A0A0A0` | Secondary text        |
+A personal portfolio for **Ahmed Raza** — Islamic Scholar, Team Lead Translation
+at Dawat-e-Islami, Founder & AI Solutions Expert at Cybrum Solutions, and Full
+Stack Developer. The site brings together two worlds that rarely meet: 8+ years
+of classical Islamic scholarship and hands-on work in modern AI engineering.
 
 ---
 
-**Ahmed Raza © 2026 — Execution Over Words**
+## ✨ What You'll Find Here
+
+### 🏠 Home
+A premium dark-tech landing page with a copper-orange accent and a subtle
+animated grid. The hero introduces Ahmed Raza with a typewriter effect that
+rotates through his roles — *Islamic Scholar, Team Lead Translation, AI
+Solutions Expert, Full Stack Developer.*
+
+### 👤 About
+A clear, honest introduction — who Ahmed Raza is, what he's spent the last
+decade doing, and how his Islamic scholarship background informs the way he
+builds AI systems today. Three quick-glance highlight cards summarise his
+identity: **8+ years as Islamic Scholar**, **Agentic AI engineer**, and **33-language Translation Lead**.
+
+### 💼 What I Do Now
+The two current positions front-and-centre:
+
+- **Team Lead — Translation Department @ Dawat-e-Islami** (Jan 2026 → Present) — leading a 33-language Quranic content translation pipeline.
+- **Founder & AI Solutions Expert @ Cybrum Solutions** (Nov 2025 → Present) — building AI automation, WhatsApp chatbots, CRM workflows, and multi-agent systems for Islamic publishers, schools, and SMEs.
+
+### 🕰️ Experience Timeline
+A vertical timeline covering 11+ years of work across Shariah advisory,
+inspection departments, scholar-level teaching, and secretariat management
+at institutions including **Dar-ul-Madinah International Islamic School System**,
+**Jamia Noor Ul Quran**, and **Al Miftah Scholars Academy**.
+
+### 🛠️ Projects
+A curated gallery of recent work, each with the tech stack and a GitHub link:
+
+- **Quran Translation Management System** — Next.js + Supabase
+- **Physical AI & Humanoid Robotics**
+- **Multiuser ToDo Application** — Next.js + FastAPI
+- **Saylani Impact Portal**
+- **Nike E-Commerce Platform** — Sanity CMS
+- **SMIT Virtual Assistant** — Dialogflow + FlowiseAI
+- **InfoNest Blog Platform**
+
+### 🧠 Skills
+Grouped into clean categories: **AI & Agents** (LangGraph, CrewAI, n8n, Claude
+API, Multi-agent Systems), **AI / ML** (LLMs, RAG, Prompt Engineering),
+**Frontend** (React, Next.js, TypeScript, Tailwind), **Backend** (Python,
+FastAPI), **Tools** (GitHub, Sanity, Dialogflow), and spoken **Languages**
+(Urdu, Arabic, English).
+
+### 📝 Blog
+Long-form writing on AI, agentic systems, translation technology, and how
+classical Islamic knowledge informs trustworthy software. The homepage shows
+recent posts in a horizontal scroller; click any card to read the full article.
+
+**Every article reads in three languages.** A clean language switcher sits at
+the top of each post:
+
+- 🇬🇧 **English**
+- 🔤 **Roman Urdu** (Urdu written in Latin script — easy on the eyes for casual readers)
+- ✍️ **اردو** (proper Nastaliq script, right-to-left, in a beautiful Jameel Noori-style font for genuine reading comfort)
+
+If a translation isn't available yet, the button shows as disabled — no broken
+links, no surprises.
+
+### 🎓 Education & Certifications
+The academic record: **Hafiz-e-Quran**, **Masters in Arabic & Islamiat
+(Shahadat Ul Almiyah)** with University of Karachi equivalence, **Specialization
+in Jurisprudence (Takhassus Fil Fiqh)**, plus modern certifications in
+**Cloud Computing & Agentic AI**, **Generative AI**, **Modern Web Development**, and more.
+
+### 📬 Contact
+Multiple ways to reach Ahmed Raza directly — WhatsApp, email, LinkedIn, and
+GitHub — each one a single click away.
+
+---
+
+## 🎁 Built-in Goodies
+
+### 🤖 24/7 AI Assistant
+A small chat bubble in the bottom-right corner opens a friendly AI assistant
+that can answer any visitor's question about Ahmed Raza — his background,
+projects, skills, current work, or how to get in touch. It speaks **English and
+Urdu/Roman Urdu**, sticks strictly to public information, and replies fast.
+
+### 🌓 Light & Dark Themes
+A theme toggle in the navbar lets visitors choose **Light**, **Dark**, or
+**System** (which follows their device setting). Both modes share the same
+warm copper-orange accent, so the personality stays consistent either way.
+
+### 📄 One-Click CV Download
+A prominent **Download CV** button on the hero serves the most current PDF
+version of Ahmed Raza's CV instantly.
+
+### 📱 Mobile-First, Everywhere
+The site is fully responsive from a 320px phone screen all the way up to
+ultra-wide monitors. The AI chat adapts gracefully when the mobile keyboard
+opens — no overlap, no clipped buttons.
+
+### ⚡ Fast & SEO-Ready
+- Lightning-fast load times via Vercel's global edge network
+- Built-in search-engine optimisation (sitemap, social-card image, structured data)
+- Indexed on Google for **Ahmed Raza**, **Ahmed Raza AI**, **Ahmed Raza AI Solutions Expert**
+
+### ♿ Accessible by Default
+Keyboard navigation, visible focus rings, a "Skip to content" link, and full
+respect for users who prefer reduced motion.
+
+---
+
+## 🌐 Get in Touch
+
+Whether you're hiring, collaborating, or just curious — Ahmed Raza is one
+message away:
+
+| Channel | Link |
+| --- | --- |
+| 💬 **WhatsApp** | [+92 313 0221118](https://wa.me/923130221118) |
+| 📧 **Email** | [hafizahmedraza12345@gmail.com](mailto:hafizahmedraza12345@gmail.com) |
+| 💼 **LinkedIn** | [linkedin.com/in/irazaahmed](https://linkedin.com/in/irazaahmed) |
+| 🐙 **GitHub** | [github.com/irazaahmed](https://github.com/irazaahmed) |
+
+---
+
+<p align="center">
+  <strong>Ahmed Raza © 2026</strong><br/>
+  <em>Execution Over Words</em>
+</p>
