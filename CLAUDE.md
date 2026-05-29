@@ -117,7 +117,11 @@ SECTIONS TO BUILD (in order):
 ---
 
 PROFESSIONAL SUMMARY (use in About section):
-"Multidisciplinary professional combining deep Islamic scholarship with hands-on expertise in AI engineering and automation. Currently leading a 33-language Quranic content translation pipeline at Dawat-e-Islami and building AI-driven solutions at Cybrum Solutions. Brings 8+ years of experience in Shariah advisory, Islamic academia, and institutional management, alongside proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration."
+"Multidisciplinary professional with 8+ years of experience as an Islamic Scholar and Asst. Shariah Advisor, paired with hands-on expertise in AI engineering and automation. Currently leading a 33-language Quranic content translation pipeline at Dawat-e-Islami and building AI-driven solutions at Cybrum Solutions. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration."
+
+IMPORTANT NAMING/WORDING RULES (always apply):
+- NEVER use the phrase "Islamic scholarship" anywhere about Ahmed Raza. He is an "Islamic Scholar" (a role he has held since 2017). When describing his religious experience, say "8+ years of experience as an Islamic Scholar and Asst. Shariah Advisor" — not "scholarship".
+- ALWAYS refer to him by his full name "Ahmed Raza". Do NOT use just "Ahmed" anywhere in UI copy, chatbot text, README, blog content, or anywhere else.
 
 ---
 

@@ -9,7 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 const title = "Blog — Ahmed Raza";
 const description =
-  "Articles by Ahmed Raza on AI, agentic systems, Islamic scholarship, translation technology, and full-stack development.";
+  "Articles by Ahmed Raza on AI, agentic systems, Islamic knowledge, translation technology, and full-stack development.";
 
 export const metadata: Metadata = {
   title,
@@ -30,7 +30,7 @@ export default function BlogIndexPage() {
           <p className="mb-2 text-sm font-medium uppercase tracking-[0.25em] text-copper">Writing</p>
           <h1 className="text-4xl font-bold tracking-tight text-fg sm:text-5xl">Blog</h1>
           <p className="mt-4 max-w-2xl text-muted">
-            Thoughts on AI, agentic systems, Islamic scholarship, translation technology, and
+            Thoughts on AI, agentic systems, Islamic knowledge, translation technology, and
             building for the web.
           </p>
         </Reveal>

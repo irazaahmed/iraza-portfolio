@@ -9,7 +9,7 @@ type Message = { role: "user" | "assistant"; content: string };
 const WELCOME: Message = {
   role: "assistant",
   content:
-    "Assalamu Alaikum! 👋 I'm Ahmed's assistant. Ask me anything about his work, skills, projects, or how to reach him.",
+    "Assalamu Alaikum! 👋 I'm Ahmed Raza's assistant. Ask me anything about his work, skills, projects, or how to reach him.",
 };
 
 const QUICK_QUESTIONS = [
@@ -89,7 +89,7 @@ export default function ChatWidget() {
         const next = [...prev];
         next[next.length - 1] = {
           role: "assistant",
-          content: `⚠️ ${msg} You can reach Ahmed directly via WhatsApp or email in the Contact section.`,
+          content: `⚠️ ${msg} You can reach Ahmed Raza directly via WhatsApp or email in the Contact section.`,
         };
         return next;
       });
@@ -103,7 +103,7 @@ export default function ChatWidget() {
       {/* Launcher button */}
       <motion.button
         type="button"
-        aria-label={open ? "Close chat" : "Chat with Ahmed's assistant"}
+        aria-label={open ? "Close chat" : "Chat with Ahmed Raza's assistant"}
         onClick={() => setOpen((v) => !v)}
         whileTap={{ scale: 0.9 }}
         className="glow-copper fixed bottom-6 right-6 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full bg-copper text-black shadow-lg transition-colors hover:bg-copper-dark"
@@ -126,7 +126,7 @@ export default function ChatWidget() {
         {open && (
           <motion.div
             role="dialog"
-            aria-label="Chat with Ahmed's assistant"
+            aria-label="Chat with Ahmed Raza's assistant"
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -147,7 +147,7 @@ export default function ChatWidget() {
                 <Sparkles size={18} />
               </span>
               <div className="min-w-0">
-                <p className="text-sm font-semibold text-fg">Ahmed&rsquo;s Assistant</p>
+                <p className="text-sm font-semibold text-fg">Ahmed Raza&rsquo;s Assistant</p>
                 <p className="text-xs text-copper">Online · answers 24/7</p>
               </div>
               <button
@@ -213,7 +213,7 @@ export default function ChatWidget() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about Ahmed…"
+                placeholder="Ask about Ahmed Raza…"
                 aria-label="Type your message"
                 className="min-w-0 flex-1 rounded-full border border-border bg-bg px-4 py-2 text-sm text-fg outline-none placeholder:text-muted focus:border-copper"
               />

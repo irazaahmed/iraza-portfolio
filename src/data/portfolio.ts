@@ -17,7 +17,7 @@ export const profile = {
   ],
   tagline: "Bridging authentic Islamic knowledge with cutting-edge AI technology",
   summary:
-    "Multidisciplinary professional combining deep Islamic scholarship with hands-on expertise in AI engineering and automation. Currently leading a 33-language Quranic content translation pipeline at Dawat-e-Islami and building AI-driven solutions at Cybrum Solutions. Brings 8+ years of experience in Shariah advisory, Islamic academia, and institutional management, alongside proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration.",
+    "Multidisciplinary professional with 8+ years of experience as an Islamic Scholar and Asst. Shariah Advisor, paired with hands-on expertise in AI engineering and automation. Currently leading a 33-language Quranic content translation pipeline at Dawat-e-Islami and building AI-driven solutions at Cybrum Solutions. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration.",
   cvFile: "/Ahmed_Raza_CV.pdf",
   photo: "/ahmed.webp",
 } as const;

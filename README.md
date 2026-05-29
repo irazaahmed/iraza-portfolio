@@ -19,7 +19,7 @@ and Framer Motion.
 - **SEO ready:** dynamic Open Graph image, `Person` JSON-LD, sitemap, robots, copper favicon
 - **Accessible:** keyboard focus rings, skip-to-content link, respects `prefers-reduced-motion`
 - **Fast:** optimized WebP imagery, Vercel Analytics
-- **AI chatbot:** a 24/7 assistant (Groq + Llama) that answers visitor questions about Ahmed using his portfolio data
+- **AI chatbot:** a 24/7 assistant (Groq + Llama) that answers visitor questions about Ahmed Raza using his portfolio data
 
 ## ⚙️ Configuration
 
@@ -34,7 +34,7 @@ Defaults to `https://ahmed-raza.vercel.app` if unset (see `src/data/portfolio.ts
 
 ## 🤖 AI Chatbot
 
-A floating assistant (bottom-right) answers visitor questions about Ahmed 24/7. It runs
+A floating assistant (bottom-right) answers visitor questions about Ahmed Raza 24/7. It runs
 on [Groq](https://groq.com/) (free, very fast) and is grounded in the portfolio data —
 update `src/data/portfolio.ts` and the bot stays in sync automatically.
 
@@ -158,4 +158,4 @@ Color tokens and effects (grid overlay, copper glow, scrollbar) are defined in
 
 ---
 
-**Ahmed Raza © 2025 — Execution Over Words**
+**Ahmed Raza © 2026 — Execution Over Words**
