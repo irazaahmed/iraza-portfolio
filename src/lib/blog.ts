@@ -6,6 +6,19 @@ import { marked } from "marked";
 /** Folder holding one Markdown file per blog post (with frontmatter). */
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
+/** Supported blog languages. English is the default and lives in `<slug>.md`. */
+export type Lang = "en" | "ur" | "ro";
+
+export const LANG_LABEL: Record<Lang, string> = {
+  en: "English",
+  ro: "Roman Urdu",
+  ur: "اردو",
+};
+
+export function parseLang(v: unknown): Lang {
+  return v === "ur" || v === "ro" ? v : "en";
+}
+
 export type BlogMeta = {
   slug: string;
   title: string;
@@ -14,6 +27,7 @@ export type BlogMeta = {
   excerpt: string;
   tags: string[];
   readingTime: string;
+  lang: Lang;
 };
 
 export type BlogPost = BlogMeta & {
@@ -21,53 +35,86 @@ export type BlogPost = BlogMeta & {
   html: string;
 };
 
-function estimateReadingTime(text: string): string {
+function estimateReadingTime(text: string, lang: Lang): string {
   const words = text.trim().split(/\s+/).filter(Boolean).length;
-  const minutes = Math.max(1, Math.round(words / 200));
-  return `${minutes} min read`;
+  const wpm = lang === "ur" ? 140 : 200; // Nastaliq reads a bit slower
+  const minutes = Math.max(1, Math.round(words / wpm));
+  const suffix = lang === "ur" ? "منٹ پڑھائی" : lang === "ro" ? "min parhai" : "min read";
+  return `${minutes} ${suffix}`;
 }
 
-function getSlugs(): string[] {
+/** Resolve the on-disk filename for a (slug, lang) pair. */
+function fileFor(slug: string, lang: Lang): string {
+  return lang === "en" ? `${slug}.md` : `${slug}.${lang}.md`;
+}
+
+/** Unique base slugs across all language files. */
+function listBaseSlugs(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
-  return fs
-    .readdirSync(BLOG_DIR)
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => f.replace(/\.md$/, ""));
+  const set = new Set<string>();
+  for (const file of fs.readdirSync(BLOG_DIR)) {
+    if (!file.endsWith(".md")) continue;
+    const base = file.replace(/\.(ur|ro)\.md$/, "").replace(/\.md$/, "");
+    set.add(base);
+  }
+  return Array.from(set);
 }
 
-function toMeta(slug: string, data: matter.GrayMatterFile<string>["data"], content: string): BlogMeta {
+function toMeta(
+  slug: string,
+  lang: Lang,
+  data: matter.GrayMatterFile<string>["data"],
+  content: string,
+): BlogMeta {
   return {
     slug,
     title: String(data.title ?? slug),
     date: String(data.date ?? ""),
     excerpt: String(data.excerpt ?? ""),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
-    readingTime: estimateReadingTime(content),
+    readingTime: estimateReadingTime(content, lang),
+    lang,
   };
 }
 
-/** All posts, newest first. */
+/** All English posts, newest first — used for the homepage and blog index. */
 export function getAllPosts(): BlogMeta[] {
-  return getSlugs()
+  return listBaseSlugs()
     .map((slug) => {
-      const raw = fs.readFileSync(path.join(BLOG_DIR, `${slug}.md`), "utf8");
+      const file = path.join(BLOG_DIR, fileFor(slug, "en"));
+      if (!fs.existsSync(file)) return null;
+      const raw = fs.readFileSync(file, "utf8");
       const { data, content } = matter(raw);
-      return toMeta(slug, data, content);
+      return toMeta(slug, "en", data, content);
     })
+    .filter((p): p is BlogMeta => p !== null)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-/** All slugs — used for static generation. */
+/** All base slugs — used for static generation. */
 export function getAllSlugs(): string[] {
-  return getSlugs();
+  return listBaseSlugs();
 }
 
-/** A single post with rendered HTML, or null if it doesn't exist. */
-export function getPostBySlug(slug: string): BlogPost | null {
-  const file = path.join(BLOG_DIR, `${slug}.md`);
-  if (!fs.existsSync(file)) return null;
-  const raw = fs.readFileSync(file, "utf8");
+/** Languages available for a given slug (always includes "en" if base file exists). */
+export function getAvailableLangs(slug: string): Lang[] {
+  const out: Lang[] = [];
+  for (const l of ["en", "ro", "ur"] as const) {
+    if (fs.existsSync(path.join(BLOG_DIR, fileFor(slug, l)))) out.push(l);
+  }
+  return out;
+}
+
+/** A single post with rendered HTML. Falls back to English if the requested
+ *  language file doesn't exist. Returns null if no version exists. */
+export function getPostBySlug(slug: string, lang: Lang = "en"): BlogPost | null {
+  const file = path.join(BLOG_DIR, fileFor(slug, lang));
+  const fallback = path.join(BLOG_DIR, fileFor(slug, "en"));
+  const target = fs.existsSync(file) ? file : fs.existsSync(fallback) ? fallback : null;
+  if (!target) return null;
+  const actualLang: Lang = target === file ? lang : "en";
+  const raw = fs.readFileSync(target, "utf8");
   const { data, content } = matter(raw);
   const html = marked.parse(content) as string;
-  return { ...toMeta(slug, data, content), html };
+  return { ...toMeta(slug, actualLang, data, content), html };
 }

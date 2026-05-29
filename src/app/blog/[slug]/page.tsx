@@ -2,63 +2,107 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import {
+  getAllSlugs,
+  getAvailableLangs,
+  getPostBySlug,
+  parseLang,
+  type Lang,
+} from "@/lib/blog";
 import { siteUrl } from "@/data/portfolio";
 import BlogHeader from "@/components/BlogHeader";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-type Props = { params: Promise<{ slug: string }> };
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ lang?: string }>;
+};
 
-/** Pre-render every post at build time. */
+/** Pre-render every English post at build time. Translated variants are
+ *  rendered on demand via the `?lang=` query parameter. */
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
 
-function formatDate(iso: string): string {
+function formatDate(iso: string, lang: Lang): string {
   if (!iso) return "";
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  const locale = lang === "ur" ? "ur-PK" : lang === "ro" ? "en-US" : "en-US";
+  return d.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" });
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+function ogLocale(lang: Lang): string {
+  return lang === "ur" ? "ur_PK" : lang === "ro" ? "en_US" : "en_US";
+}
+
+function pathFor(slug: string, lang: Lang): string {
+  return lang === "en" ? `/blog/${slug}` : `/blog/${slug}?lang=${lang}`;
+}
+
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const sp = await searchParams;
+  const lang = parseLang(sp.lang);
+  const post = getPostBySlug(slug, lang);
   if (!post) return { title: "Post not found — Ahmed Raza" };
+
+  const available = getAvailableLangs(slug);
+  const languages: Record<string, string> = {};
+  for (const l of available) {
+    const tag = l === "ur" ? "ur" : l === "ro" ? "en-x-roman-ur" : "en";
+    languages[tag] = `${siteUrl}${pathFor(slug, l)}`;
+  }
 
   return {
     title: `${post.title} — Ahmed Raza`,
     description: post.excerpt,
     keywords: post.tags,
-    alternates: { canonical: `/blog/${slug}` },
+    alternates: { canonical: pathFor(slug, lang), languages },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `${siteUrl}/blog/${slug}`,
+      url: `${siteUrl}${pathFor(slug, lang)}`,
       type: "article",
       publishedTime: post.date,
       authors: ["Ahmed Raza"],
+      locale: ogLocale(lang),
     },
     twitter: { card: "summary_large_image", title: post.title, description: post.excerpt },
   };
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params, searchParams }: Props) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const sp = await searchParams;
+  const lang = parseLang(sp.lang);
+  const post = getPostBySlug(slug, lang);
   if (!post) notFound();
+
+  const available = getAvailableLangs(slug);
+  const isUrdu = post.lang === "ur";
+  const labels = {
+    back: isUrdu ? "تمام تحریریں" : post.lang === "ro" ? "Sari tehreerain" : "All posts",
+    backBottom: isUrdu
+      ? "تمام تحریروں پر واپس"
+      : post.lang === "ro"
+        ? "Wapis sari tehreerain"
+        : "Back to all posts",
+  };
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
+    inLanguage: post.lang === "ur" ? "ur" : post.lang === "ro" ? "en" : "en",
     datePublished: post.date,
     dateModified: post.date,
     keywords: post.tags.join(", "),
     author: { "@type": "Person", name: "Ahmed Raza", url: siteUrl },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${siteUrl}/blog/${slug}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${siteUrl}${pathFor(slug, post.lang)}` },
   };
 
   return (
@@ -70,25 +114,43 @@ export default async function BlogPostPage({ params }: Props) {
           className="inline-flex items-center gap-1.5 text-sm font-medium text-copper transition-colors hover:text-copper-dark"
         >
           <ArrowLeft size={16} />
-          All posts
+          {labels.back}
         </Link>
 
-        <article className="mt-6">
+        <div className="mt-6">
+          <LanguageSwitcher slug={slug} current={post.lang} available={available} />
+        </div>
+
+        <article dir={isUrdu ? "rtl" : "ltr"} lang={post.lang === "ur" ? "ur" : "en"}>
           <header className="mb-10 border-b border-border pb-8">
-            <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
-              <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <div
+              className={`flex flex-wrap items-center gap-2 text-xs text-muted ${
+                isUrdu ? "justify-end" : ""
+              }`}
+            >
+              <time dateTime={post.date}>{formatDate(post.date, post.lang)}</time>
               <span aria-hidden>·</span>
               <span>{post.readingTime}</span>
             </div>
-            <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-fg sm:text-4xl">
+            <h1
+              className={
+                isUrdu
+                  ? "urdu-heading mt-3 text-4xl font-bold text-fg sm:text-5xl"
+                  : "mt-3 text-3xl font-bold leading-tight tracking-tight text-fg sm:text-4xl"
+              }
+            >
               {post.title}
             </h1>
             {post.tags.length > 0 && (
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div
+                className={`mt-4 flex flex-wrap gap-2 ${isUrdu ? "justify-end" : ""}`}
+              >
                 {post.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border border-copper/30 bg-copper/5 px-3 py-1 text-xs font-medium text-copper"
+                    className={`rounded-full border border-copper/30 bg-copper/5 px-3 py-1 text-xs font-medium text-copper ${
+                      isUrdu ? "urdu-heading text-base" : ""
+                    }`}
                   >
                     {t}
                   </span>
@@ -97,7 +159,10 @@ export default async function BlogPostPage({ params }: Props) {
             )}
           </header>
 
-          <div className="prose-blog" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div
+            className={isUrdu ? "prose-blog prose-urdu" : "prose-blog"}
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
         </article>
 
         <div className="mt-14 border-t border-border pt-8">
@@ -106,7 +171,7 @@ export default async function BlogPostPage({ params }: Props) {
             className="inline-flex items-center gap-1.5 text-sm font-medium text-copper transition-colors hover:text-copper-dark"
           >
             <ArrowLeft size={16} />
-            Back to all posts
+            {labels.backBottom}
           </Link>
         </div>
       </main>

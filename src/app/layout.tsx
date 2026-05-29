@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Nastaliq_Urdu } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -10,6 +10,15 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+});
+
+// Nastaliq script for Urdu blog content — gives the Jameel Noori Nastaleeq look
+// while staying free / web-optimized.
+const nastaliq = Noto_Nastaliq_Urdu({
+  variable: "--font-nastaliq",
+  subsets: ["arabic"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const title = "Ahmed Raza - AI Solutions Expert";
@@ -55,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} h-full`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${nastaliq.variable} h-full`}>
       <body className="min-h-full antialiased">
         <a href="#main" className="skip-link">
           Skip to content

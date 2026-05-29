@@ -78,6 +78,23 @@ Your article content in **Markdown** — headings, lists, links, code blocks, et
 Commit and push — Vercel rebuilds and the post appears automatically on the homepage
 **Blog** section, the `/blog` list, and the sitemap (reading time is calculated for you).
 
+### 🌐 Translations (English / Roman Urdu / اردو)
+
+Each article can ship in up to three languages. Add translation files next to the
+English one using a language suffix on the slug:
+
+| Language     | Filename                                  | URL                                  |
+| ------------ | ----------------------------------------- | ------------------------------------ |
+| English      | `my-post-slug.md`                         | `/blog/my-post-slug`                 |
+| Roman Urdu   | `my-post-slug.ro.md`                      | `/blog/my-post-slug?lang=ro`         |
+| Urdu         | `my-post-slug.ur.md`                      | `/blog/my-post-slug?lang=ur`         |
+
+Each translation has its own frontmatter (translated `title`, `excerpt`, `tags`) — the
+file body is just the article in that language. A language switcher renders
+automatically above every article and only highlights the languages that actually
+have a file. Urdu pages render right-to-left in the **Noto Nastaliq Urdu** font
+(the free Nastaliq face that mirrors *Jameel Noori Nastaleeq*'s readability).
+
 ## 🧱 Tech Stack
 
 - [Next.js 16](https://nextjs.org/) (App Router)

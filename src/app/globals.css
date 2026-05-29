@@ -235,6 +235,45 @@ body::before {
   margin: 2.5rem 0;
 }
 
+/* Urdu (Nastaliq) typography — applied when the article language is Urdu.
+   Nastaliq needs a larger size and very generous leading to stay readable. */
+.prose-urdu {
+  font-family: var(--font-nastaliq), "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
+  font-size: 1.5rem;
+  line-height: 2.5;
+  text-align: right;
+}
+.prose-urdu h1,
+.prose-urdu h2,
+.prose-urdu h3,
+.prose-urdu h4 {
+  font-family: var(--font-nastaliq), "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
+  line-height: 2;
+}
+.prose-urdu h2 {
+  font-size: 2rem;
+}
+.prose-urdu h3 {
+  font-size: 1.7rem;
+}
+.prose-urdu ul,
+.prose-urdu ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+.prose-urdu blockquote {
+  border-left: none;
+  border-right: 3px solid #e97a2c;
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+/* Headline (rendered outside the prose container) when article is in Urdu */
+.urdu-heading {
+  font-family: var(--font-nastaliq), "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
+  line-height: 2;
+  text-align: right;
+}
+
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {

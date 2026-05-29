@@ -1,16 +1,25 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/data/portfolio";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, getAvailableLangs } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
 
-  const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: post.date ? new Date(post.date) : new Date(),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  // One entry per (post × available language) so Google indexes every
+  // translation we ship.
+  const postEntries: MetadataRoute.Sitemap = posts.flatMap((post) => {
+    const langs = getAvailableLangs(post.slug);
+    const lastModified = post.date ? new Date(post.date) : new Date();
+    return langs.map((lang) => ({
+      url:
+        lang === "en"
+          ? `${siteUrl}/blog/${post.slug}`
+          : `${siteUrl}/blog/${post.slug}?lang=${lang}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: lang === "en" ? 0.7 : 0.6,
+    }));
+  });
 
   return [
     {
