@@ -5,7 +5,9 @@ excerpt: "Aik honest baat: kese mein, Ahmed Raza, 8+ saal Islamic Scholar aur As
 tags: ["Ahmed Raza", "AI Solutions Expert", "Cybrum Solutions", "Career", "Agentic AI"]
 ---
 
-Assalamu Alaikum. Mein **Ahmed Raza** hoon — taleem se aik Islamic Scholar, aur kaam se **AI Solutions Expert**. **Cybrum Solutions ka Founder** hoon, aur is waqt **Dawat-e-Islami me Team Lead — Translation Department** ke tor per kaam kar raha hoon, jahan 33 zubaanon ki Qurani content translation pipeline lead karta hoon.
+Assalamu Alaikum. Mein **Ahmed Raza** hoon — aik active **Islamic Scholar** aur **AI Solutions Expert**. Mera mission simple hai: classical Islamic ilm ko modern technology ke sath combine kar ke asli Islami taleemat ko har aam shakhs tak asaan, easy, aur engaging tareeqe se pohchana.
+
+**Cybrum Solutions ka Founder** hoon, aur is waqt **Dawat-e-Islami ke Translation Department (شعبہ تراجم) me Team Lead Translation** ke tor per kaam kar raha hoon, jahan 33 zubaanon ki Qurani content translation pipeline lead karta hoon.
 
 Lagta hai unusual combination hai, hai na? Log aksar poochte hain: *"Aik Hafiz-e-Quran aur Asst. Shariah Advisor agentic AI systems kese bana raha hai?"* Ye article meri honest answer hai.
 
@@ -36,7 +38,7 @@ Phir mein ne seriously seekhna shuru kiya. **GIAIC ka Cloud Computing & Agentic 
 
 Is waqt do roles parallel chal rahe hain — donon ka mission aik hi hai.
 
-### Team Lead — Translation Department, Dawat-e-Islami
+### Team Lead Translation — Dawat-e-Islami ka Translation Department (شعبہ تراجم)
 
 Ek multilingual Qurani content translation pipeline **33 zubaanon** me lead kar raha hoon, structured relay chain ke through (Arabic → Urdu → English → 33 languages). Mera kaam translator teams manage karna, quality benchmarks set karna, har language output me scholarly standards enforce karna, aur translation se publishing tak ka poora workflow oversee karna hai.
 

@@ -28,7 +28,7 @@ identity: **8+ years as Islamic Scholar**, **Agentic AI engineer**, and **33-lan
 ### 💼 What I Do Now
 The two current positions front-and-centre:
 
-- **Team Lead — Translation Department @ Dawat-e-Islami** (Jan 2026 → Present) — leading a 33-language Quranic content translation pipeline.
+- **Team Lead Translation @ Dawat-e-Islami's Translation Department (شعبہ تراجم)** (Jan 2026 → Present) — leading a 33-language Quranic content translation pipeline.
 - **Founder & AI Solutions Expert @ Cybrum Solutions** (Nov 2025 → Present) — building AI automation, WhatsApp chatbots, CRM workflows, and multi-agent systems for Islamic publishers, schools, and SMEs.
 
 ### 🕰️ Experience Timeline

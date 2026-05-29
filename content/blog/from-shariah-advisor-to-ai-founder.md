@@ -5,7 +5,9 @@ excerpt: "An honest look at how I, Ahmed Raza, moved from 8+ years as an Islamic
 tags: ["Ahmed Raza", "AI Solutions Expert", "Cybrum Solutions", "Career", "Agentic AI"]
 ---
 
-Assalamu Alaikum. I'm **Ahmed Raza** — an Islamic Scholar by training and an **AI Solutions Expert** by practice. I'm the **Founder of Cybrum Solutions**, and currently the **Team Lead for the Translation Department at Dawat-e-Islami**, where I'm leading a 33-language Quranic content translation pipeline.
+Assalamu Alaikum. I'm **Ahmed Raza** — an active **Islamic Scholar** and an **AI Solutions Expert**. My mission is simple: combine classical Islamic knowledge with modern technology to make authentic Islamic teachings accessible, easy, and engaging for everyone.
+
+I'm the **Founder of Cybrum Solutions**, and currently **Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم)**, where I'm leading a 33-language Quranic content translation pipeline.
 
 If that sounds like an unusual combination, you're not alone. People often ask me: *"How does a Hafiz-e-Quran and Asst. Shariah Advisor end up building agentic AI systems?"* This article is my honest answer.
 
@@ -36,7 +38,7 @@ I started learning seriously. I went through **GIAIC's Cloud Computing and Agent
 
 Today I run two roles in parallel — both with the same underlying mission.
 
-### Team Lead — Translation Department at Dawat-e-Islami
+### Team Lead Translation — Dawat-e-Islami's Translation Department (شعبہ تراجم)
 
 I lead a multilingual Quranic content translation pipeline across **33 target languages**, using a structured relay chain (Arabic → Urdu → English → 33 languages). My job is to manage translator teams, set quality benchmarks, enforce scholarly standards across every language output, and oversee the workflow from translation to publishing.
 

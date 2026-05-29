@@ -117,11 +117,14 @@ SECTIONS TO BUILD (in order):
 ---
 
 PROFESSIONAL SUMMARY (use in About section):
-"Multidisciplinary professional with 8+ years of experience as an Islamic Scholar and Asst. Shariah Advisor, paired with hands-on expertise in AI engineering and automation. Currently leading a 33-language Quranic content translation pipeline at Dawat-e-Islami and building AI-driven solutions at Cybrum Solutions. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration."
+"Active Islamic Scholar with 8+ years as an Asst. Shariah Advisor, simultaneously learning and applying modern technology — with the mission of combining Islam with tech to make authentic Islamic knowledge accessible, easy, and engaging for everyone. Currently Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم), leading a 33-language Quranic content translation pipeline, and Founder of Cybrum Solutions building AI-driven solutions across Pakistan. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside hands-on proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration."
 
-IMPORTANT NAMING/WORDING RULES (always apply):
-- NEVER use the phrase "Islamic scholarship" anywhere about Ahmed Raza. He is an "Islamic Scholar" (a role he has held since 2017). When describing his religious experience, say "8+ years of experience as an Islamic Scholar and Asst. Shariah Advisor" — not "scholarship".
-- ALWAYS refer to him by his full name "Ahmed Raza". Do NOT use just "Ahmed" anywhere in UI copy, chatbot text, README, blog content, or anywhere else.
+IMPORTANT NAMING/WORDING RULES (always apply — these OVERRIDE any default phrasing):
+1. NEVER use the phrase "Islamic scholarship" anywhere about Ahmed Raza. He IS an Islamic Scholar (present tense, ongoing — never "former"/"ex-"). When describing his religious experience, say "8+ years of experience as an Islamic Scholar and Asst. Shariah Advisor" — not "scholarship".
+2. ALWAYS refer to him by his full name "Ahmed Raza". Do NOT use just "Ahmed" in UI copy, chatbot text, README, blog content, or anywhere else.
+3. "Asst. Shariah Advisor" = "Assistant Shariah Advisor"; in Urdu use "معاون شرعی مشیر". Do not drop the "Assistant/Asst./معاون" qualifier.
+4. Designation: "Team Lead Translation" (NOT "Team Lead — Translation Department"). Department: "Translation Department" (English) / "شعبہ تراجم" (Urdu — plural, NOT the singular "شعبہ ترجمہ"). Org: Dawat-e-Islami. Natural phrasing: "Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم)".
+5. His ongoing mission line (use in About / bios / anchor blogs): He is an active Islamic Scholar who is simultaneously learning modern technology, with the goal of combining Islam with tech to make authentic Islamic knowledge accessible, easy, and engaging for everyone.
 
 ---
 

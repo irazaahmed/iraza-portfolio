@@ -17,7 +17,7 @@ export const profile = {
   ],
   tagline: "Bridging authentic Islamic knowledge with cutting-edge AI technology",
   summary:
-    "Multidisciplinary professional with 8+ years of experience as an Islamic Scholar and Asst. Shariah Advisor, paired with hands-on expertise in AI engineering and automation. Currently leading a 33-language Quranic content translation pipeline at Dawat-e-Islami and building AI-driven solutions at Cybrum Solutions. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration.",
+    "Active Islamic Scholar with 8+ years as an Asst. Shariah Advisor, simultaneously learning and applying modern technology — with the mission of combining Islam with tech to make authentic Islamic knowledge accessible, easy, and engaging for everyone. Currently Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم), leading a 33-language Quranic content translation pipeline, and Founder of Cybrum Solutions building AI-driven solutions across Pakistan. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside hands-on proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration.",
   cvFile: "/Ahmed_Raza_CV.pdf",
   photo: "/ahmed.webp",
 } as const;
@@ -62,8 +62,8 @@ export type Position = {
 
 export const currentPositions: Position[] = [
   {
-    title: "Team Lead — Translation Department",
-    org: "Dawat-e-Islami",
+    title: "Team Lead Translation",
+    org: "Dawat-e-Islami — Translation Department (شعبہ تراجم)",
     period: "Jan 2026 – Present",
     description:
       "Leading a multilingual Quranic content translation operation across 33 target languages using a structured relay chain (Arabic → Urdu → English → 33 languages). Managing translator teams, setting quality benchmarks, and enforcing Islamic scholarly standards across all language outputs, while overseeing the complete workflow from translation to publishing.",
