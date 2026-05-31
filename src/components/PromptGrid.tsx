@@ -108,7 +108,7 @@ export default function PromptGrid() {
                         exit={{ opacity: 0, height: 0 }}
                         className="overflow-hidden"
                       >
-                        <p className="mt-3 max-h-40 overflow-y-auto whitespace-pre-line rounded-lg border border-border bg-bg/50 p-3 text-sm leading-relaxed text-muted">
+                        <p className="mt-3 max-h-40 overflow-y-auto overflow-x-hidden whitespace-pre-line break-words [overflow-wrap:anywhere] rounded-lg border border-border bg-bg/50 p-3 text-sm leading-relaxed text-muted">
                           {p.prompt}
                         </p>
                       </motion.div>
@@ -201,7 +201,7 @@ export default function PromptGrid() {
                 <p className="mb-2 mt-5 text-xs font-semibold uppercase tracking-[0.15em] text-muted">
                   Prompt
                 </p>
-                <div className="min-h-0 flex-1 overflow-y-auto whitespace-pre-line rounded-lg border border-border bg-bg-soft/60 p-4 text-sm leading-relaxed text-fg">
+                <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden whitespace-pre-line break-words [overflow-wrap:anywhere] rounded-lg border border-border bg-bg-soft/60 p-4 text-sm leading-relaxed text-fg">
                   {lightbox.prompt}
                 </div>
 
