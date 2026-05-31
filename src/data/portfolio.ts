@@ -199,6 +199,275 @@ export const projects: Project[] = [
   },
 ];
 
+export type Prompt = {
+  id: string;
+  title: string;
+  /** Path to the generated result image, e.g. "/prompts/my-image.jpg" */
+  image: string;
+  /** The exact prompt used to generate the result */
+  prompt: string;
+  /** The AI tool used — also used as the filter category */
+  tool: string;
+};
+
+// 👇 ADD YOUR PROMPTS HERE.
+// 1) Put your image file in:  public/prompts/   (e.g. public/prompts/my-art.jpg)
+// 2) Copy one block below, paste it inside the [ ], and fill in your details.
+//
+//   {
+//     id: "my-art",                       // koi bhi unique naam (no spaces)
+//     title: "Card ka title",             // card pe dikhega
+//     image: "/prompts/my-art.jpg",       // public/prompts/ wali file ka naam
+//     tool: "Midjourney",                 // jis tool se banaya (chhote pill me aata hai)
+//     prompt: "Yahan apna pura prompt likho...",
+//   },
+//
+export const prompts: Prompt[] = [
+  {
+    id: "image-in-text",
+    title: "Image in Text Prompting",
+    image: "/prompts/pic-in-text.jpg",
+    tool: "ChatGPT",
+    prompt:"Create a luxury editorial name collage using the uploaded reference photo as the likeness guide. Spell the name: [Ahmed Raza] Use large, bold, clean block letters centered on a black background. Make the letters photo-filled cutouts with a glowing deep orange and gold outline. The background should be black-on-black with subtle velvet, satin, smoke, or soft spotlight texture. Use the person’s likeness consistently across every portrait: face shape, skin tone, hairstyle, eyewear if present, signature features, expression, and overall presence. Do not copy the exact reference photo. Create elevated editorial versions of the person.Inside the letters, create fewer but stronger portraits. Include a mix of close-up cinematic portraits, seated leadership poses, side-profile portraits, standing full-body fashion poses, lifestyle branding shots, TEDx-style keynote speaker moments, AI strategist workspace scenes, and luxury personal brand imagery.Style direction: magazine cover meets luxury personal brand campaign. Professional stylist.Professional grooming. Polished luxury editorial styling. Flawless skin texture. Defined eyes. Natural confidence. Premium wardrobe. Cinematic lighting. Editorial depth. Sharp high-resolution finish.Wardrobe palette: [black, deep orange & gold] Expression direction: calm confidence, visionary energy, modern founder presence, powerful but approachable, quiet authority.Make the center letter the hero portrait with one strong close-up image. Let each letter represent a different side of the person, such as leader, creator, strategist, visionary, speaker, mentor, founder, or AI innovator."
+  },
+  {
+    id: "insta-vew",
+    title: "Instagram View Prompting",
+    image: "/prompts/insta-view.jpg",
+    tool: "DALL·E",
+    prompt: `Create a hyper-realistic premium futuristic founder portrait using
+the uploaded man's photo. Preserve the EXACT facial identity, facial 
+structure, hairstyle, skin texture, beard, glasses, facial features, 
+and overall likeness from Ahmed Raza's uploaded portrait. Do NOT 
+alter, beautify, replace, or redesign the face. Maintain 100% facial 
+identity accuracy — this is non-negotiable.
+
+⚠️ STRICT DIMENSION LOCK: Output must be exactly 1080 × 1350 pixels 
+(4:5 portrait ratio for LinkedIn) OR 1080 × 1080 pixels (1:1 square 
+for WhatsApp/Facebook/Instagram). Verify exact aspect ratio.
+
+═══════════════════════════════════════════════════════════════
+SUBJECT — AHMED RAZA (Founder & AI Solutions Expert)
+═══════════════════════════════════════════════════════════════
+
+▸ FACIAL IDENTITY (preserve 100%):
+  • Use uploaded portrait photo as exact reference
+  • Maintain his glasses, beard, hairstyle, skin tone, expression 
+    baseline
+  • Do not "beautify", smooth, or replace any feature
+  • Render with photorealistic skin texture and natural pores
+  • Subtle confident genuine smile, NOT exaggerated
+  • Direct confident eye contact with viewer
+  • Approachable yet authoritative energy
+
+▸ POSE & POSTURE:
+  • Sitting elegantly and confidently on a sleek floating dark 
+    platform with subtle copper edge glow
+  • Natural masculine posture: shoulders back, chin slightly up, 
+    one hand resting thoughtfully (chin or knee), the other 
+    casually placed
+  • Confident, composed, founder-grade authority
+  • NOT influencer pose — executive thought-leader vibe
+  • Cinematic gravitas, like a senior tech CEO portrait
+
+▸ OUTFIT (Premium Founder Aesthetic):
+  • Premium black tailored modern kurta (refined cut, slightly 
+    structured) OR black premium turtleneck (founder-classic)
+  • Optional: dark charcoal blazer or fitted overcoat layered on top 
+    (refined, subtle copper-tone metallic buttons or piping)
+  • Premium black trousers (well-fitted, modern cut)
+  • Premium black leather shoes (refined, polished — NOT sneakers)
+  • Optional refined accessories: minimalist watch with copper-tone 
+    accent (subtle, not flashy)
+  • Overall vibe: Tim Cook meets traditional Pakistani elegance — 
+    premium, modern, culturally rooted, authoritative
+
+⚠️ MASCULINE + FOUNDER ENERGY — NOT feminine, NOT influencer-style.
+
+═══════════════════════════════════════════════════════════════
+BACKGROUND — HOLOGRAPHIC AI WORKSPACE
+═══════════════════════════════════════════════════════════════
+
+▸ MAIN HOLOGRAPHIC DISPLAY (behind/beside Ahmed):
+  • Giant curved holographic interface showing his AI work
+  • Display elements (all in copper-orange #E97A2C + dim white):
+    - LinkedIn profile preview with engagement metrics
+    - WhatsApp Business dashboard with chat threads
+    - Agentic AI workflow diagrams (connected nodes, copper lines)
+    - Code editor showing Next.js/Python (subtle, blurred)
+    - Quranic Translation pipeline visualization
+    - Analytics dashboards (growth charts in copper)
+    - Notification badges and engagement counters
+  • Interface style: futuristic dark UI with copper accents (NOT 
+    bright blue/white tech aesthetic)
+  • Seamlessly integrated into the dark environment
+
+▸ FLOATING HOLOGRAPHIC ELEMENTS (around scene):
+  • Glowing agentic AI nodes connected by thin copper lines
+  • Floating workflow icons (📊 reports, 💬 chats, 📈 charts) — 
+    but rendered as STYLIZED COPPER OUTLINE ICONS, not actual emoji
+  • Translation/language flow indicators (Arabic, Urdu, English 
+    text fragments floating, copper-orange)
+  • LinkedIn-style engagement metrics (followers, post views, 
+    impressions) as floating holographic numbers
+  • Small copper-glowing API/automation visual indicators
+  • Subtle "live" pulsing dots representing real-time activity
+  • All floating elements: copper-orange #E97A2C outlines, 
+    semi-transparent (~60% opacity), soft glow halos
+
+═══════════════════════════════════════════════════════════════
+LIGHTING & ATMOSPHERE
+═══════════════════════════════════════════════════════════════
+
+▸ PRIMARY LIGHTING:
+  • Pure deep black ambient base (#000000)
+  • Soft warm copper-orange key light from above-left, illuminating 
+    Ahmed's face and shoulders (#E97A2C → #FFB347)
+  • Counter-glow from holographic displays on the right side 
+    (#D97426 rim light)
+  • Subtle backlight creating soft halo around his silhouette
+
+▸ ATMOSPHERIC ELEMENTS:
+  • Soft volumetric copper light beams cutting through the space
+  • Floating warm golden particles drifting upward (sense of 
+    ideas/energy/data flowing)
+  • Subtle bokeh lights in copper tones in the deep background
+  • Atmospheric fog with warm copper undertone (very subtle)
+  • Reflective floor surface with soft copper light bouncing
+  • Soft vignette in all four corners
+  • Slight cinematic film grain for premium feel
+
+⚠️ ABSOLUTELY NO: Electric blue, cyan, pink, purple, green, or 
+white-bright tech lighting. ONLY copper-orange warm tones.
+
+═══════════════════════════════════════════════════════════════
+TOP-LEFT BRANDING BLOCK (MANDATORY, COMPACT)
+═══════════════════════════════════════════════════════════════
+- A SECOND smaller circular profile photo of Ahmed Raza in top-left 
+  corner (separate from main hero portrait)
+- PERFECT CIRCULAR crop (1:1 mask)
+- Thin glowing copper-orange ring border (#E97A2C, 2-3px)
+- Soft outer copper halo glow
+- Compact size (~70-80px diameter)
+- Right of circle, two stacked sans-serif lines:
+    Line 1 (bold white #FFFFFF): "Ahmed Raza"
+    Line 2 (copper #E97A2C, smaller): 
+    "AI Solutions Expert | Team Lead Translation"
+- Padding: ~40px from top, ~40px from left
+
+═══════════════════════════════════════════════════════════════
+HERO TYPOGRAPHY OVERLAY (optional, on the right side)
+═══════════════════════════════════════════════════════════════
+
+▶ Subtle elegant text overlay on the upper-right area:
+
+  Line 1:  "BUILDING THE"
+  Line 2:  "FUTURE"   ← DOMINANT
+  Line 3:  "WITH AI"
+
+▸ LINE 2 "FUTURE":
+  • Massive bold display serif (Playfair Display Black, Bodoni Bold)
+  • Copper-orange #E97A2C with strong glow halo #FFB347
+  • Size: large but doesn't compete with the subject
+  • 3D dimensional embossed feel
+
+▸ LINES 1 & 3:
+  • Modern sans-serif (Inter Black, Poppins ExtraBold)
+  • Soft white #FFFFFF
+  • All uppercase, letter-spaced
+  • Smaller than Line 2
+
+═══════════════════════════════════════════════════════════════
+BOTTOM CONTACT STRIP (MANDATORY)
+═══════════════════════════════════════════════════════════════
+- Thin copper-orange horizontal divider line (#D97426, 1px, 
+  ~70% width, centered, soft glow)
+- Single horizontal row, centered, ~40px from bottom edge:
+
+  [WA icon]  +92 313 0221118
+
+- WhatsApp icon: stylized speech bubble outline in copper-orange 
+  #E97A2C, ~22-24px (NOT exact WhatsApp green logo)
+- Phone number: "+92 313 0221118" in soft white #FFFFFF, modern 
+  bold sans-serif, ~16-18px
+
+⚠️ DO NOT add company name, tagline, philosophy, website, social 
+handles.
+⚠️ NO emojis anywhere.
+
+═══════════════════════════════════════════════════════════════
+COLOR PALETTE (strict — copper-orange + black ONLY)
+═══════════════════════════════════════════════════════════════
+- Pure black              #000000  (background, base)
+- Warm orange             #E97A2C  (primary accent, holograms, 
+                                    lighting, outlines)
+- Copper                  #D97426  (secondary accent, deeper tones)
+- Soft white              #FFFFFF  (text, name, subtle highlights)
+- Bright glow              #FFB347  (key light, halos, "FUTURE" glow)
+- Subtle gold             #C9A227  (premium metallic accent)
+- Deep dark warm          #1A0F08  (atmospheric depth)
+- Charcoal                #2A2520  (outfit blacks, depth)
+
+═══════════════════════════════════════════════════════════════
+STYLE
+═══════════════════════════════════════════════════════════════
+- Hyper-realistic photographic founder portrait
+- Cinematic dark premium mode
+- Apple keynote campaign meets Tesla CEO portrait meets premium 
+  tech magazine cover
+- 8K ultra-detailed, 85mm lens depth of field
+- Glossy reflective surfaces
+- Award-winning commercial advertising quality
+- Magazine-cover grade
+- Creator economy meets B2B SaaS founder aesthetic
+- Subtle film grain for cinematic warmth
+- NOT influencer aesthetic — executive/founder aesthetic
+
+═══════════════════════════════════════════════════════════════
+TECHNICAL SPECS
+═══════════════════════════════════════════════════════════════
+- 85mm lens, shallow depth of field (subject sharp, background 
+  softly defocused with bokeh)
+- Three-point lighting setup
+- Professional commercial photography quality
+- Ultra-HD resolution rendering
+- Photorealistic skin texture preserved
+- Realistic shadows matching light source direction
+- Hyper-detailed fabric textures on outfit
+- Soft reflective glow on glasses (subtle, not blocking eyes)
+
+═══════════════════════════════════════════════════════════════
+ABSOLUTE NEGATIVE PROMPT (DO NOT INCLUDE)
+═══════════════════════════════════════════════════════════════
+- ❌ Different face, altered identity, face swap errors
+- ❌ AI-generated face replacement
+- ❌ Beauty filter, over-retouched skin, plastic skin
+- ❌ Female features, feminine elegance, female body proportions
+- ❌ Sky-blue, electric blue, cyan, pink, purple, green, white tech 
+   lighting
+- ❌ Sneakers, denim jacket, casual streetwear
+- ❌ Generic influencer pose, social media model pose
+- ❌ Floating hearts, kissy emoji, romance elements
+- ❌ Cartoon, anime, CGI plastic appearance
+- ❌ Distorted facial features, elongated limbs, bad anatomy
+- ❌ Extra fingers, duplicate elements, deformed hands
+- ❌ Artificial smile, mannequin expression
+- ❌ Blurry face, low resolution, low detail
+- ❌ Oversaturated bright colors
+- ❌ Real Instagram screenshots (use abstract holographic UI)
+- ❌ Real LinkedIn screenshots (use abstract dashboard visuals)
+- ❌ Exact WhatsApp/Adobe/LinkedIn logos (stylized only)
+- ❌ Cropped body, weird framing
+- ❌ Different aspect ratio (must be exactly 1080×1350 or 1080×1080)
+- ❌ Removing top-left branding block
+- ❌ Removing bottom WhatsApp strip
+- ❌ Adding company name, tagline, philosophy text
+- ❌ ANY emoji anywhere
+- ❌ ANY @username tags or external watermarks
+- ❌ Bright backgrounds`
+  }
+];
+
 export type SkillCategory = {
   category: string;
   skills: string[];
@@ -306,6 +575,7 @@ export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Prompts", href: "/prompts" },
   { label: "Skills", href: "#skills" },
   { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },

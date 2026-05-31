@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import BlogSection from "@/components/BlogSection";
+import PromptsTeaser from "@/components/PromptsTeaser";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -27,6 +28,7 @@ export default function Home() {
         <Skills />
         <Education />
         <BlogSection />
+        <PromptsTeaser />
         <Contact />
       </main>
       <Footer />
