@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteUrl } from "@/data/portfolio";
+import { siteUrl, prompts } from "@/data/portfolio";
 import { getAllPosts, getAvailableLangs } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -40,6 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
+    ...prompts.map((p) => ({
+      url: `${siteUrl}/prompts/${p.id}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     ...postEntries,
   ];
 }
