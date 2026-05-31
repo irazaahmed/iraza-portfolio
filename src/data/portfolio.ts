@@ -206,8 +206,6 @@ export type Prompt = {
   image: string;
   /** The exact prompt used to generate the result */
   prompt: string;
-  /** The AI tool used — also used as the filter category */
-  tool: string;
 };
 
 // 👇 ADD YOUR PROMPTS HERE.
@@ -218,8 +216,7 @@ export type Prompt = {
 //     id: "my-art",                       // koi bhi unique naam (no spaces)
 //     title: "Card ka title",             // card pe dikhega
 //     image: "/prompts/my-art.jpg",       // public/prompts/ wali file ka naam
-//     tool: "Midjourney",                 // jis tool se banaya (chhote pill me aata hai)
-//     prompt: "Yahan apna pura prompt likho...",
+//     prompt: `Yahan apna pura prompt likho...`,  // hamesha backtick me
 //   },
 //
 export const prompts: Prompt[] = [
@@ -227,14 +224,12 @@ export const prompts: Prompt[] = [
     id: "image-in-text",
     title: "Image in Text Prompting",
     image: "/prompts/pic-in-text.jpg",
-    tool: "ChatGPT",
     prompt:"Create a luxury editorial name collage using the uploaded reference photo as the likeness guide. Spell the name: [Ahmed Raza] Use large, bold, clean block letters centered on a black background. Make the letters photo-filled cutouts with a glowing deep orange and gold outline. The background should be black-on-black with subtle velvet, satin, smoke, or soft spotlight texture. Use the person’s likeness consistently across every portrait: face shape, skin tone, hairstyle, eyewear if present, signature features, expression, and overall presence. Do not copy the exact reference photo. Create elevated editorial versions of the person.Inside the letters, create fewer but stronger portraits. Include a mix of close-up cinematic portraits, seated leadership poses, side-profile portraits, standing full-body fashion poses, lifestyle branding shots, TEDx-style keynote speaker moments, AI strategist workspace scenes, and luxury personal brand imagery.Style direction: magazine cover meets luxury personal brand campaign. Professional stylist.Professional grooming. Polished luxury editorial styling. Flawless skin texture. Defined eyes. Natural confidence. Premium wardrobe. Cinematic lighting. Editorial depth. Sharp high-resolution finish.Wardrobe palette: [black, deep orange & gold] Expression direction: calm confidence, visionary energy, modern founder presence, powerful but approachable, quiet authority.Make the center letter the hero portrait with one strong close-up image. Let each letter represent a different side of the person, such as leader, creator, strategist, visionary, speaker, mentor, founder, or AI innovator."
   },
   {
     id: "insta-view",
     title: "Instagram View Prompting",
     image: "/prompts/insta-view.jpg",
-    tool: "DALL·E",
     prompt: `Create a hyper-realistic premium futuristic founder portrait using the uploaded photo. Preserve the EXACT facial identity — face structure, hairstyle, skin texture, beard, glasses, and overall likeness from Ahmed Raza's uploaded portrait. Do NOT alter, beautify, replace, or redesign the face; maintain 100% facial identity accuracy (non-negotiable). Output exactly 1080x1350 px (4:5 portrait for LinkedIn) or 1080x1080 px (1:1 square for WhatsApp/Facebook/Instagram).
 
 Subject — Ahmed Raza (Founder & AI Solutions Expert). Use the uploaded portrait as the exact reference; keep his glasses, beard, hairstyle, skin tone and baseline expression; photorealistic skin texture with natural pores; a subtle, genuine, confident smile (not exaggerated); direct eye contact; approachable yet authoritative energy. Pose: sitting elegantly on a sleek floating dark platform with a subtle copper edge glow; natural masculine posture — shoulders back, chin slightly up, one hand resting thoughtfully, the other casually placed; founder-grade authority, executive thought-leader (not influencer). Outfit: premium black tailored modern kurta or black turtleneck, optional dark charcoal blazer or overcoat with subtle copper-tone details, premium black trousers and polished leather shoes, optional minimalist watch with a copper accent — Tim Cook meets traditional Pakistani elegance; masculine, founder energy.

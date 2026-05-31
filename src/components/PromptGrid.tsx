@@ -34,9 +34,6 @@ export default function PromptGrid() {
                 className="h-full w-full object-cover transition-transform duration-500 [@media(hover:hover)]:group-hover:scale-105"
               />
               <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-0 transition-opacity duration-300 [@media(hover:hover)]:group-hover:opacity-100" />
-              <span className="absolute right-3 top-3 rounded-full border border-copper/30 bg-black/55 px-2.5 py-1 text-xs font-medium text-copper backdrop-blur-sm">
-                {p.tool}
-              </span>
             </div>
 
             {/* Body */}
