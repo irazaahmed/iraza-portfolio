@@ -12,7 +12,7 @@ const inter = Inter({
   display: "swap",
 });
 
-// Nastaliq script for Urdu blog content — gives the Jameel Noori Nastaleeq look
+// Nastaliq script for Urdu blog content - gives the Jameel Noori Nastaleeq look
 // while staying free / web-optimized.
 const nastaliq = Noto_Nastaliq_Urdu({
   variable: "--font-nastaliq",
@@ -23,7 +23,7 @@ const nastaliq = Noto_Nastaliq_Urdu({
 
 const title = "Ahmed Raza - AI Solutions Expert";
 const description =
-  "Portfolio of Ahmed Raza — bridging authentic Islamic knowledge with cutting-edge AI technology. Team Lead Translation at Dawat-e-Islami, Founder of Cybrum Solutions, full-stack developer.";
+  "Portfolio of Ahmed Raza - bridging authentic Islamic knowledge with cutting-edge AI technology. Team Lead Translation at Dawat-e-Islami, Founder of Cybrum Solutions, full-stack developer.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

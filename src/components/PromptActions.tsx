@@ -6,7 +6,7 @@ import type { Prompt } from "@/data/portfolio";
 
 /**
  * Copy + Share buttons for a single prompt detail page.
- * Share sends ONLY this prompt's own URL (/prompts/[id]) — not the whole gallery.
+ * Share sends ONLY this prompt's own URL (/prompts/[id]) - not the whole gallery.
  */
 export default function PromptActions({ prompt }: { prompt: Prompt }) {
   const [copied, setCopied] = useState(false);

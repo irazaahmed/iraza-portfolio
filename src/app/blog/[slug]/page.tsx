@@ -47,7 +47,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const sp = await searchParams;
   const lang = parseLang(sp.lang);
   const post = getPostBySlug(slug, lang);
-  if (!post) return { title: "Post not found — Ahmed Raza" };
+  if (!post) return { title: "Post not found - Ahmed Raza" };
 
   const available = getAvailableLangs(slug);
   const languages: Record<string, string> = {};
@@ -57,7 +57,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   }
 
   return {
-    title: `${post.title} — Ahmed Raza`,
+    title: `${post.title} - Ahmed Raza`,
     description: post.excerpt,
     keywords: post.tags,
     alternates: { canonical: pathFor(slug, lang), languages },

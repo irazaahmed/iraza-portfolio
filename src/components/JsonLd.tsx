@@ -98,7 +98,7 @@ export default function JsonLd() {
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     url: siteUrl,
-    name: "Ahmed Raza — AI Solutions Expert",
+    name: "Ahmed Raza - AI Solutions Expert",
     description:
       "Portfolio of Ahmed Raza, an Islamic Scholar and AI Solutions Expert bridging authentic Islamic knowledge with cutting-edge AI technology.",
     publisher: { "@id": personId },
@@ -109,7 +109,7 @@ export default function JsonLd() {
     "@type": "ProfilePage",
     "@id": `${siteUrl}/#profilepage`,
     url: siteUrl,
-    name: "Ahmed Raza — AI Solutions Expert & Islamic Scholar",
+    name: "Ahmed Raza - AI Solutions Expert & Islamic Scholar",
     isPartOf: { "@id": `${siteUrl}/#website` },
     about: { "@id": personId },
     mainEntity: { "@id": personId },

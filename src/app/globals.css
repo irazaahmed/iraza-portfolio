@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Ahmed Raza — Portfolio theme
+   Ahmed Raza - Portfolio theme
    Premium copper-accent aesthetic with full dark + light support.
    Colors are driven by CSS variables that swap per theme (.dark / .light),
    so components use semantic tokens (bg-bg, text-fg, text-muted, etc.).
@@ -19,7 +19,7 @@
   --glow-alpha: 0.45;
 }
 
-/* Light palette — warm off-white paired with the same copper accent */
+/* Light palette - warm off-white paired with the same copper accent */
 .light {
   --background: #f6f3ee;
   --surface: #ffffff;
@@ -58,7 +58,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Subtle grid overlay — thin lines, fixed behind content, adapts per theme */
+/* Subtle grid overlay - thin lines, fixed behind content, adapts per theme */
 body::before {
   content: "";
   position: fixed;
@@ -72,7 +72,7 @@ body::before {
   mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, #000 40%, transparent 90%);
 }
 
-/* Copper glow utilities — registered via @utility so variants (hover:) work */
+/* Copper glow utilities - registered via @utility so variants (hover:) work */
 @utility glow-copper {
   box-shadow: 0 0 24px -4px rgba(233, 122, 44, var(--glow-alpha));
 }
@@ -99,7 +99,7 @@ body::before {
   background: #e97a2c;
 }
 
-/* Blog horizontal scroller — slim, always-visible copper scrollbar */
+/* Blog horizontal scroller - slim, always-visible copper scrollbar */
 .blog-scroller {
   scrollbar-width: thin;
   scrollbar-color: #e97a2c var(--border);
@@ -128,7 +128,7 @@ body::before {
   animation: blink 1s step-end infinite;
 }
 
-/* Keyboard focus — visible copper ring (not shown for mouse clicks) */
+/* Keyboard focus - visible copper ring (not shown for mouse clicks) */
 :focus-visible {
   outline: 2px solid #e97a2c;
   outline-offset: 3px;
@@ -154,7 +154,7 @@ body::before {
   transform: translateY(0);
 }
 
-/* Blog article typography — themed prose styles for rendered Markdown */
+/* Blog article typography - themed prose styles for rendered Markdown */
 .prose-blog {
   color: var(--muted);
   font-size: 1.0625rem;
@@ -235,7 +235,7 @@ body::before {
   margin: 2.5rem 0;
 }
 
-/* Urdu (Nastaliq) typography — applied when the article language is Urdu.
+/* Urdu (Nastaliq) typography - applied when the article language is Urdu.
    Nastaliq needs a larger size and very generous leading to stay readable. */
 .prose-urdu {
   font-family: var(--font-nastaliq), "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;

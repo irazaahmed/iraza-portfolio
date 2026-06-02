@@ -6,9 +6,9 @@ import Reveal from "@/components/Reveal";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const title = "Prompt Gallery — Ahmed Raza";
+const title = "Prompt Gallery - Ahmed Raza";
 const description =
-  "AI-generated results by Ahmed Raza with the exact prompts behind them. Browse the gallery and copy any prompt to try it yourself — premium AI prompts shared free of cost.";
+  "AI-generated results by Ahmed Raza with the exact prompts behind them. Browse the gallery and copy any prompt to try it yourself - premium AI prompts shared free of cost.";
 
 export const metadata: Metadata = {
   title,
@@ -42,7 +42,7 @@ export default function PromptsPage() {
           </div>
           <p className="mt-4 max-w-2xl text-muted">
             Premium AI prompts shared{" "}
-            <span className="font-semibold text-copper">free of cost</span> —
+            <span className="font-semibold text-copper">free of cost</span> -
             real results with the exact prompts behind them. Tap any card to view
             it large, then copy or share the prompt and use it yourself.
           </p>

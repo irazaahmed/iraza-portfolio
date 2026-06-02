@@ -19,7 +19,7 @@ function useTypewriter(words: readonly string[]) {
     const delay = finishedTyping ? 1600 : finishedDeleting ? 400 : deleting ? 45 : 90;
 
     // All state updates run inside the timeout callback (async), never
-    // synchronously in the effect body — avoids cascading renders.
+    // synchronously in the effect body - avoids cascading renders.
     const timeout = setTimeout(() => {
       if (finishedTyping) {
         setDeleting(true);
@@ -47,7 +47,7 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-svh items-center overflow-hidden px-6 py-24"
     >
-      {/* Islamic geometric watermark — faint copper star lattice */}
+      {/* Islamic geometric watermark - faint copper star lattice */}
       <IslamicPattern />
 
       {/* Radial copper glow */}

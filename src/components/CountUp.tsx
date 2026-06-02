@@ -19,7 +19,7 @@ export default function CountUp({ value }: { value: string }) {
   const [n, setN] = useState(0);
 
   useEffect(() => {
-    // Primitive deps only — `match` is a fresh array each render, so including
+    // Primitive deps only - `match` is a fresh array each render, so including
     // it would restart the animation every frame (causing flicker).
     if (!hasNumber || !inView) return;
     const duration = 1200;

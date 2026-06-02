@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 import BlogCard from "./BlogCard";
 
 /**
- * Homepage "Blog" section — recent posts in a horizontal, swipe/scrollable row.
+ * Homepage "Blog" section - recent posts in a horizontal, swipe/scrollable row.
  * Only a few cards fit on screen at once; the rest are reachable by scrolling
  * left/right, with a "See all posts" button linking to the full /blog page.
  */
@@ -29,7 +29,7 @@ export default function BlogSection() {
         </div>
       </div>
 
-      {/* Horizontal scroller — padded to align with the max-w-7xl content edge */}
+      {/* Horizontal scroller - padded to align with the max-w-7xl content edge */}
       <Reveal>
         <div className="blog-scroller flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-6 pb-5 [scroll-padding-left:1.5rem] lg:px-[max(1.5rem,calc((100%-80rem)/2+1.5rem))]">
           {posts.map((post) => (

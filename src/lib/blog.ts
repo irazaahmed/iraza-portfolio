@@ -77,7 +77,7 @@ function toMeta(
   };
 }
 
-/** All English posts, newest first — used for the homepage and blog index. */
+/** All English posts, newest first - used for the homepage and blog index. */
 export function getAllPosts(): BlogMeta[] {
   return listBaseSlugs()
     .map((slug) => {
@@ -91,7 +91,7 @@ export function getAllPosts(): BlogMeta[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-/** All base slugs — used for static generation. */
+/** All base slugs - used for static generation. */
 export function getAllSlugs(): string[] {
   return listBaseSlugs();
 }

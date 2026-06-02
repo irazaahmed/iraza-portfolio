@@ -1,7 +1,7 @@
 /**
  * Subtle Islamic geometric watermark for the hero background.
  * A tiled 8-pointed star (khatim / girih) lattice rendered in faint copper,
- * fading out toward the edges via a radial mask. Pure SVG — renders identically
+ * fading out toward the edges via a radial mask. Pure SVG - renders identically
  * on every system and adapts to both themes.
  */
 

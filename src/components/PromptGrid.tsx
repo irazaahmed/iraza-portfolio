@@ -11,7 +11,7 @@ export default function PromptGrid() {
   if (PROMPTS.length === 0) {
     return (
       <p className="mt-16 text-muted">
-        No prompts yet — check back soon, in shā’ Allāh.
+        No prompts yet - check back soon, in shā’ Allāh.
       </p>
     );
   }
@@ -24,7 +24,7 @@ export default function PromptGrid() {
             href={`/prompts/${p.id}`}
             className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-bg-soft/60 transition-all duration-300 [@media(hover:hover)]:hover:-translate-y-1.5 [@media(hover:hover)]:hover:border-copper/50 [@media(hover:hover)]:hover:glow-copper-strong"
           >
-            {/* Image — fixed 4:5 frame, cropped to fill so all cards match */}
+            {/* Image - fixed 4:5 frame, cropped to fill so all cards match */}
             <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-black">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

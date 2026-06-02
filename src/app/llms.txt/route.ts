@@ -9,7 +9,7 @@ import {
 } from "@/data/portfolio";
 
 /**
- * /llms.txt — a Markdown summary of the site for large language models
+ * /llms.txt - a Markdown summary of the site for large language models
  * (the emerging llms.txt convention). Generated from portfolio data so it
  * stays in sync. Gives AI engines a clean, factual description of Ahmed Raza.
  */
@@ -29,7 +29,7 @@ export function GET() {
 
   lines.push("## Current roles");
   for (const p of currentPositions) {
-    lines.push(`- **${p.title}** — ${p.org} (${p.period}): ${p.description}`);
+    lines.push(`- **${p.title}** - ${p.org} (${p.period}): ${p.description}`);
   }
   lines.push("");
 
@@ -60,7 +60,7 @@ export function GET() {
 
   lines.push("## Key pages");
   lines.push(`- Portfolio home: ${siteUrl}/`);
-  lines.push(`- FAQ — Who is Ahmed Raza: ${siteUrl}/faq`);
+  lines.push(`- FAQ - Who is Ahmed Raza: ${siteUrl}/faq`);
   lines.push(`- Blog: ${siteUrl}/blog`);
   lines.push(`- AI Prompt Gallery: ${siteUrl}/prompts`);
   lines.push("");

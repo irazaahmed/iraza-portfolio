@@ -23,9 +23,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const prompt = prompts.find((p) => p.id === id);
-  if (!prompt) return { title: "Prompt not found — Ahmed Raza" };
+  if (!prompt) return { title: "Prompt not found - Ahmed Raza" };
 
-  const title = `${prompt.title} — Prompt by Ahmed Raza`;
+  const title = `${prompt.title} - Prompt by Ahmed Raza`;
   const description = `Premium AI prompt by Ahmed Raza: ${prompt.prompt.slice(0, 150)}…`;
   const url = `${siteUrl}/prompts/${prompt.id}`;
 
@@ -77,7 +77,7 @@ export default async function PromptDetailPage({
 
         <Reveal>
           <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
-            {/* Left — image */}
+            {/* Left - image */}
             <div className="overflow-hidden rounded-2xl border border-border bg-black">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -87,7 +87,7 @@ export default async function PromptDetailPage({
               />
             </div>
 
-            {/* Right — prompt + actions */}
+            {/* Right - prompt + actions */}
             <div className="flex flex-col lg:sticky lg:top-28">
               <h1 className="text-2xl font-bold tracking-tight text-fg sm:text-3xl">
                 {prompt.title}

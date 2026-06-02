@@ -52,7 +52,7 @@ export async function POST(request: Request) {
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   if (isRateLimited(ip)) {
-    return json({ error: "Too many messages — please slow down a moment." }, 429);
+    return json({ error: "Too many messages - please slow down a moment." }, 429);
   }
 
   let body: unknown;

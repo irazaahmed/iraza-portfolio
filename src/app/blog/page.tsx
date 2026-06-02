@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const title = "Blog — Ahmed Raza";
+const title = "Blog - Ahmed Raza";
 const description =
   "Articles by Ahmed Raza on AI, agentic systems, Islamic knowledge, translation technology, and full-stack development.";
 
@@ -36,7 +36,7 @@ export default function BlogIndexPage() {
         </Reveal>
 
         {posts.length === 0 ? (
-          <p className="mt-16 text-muted">No posts yet — check back soon, in shā’ Allāh.</p>
+          <p className="mt-16 text-muted">No posts yet - check back soon, in shā’ Allāh.</p>
         ) : (
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post, i) => (

@@ -3,7 +3,7 @@
  * Update values here to change what renders across the site.
  */
 
-/** Public site URL — override via NEXT_PUBLIC_SITE_URL when deploying. */
+/** Public site URL - override via NEXT_PUBLIC_SITE_URL when deploying. */
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.irazaahmed.me";
 
@@ -17,7 +17,7 @@ export const profile = {
   ],
   tagline: "Bridging authentic Islamic knowledge with cutting-edge AI technology",
   summary:
-    "Active Islamic Scholar with 8+ years as an Asst. Shariah Advisor, simultaneously learning and applying modern technology — with the mission of combining Islam with tech to make authentic Islamic knowledge accessible, easy, and engaging for everyone. Currently Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم), leading a 33-language Quranic content translation pipeline, and Founder of Cybrum Solutions building AI-driven solutions across Pakistan. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside hands-on proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration.",
+    "Active Islamic Scholar with 8+ years as an Asst. Shariah Advisor, simultaneously learning and applying modern technology - with the mission of combining Islam with tech to make authentic Islamic knowledge accessible, easy, and engaging for everyone. Currently Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم), leading a 33-language Quranic content translation pipeline, and Founder of Cybrum Solutions building AI-driven solutions across Pakistan. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside hands-on proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration.",
   cvFile: "/Ahmed_Raza_CV.pdf",
   photo: "/ahmed.webp",
 } as const;
@@ -63,15 +63,15 @@ export type Position = {
 export const currentPositions: Position[] = [
   {
     title: "Team Lead Translation",
-    org: "Dawat-e-Islami — Translation Department (شعبہ تراجم)",
-    period: "Jan 2026 – Present",
+    org: "Dawat-e-Islami - Translation Department (شعبہ تراجم)",
+    period: "Jan 2026 - Present",
     description:
       "Leading a multilingual Quranic content translation operation across 33 target languages using a structured relay chain (Arabic → Urdu → English → 33 languages). Managing translator teams, setting quality benchmarks, and enforcing Islamic scholarly standards across all language outputs, while overseeing the complete workflow from translation to publishing.",
   },
   {
     title: "Founder & AI Solutions Expert",
     org: "Cybrum Solutions",
-    period: "Nov 2025 – Present",
+    period: "Nov 2025 - Present",
     description:
       "Building and productizing AI automation solutions for Islamic publishers, educational institutions, and Pakistani SMEs. Developing WhatsApp chatbots, CRM workflow automation, and multi-agent AI systems as core service offerings.",
   },
@@ -88,7 +88,7 @@ export const experience: Experience[] = [
   {
     title: "Asst. Mufattish / Asst. Shariah Advisor",
     org: "Dar-ul-Madinah International Islamic School System",
-    period: "Aug 2017 – Jan 2026 · 8.5 Years",
+    period: "Aug 2017 - Jan 2026 · 8.5 Years",
     points: [
       "Served in the Shariah and Tafteesh (Inspection) Department, overseeing compliance with Islamic law and institutional standards.",
       "Conducted Shariah audits, prepared legal opinions, and advised management on jurisprudential matters.",
@@ -97,7 +97,7 @@ export const experience: Experience[] = [
   {
     title: "Secretariat Incharge",
     org: "Dar-ul-Madinah International Islamic School System",
-    period: "Jan 2022 – Sep 2023",
+    period: "Jan 2022 - Sep 2023",
     points: [
       "Managed secretariat operations, official correspondence, and administrative coordination for the school system.",
       "Streamlined documentation workflows and maintained institutional records across departments.",
@@ -106,7 +106,7 @@ export const experience: Experience[] = [
   {
     title: "Teacher of Scholars Course",
     org: "Jamia Noor Ul Quran, Karachi",
-    period: "Sep 2022 – Apr 2024",
+    period: "Sep 2022 - Apr 2024",
     points: [
       "Delivered advanced Dars-e-Nizami curriculum to students enrolled in the Scholars Course.",
       "Focused on Arabic language, Islamic jurisprudence, and classical Islamic texts.",
@@ -115,7 +115,7 @@ export const experience: Experience[] = [
   {
     title: "Teacher of Scholars Course",
     org: "Al Miftah Scholars Academy, Karachi",
-    period: "Nov 2014 – Aug 2022 · 7+ Years",
+    period: "Nov 2014 - Aug 2022 · 7+ Years",
     points: [
       "Taught Dars-e-Nizami subjects over 7+ years with consistent academic outcomes.",
       "Mentored students in Arabic grammar, Fiqh, Hadith, and Tafseer disciplines.",
@@ -124,16 +124,16 @@ export const experience: Experience[] = [
   {
     title: "Online Quran & Dars-e-Nizami Teacher",
     org: "Independent / Remote",
-    period: "Jan 2017 – Dec 2020",
+    period: "Jan 2017 - Dec 2020",
     points: [
       "Delivered one-on-one and group online sessions for Quran recitation and Dars-e-Nizami subjects.",
       "Taught students across multiple countries, adapting instruction to individual learning levels.",
     ],
   },
   {
-    title: "Class Teacher — Nazrah Quran",
+    title: "Class Teacher - Nazrah Quran",
     org: "Islamic Institution, Karachi",
-    period: "Jun 2015 – Jul 2017",
+    period: "Jun 2015 - Jul 2017",
     points: [
       "Conducted Nazrah Quran classes and monitored student progress in recitation and tajweed.",
     ],
@@ -230,23 +230,23 @@ export const prompts: Prompt[] = [
     id: "insta-view",
     title: "Instagram View Prompting",
     image: "/prompts/insta-view.jpg",
-    prompt: `Create a hyper-realistic premium futuristic founder portrait using the uploaded photo. Preserve the EXACT facial identity — face structure, hairstyle, skin texture, beard, glasses, and overall likeness from Ahmed Raza's uploaded portrait. Do NOT alter, beautify, replace, or redesign the face; maintain 100% facial identity accuracy (non-negotiable). Output exactly 1080x1350 px (4:5 portrait for LinkedIn) or 1080x1080 px (1:1 square for WhatsApp/Facebook/Instagram).
+    prompt: `Create a hyper-realistic premium futuristic founder portrait using the uploaded photo. Preserve the EXACT facial identity - face structure, hairstyle, skin texture, beard, glasses, and overall likeness from Ahmed Raza's uploaded portrait. Do NOT alter, beautify, replace, or redesign the face; maintain 100% facial identity accuracy (non-negotiable). Output exactly 1080x1350 px (4:5 portrait for LinkedIn) or 1080x1080 px (1:1 square for WhatsApp/Facebook/Instagram).
 
-Subject — Ahmed Raza (Founder & AI Solutions Expert). Use the uploaded portrait as the exact reference; keep his glasses, beard, hairstyle, skin tone and baseline expression; photorealistic skin texture with natural pores; a subtle, genuine, confident smile (not exaggerated); direct eye contact; approachable yet authoritative energy. Pose: sitting elegantly on a sleek floating dark platform with a subtle copper edge glow; natural masculine posture — shoulders back, chin slightly up, one hand resting thoughtfully, the other casually placed; founder-grade authority, executive thought-leader (not influencer). Outfit: premium black tailored modern kurta or black turtleneck, optional dark charcoal blazer or overcoat with subtle copper-tone details, premium black trousers and polished leather shoes, optional minimalist watch with a copper accent — Tim Cook meets traditional Pakistani elegance; masculine, founder energy.
+Subject - Ahmed Raza (Founder & AI Solutions Expert). Use the uploaded portrait as the exact reference; keep his glasses, beard, hairstyle, skin tone and baseline expression; photorealistic skin texture with natural pores; a subtle, genuine, confident smile (not exaggerated); direct eye contact; approachable yet authoritative energy. Pose: sitting elegantly on a sleek floating dark platform with a subtle copper edge glow; natural masculine posture - shoulders back, chin slightly up, one hand resting thoughtfully, the other casually placed; founder-grade authority, executive thought-leader (not influencer). Outfit: premium black tailored modern kurta or black turtleneck, optional dark charcoal blazer or overcoat with subtle copper-tone details, premium black trousers and polished leather shoes, optional minimalist watch with a copper accent - Tim Cook meets traditional Pakistani elegance; masculine, founder energy.
 
-Background — a holographic AI workspace. A giant curved holographic interface behind and beside him shows his AI work in copper-orange (#E97A2C) and dim white: LinkedIn profile with engagement metrics, a WhatsApp Business dashboard, agentic AI workflow diagrams with connected nodes, a subtly blurred Next.js/Python code editor, a Quranic translation pipeline, and copper analytics charts. Floating elements around the scene: glowing AI nodes connected by thin copper lines, stylized copper outline icons (reports, chats, charts — not emoji), floating Arabic/Urdu/English translation fragments, holographic engagement numbers, small API/automation indicators, and subtle pulsing live dots — all copper-orange outlines, semi-transparent (about 60%), with soft glow halos. Keep the futuristic dark UI integrated into the environment.
+Background - a holographic AI workspace. A giant curved holographic interface behind and beside him shows his AI work in copper-orange (#E97A2C) and dim white: LinkedIn profile with engagement metrics, a WhatsApp Business dashboard, agentic AI workflow diagrams with connected nodes, a subtly blurred Next.js/Python code editor, a Quranic translation pipeline, and copper analytics charts. Floating elements around the scene: glowing AI nodes connected by thin copper lines, stylized copper outline icons (reports, chats, charts - not emoji), floating Arabic/Urdu/English translation fragments, holographic engagement numbers, small API/automation indicators, and subtle pulsing live dots - all copper-orange outlines, semi-transparent (about 60%), with soft glow halos. Keep the futuristic dark UI integrated into the environment.
 
-Lighting and atmosphere: pure deep black base (#000000); a soft warm copper-orange key light from above-left on his face and shoulders (#E97A2C to #FFB347); counter-glow from the displays on the right (#D97426 rim light); a subtle backlight halo around his silhouette. Add soft volumetric copper light beams, warm golden particles drifting upward, copper bokeh in the deep background, very subtle warm fog, a reflective floor with soft copper bounce, a gentle corner vignette, and slight cinematic film grain. Absolutely NO electric blue, cyan, pink, purple, green, or bright-white tech lighting — copper-orange warm tones only.
+Lighting and atmosphere: pure deep black base (#000000); a soft warm copper-orange key light from above-left on his face and shoulders (#E97A2C to #FFB347); counter-glow from the displays on the right (#D97426 rim light); a subtle backlight halo around his silhouette. Add soft volumetric copper light beams, warm golden particles drifting upward, copper bokeh in the deep background, very subtle warm fog, a reflective floor with soft copper bounce, a gentle corner vignette, and slight cinematic film grain. Absolutely NO electric blue, cyan, pink, purple, green, or bright-white tech lighting - copper-orange warm tones only.
 
-Top-left branding block (compact): a second small circular profile photo of Ahmed Raza, perfect 1:1 circular crop, thin glowing copper-orange ring (#E97A2C, 2-3px) with a soft outer halo, about 70-80px diameter, about 40px from the top and left. To its right, two stacked lines — line 1 bold white 'Ahmed Raza', line 2 smaller copper 'AI Solutions Expert | Team Lead Translation'.
+Top-left branding block (compact): a second small circular profile photo of Ahmed Raza, perfect 1:1 circular crop, thin glowing copper-orange ring (#E97A2C, 2-3px) with a soft outer halo, about 70-80px diameter, about 40px from the top and left. To its right, two stacked lines - line 1 bold white 'Ahmed Raza', line 2 smaller copper 'AI Solutions Expert | Team Lead Translation'.
 
-Hero typography overlay (optional, upper-right): three lines — 'BUILDING THE', 'FUTURE' (dominant), 'WITH AI'. 'FUTURE' in a massive bold display serif, copper-orange (#E97A2C) with a strong glow halo (#FFB347), large but not competing with the subject, with a 3D embossed feel; the other two lines in a modern sans-serif, soft white, uppercase and letter-spaced, smaller than 'FUTURE'.
+Hero typography overlay (optional, upper-right): three lines - 'BUILDING THE', 'FUTURE' (dominant), 'WITH AI'. 'FUTURE' in a massive bold display serif, copper-orange (#E97A2C) with a strong glow halo (#FFB347), large but not competing with the subject, with a 3D embossed feel; the other two lines in a modern sans-serif, soft white, uppercase and letter-spaced, smaller than 'FUTURE'.
 
-Bottom contact strip (mandatory): a thin copper-orange divider line (#D97426, 1px, about 70% width, centered, soft glow), then a single centered row about 40px from the bottom — a stylized copper-orange WhatsApp speech-bubble outline (about 22-24px, not the exact green logo) followed by '+92 313 0221118' in soft white bold sans-serif (about 16-18px). Do NOT add a company name, tagline, philosophy, website, or social handles, and no emojis anywhere.
+Bottom contact strip (mandatory): a thin copper-orange divider line (#D97426, 1px, about 70% width, centered, soft glow), then a single centered row about 40px from the bottom - a stylized copper-orange WhatsApp speech-bubble outline (about 22-24px, not the exact green logo) followed by '+92 313 0221118' in soft white bold sans-serif (about 16-18px). Do NOT add a company name, tagline, philosophy, website, or social handles, and no emojis anywhere.
 
-Color palette (strict — copper-orange and black only): pure black #000000, warm orange #E97A2C, copper #D97426, soft white #FFFFFF, bright glow #FFB347, subtle gold #C9A227, deep dark warm #1A0F08, charcoal #2A2520.
+Color palette (strict - copper-orange and black only): pure black #000000, warm orange #E97A2C, copper #D97426, soft white #FFFFFF, bright glow #FFB347, subtle gold #C9A227, deep dark warm #1A0F08, charcoal #2A2520.
 
-Style: hyper-realistic photographic founder portrait, cinematic dark premium mode — Apple keynote campaign meets Tesla CEO portrait meets premium tech magazine cover; 8K ultra-detailed, 85mm lens depth of field, glossy reflective surfaces, award-winning commercial advertising quality, magazine-cover grade, executive/founder aesthetic (not influencer), with subtle film grain.
+Style: hyper-realistic photographic founder portrait, cinematic dark premium mode - Apple keynote campaign meets Tesla CEO portrait meets premium tech magazine cover; 8K ultra-detailed, 85mm lens depth of field, glossy reflective surfaces, award-winning commercial advertising quality, magazine-cover grade, executive/founder aesthetic (not influencer), with subtle film grain.
 
 Technical specs: 85mm lens, shallow depth of field (subject sharp, background softly defocused with bokeh), three-point lighting, professional commercial photography quality, ultra-HD rendering, preserved photorealistic skin texture, realistic shadows matching the light direction, hyper-detailed fabric textures, and a soft reflective glow on the glasses that does not block the eyes.
 
@@ -296,7 +296,7 @@ export const skills: SkillCategory[] = [
 export type LanguageLevel = {
   name: string;
   level: string;
-  value: number; // 0–100, for the proficiency bar
+  value: number; // 0-100, for the proficiency bar
 };
 
 export const languageLevels: LanguageLevel[] = [
@@ -306,21 +306,21 @@ export const languageLevels: LanguageLevel[] = [
 ];
 
 export const academicEducation: string[] = [
-  "Hafiz-e-Quran — Memorization of the Complete Holy Quran",
-  "Matriculation (Computer Science) — Board of Secondary Education, Karachi",
-  "Masters in Arabic & Islamiat (Shahadat Ul Almiyah) — Tanzeem-ul-Madaris, Pakistan",
-  "Equivalence: Masters in Arabic & Islamiat — University of Karachi",
-  "Specialization in Jurisprudence (Takhassus Fil Fiqh) — Jamia-Tul-Madina, Karachi",
+  "Hafiz-e-Quran - Memorization of the Complete Holy Quran",
+  "Matriculation (Computer Science) - Board of Secondary Education, Karachi",
+  "Masters in Arabic & Islamiat (Shahadat Ul Almiyah) - Tanzeem-ul-Madaris, Pakistan",
+  "Equivalence: Masters in Arabic & Islamiat - University of Karachi",
+  "Specialization in Jurisprudence (Takhassus Fil Fiqh) - Jamia-Tul-Madina, Karachi",
 ];
 
 export const certifications: string[] = [
-  "Cloud Computing and Agentic AI — GIAIC (Governor Initiative for AI & Computing)",
-  "Generative AI and Chatbot Development — SMIT",
-  "Modern Web Application Development — SMIT",
-  "MOS — Microsoft Office Specialist — SMIT",
-  "3D Visualization with 3Ds Max 2017 — SMIT",
-  "Teaching Methodology Course — Jamia-Tul-Madina, Karachi",
-  "JavaScript Essentials 1 — Cisco Networking Academy",
+  "Cloud Computing and Agentic AI - GIAIC (Governor Initiative for AI & Computing)",
+  "Generative AI and Chatbot Development - SMIT",
+  "Modern Web Application Development - SMIT",
+  "MOS - Microsoft Office Specialist - SMIT",
+  "3D Visualization with 3Ds Max 2017 - SMIT",
+  "Teaching Methodology Course - Jamia-Tul-Madina, Karachi",
+  "JavaScript Essentials 1 - Cisco Networking Academy",
 ];
 
 export type ContactLink = {
@@ -363,7 +363,7 @@ export type Faq = {
 };
 
 /**
- * FAQ content — surfaced on /faq and emitted as FAQPage structured data.
+ * FAQ content - surfaced on /faq and emitted as FAQPage structured data.
  * Written in a direct, factual, entity-rich style so AI search engines
  * (Google AI Overviews, Gemini, Perplexity, ChatGPT) can quote it when
  * users ask about "Ahmed Raza", "Ahmed Raza AI", or "AI Solutions Expert".

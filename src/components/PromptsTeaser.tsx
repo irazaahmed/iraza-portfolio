@@ -22,7 +22,7 @@ export default function PromptsTeaser() {
             <div className="max-w-2xl">
               <span className="inline-flex items-center gap-2 rounded-full border border-copper/30 bg-copper/5 px-3 py-1 text-xs font-medium text-copper">
                 <Sparkles size={14} />
-                100% Free — no sign-up
+                100% Free - no sign-up
               </span>
 
               <h3 className="mt-4 text-2xl font-bold tracking-tight text-fg sm:text-3xl">
@@ -32,7 +32,7 @@ export default function PromptsTeaser() {
 
               <p className="mt-3 text-muted">
                 Explore a growing gallery of high-quality, premium AI prompts by
-                Ahmed Raza — the exact prompts behind every result. Browse the
+                Ahmed Raza - the exact prompts behind every result. Browse the
                 images, then copy or share any prompt and use it yourself,
                 completely free.
               </p>

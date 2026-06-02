@@ -20,13 +20,13 @@ function CardList({
       </h3>
       <ul className="space-y-3">
         {items.map((item, i) => {
-          const [head, ...rest] = item.split(" — ");
+          const [head, ...rest] = item.split(" - ");
           return (
             <Reveal key={i} delay={i * 0.04}>
               <li className="rounded-lg border-l-2 border-copper bg-bg-soft/50 px-5 py-4 transition-colors duration-300 hover:bg-bg-soft">
                 <p className="font-medium text-fg">{head}</p>
                 {rest.length > 0 && (
-                  <p className="mt-0.5 text-sm text-muted">{rest.join(" — ")}</p>
+                  <p className="mt-0.5 text-sm text-muted">{rest.join(" - ")}</p>
                 )}
               </li>
             </Reveal>

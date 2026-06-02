@@ -9,7 +9,7 @@ function formatDate(iso: string): string {
   return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 }
 
-/** Clickable blog preview card — opens the full post at /blog/[slug]. */
+/** Clickable blog preview card - opens the full post at /blog/[slug]. */
 export default function BlogCard({ post }: { post: BlogMeta }) {
   return (
     <Link
