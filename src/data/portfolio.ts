@@ -357,6 +357,60 @@ export const contacts: ContactLink[] = [
   },
 ];
 
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
+/**
+ * FAQ content — surfaced on /faq and emitted as FAQPage structured data.
+ * Written in a direct, factual, entity-rich style so AI search engines
+ * (Google AI Overviews, Gemini, Perplexity, ChatGPT) can quote it when
+ * users ask about "Ahmed Raza", "Ahmed Raza AI", or "AI Solutions Expert".
+ */
+export const faqs: Faq[] = [
+  {
+    question: "Who is Ahmed Raza?",
+    answer:
+      "Ahmed Raza is an active Islamic Scholar and AI Solutions Expert based in Karachi, Pakistan. He has 8+ years of experience as an Asst. Shariah Advisor and is currently Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم), leading a 33-language Quranic content translation pipeline. He is also the Founder of Cybrum Solutions, where he builds AI-driven solutions, and a full-stack developer. His mission is to combine Islam with technology to make authentic Islamic knowledge accessible, easy, and engaging for everyone.",
+  },
+  {
+    question: "Is Ahmed Raza an AI Solutions Expert?",
+    answer:
+      "Yes. Ahmed Raza is an AI Solutions Expert and the Founder of Cybrum Solutions, where he builds and productizes AI automation for Islamic publishers, educational institutions, and Pakistani SMEs. He works hands-on with agentic AI systems, multi-agent workflows, LLM integration, RAG pipelines, and full-stack development using tools such as LangGraph, CrewAI, n8n, and the Claude API.",
+  },
+  {
+    question: "What AI solutions and services does Ahmed Raza offer?",
+    answer:
+      "Through Cybrum Solutions, Ahmed Raza offers WhatsApp business chatbots, CRM and workflow automation, multi-agent AI systems, LLM and RAG integrations, and full-stack web applications built with Next.js, TypeScript, Python, and FastAPI. He specialises in practical, production-ready AI automation tailored for businesses and Islamic organisations across Pakistan.",
+  },
+  {
+    question: "What does Ahmed Raza do at Dawat-e-Islami?",
+    answer:
+      "Ahmed Raza is Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم). He leads a multilingual Quranic content translation operation across 33 target languages using a structured relay chain (Arabic → Urdu → English → 33 languages), managing translator teams, setting quality benchmarks, and enforcing Islamic scholarly standards across all language outputs.",
+  },
+  {
+    question: "What is Ahmed Raza's experience as an Islamic Scholar?",
+    answer:
+      "Ahmed Raza is a Hafiz-e-Quran with a Masters in Arabic & Islamiat (Shahadat Ul Almiyah) and a Specialization in Jurisprudence (Takhassus Fil Fiqh). He has 8+ years of experience as an Asst. Shariah Advisor (معاون شرعی مشیر) at Dar-ul-Madinah International Islamic School System, alongside years of teaching the Dars-e-Nizami Scholars Course. He remains an active Islamic Scholar to this day.",
+  },
+  {
+    question: "What technologies and skills does Ahmed Raza work with?",
+    answer:
+      "Ahmed Raza works with Agentic AI, multi-agent systems, LLMs, prompt engineering, RAG, and generative AI, using tools like LangGraph, CrewAI, n8n, and the Claude API. On the development side he uses Next.js, React, TypeScript, Tailwind CSS, Python, and FastAPI. He is fluent in Urdu (native), Arabic, and English.",
+  },
+  {
+    question: "Can I hire Ahmed Raza or Cybrum Solutions for an AI project?",
+    answer:
+      "Yes. Ahmed Raza takes on AI automation and development projects through Cybrum Solutions. You can reach him on WhatsApp at +92 313 0221118, by email at hafizahmedraza12345@gmail.com, or via LinkedIn at linkedin.com/in/irazaahmed to discuss AI solutions, chatbots, automation, or full-stack development.",
+  },
+  {
+    question: "How can I contact Ahmed Raza?",
+    answer:
+      "You can contact Ahmed Raza on WhatsApp at +92 313 0221118, by email at hafizahmedraza12345@gmail.com, on LinkedIn at linkedin.com/in/irazaahmed, or on GitHub at github.com/irazaahmed.",
+  },
+];
+
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },

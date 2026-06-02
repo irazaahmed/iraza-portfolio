@@ -8,7 +8,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 const title = "Prompt Gallery — Ahmed Raza";
 const description =
-  "AI-generated results by Ahmed Raza with the exact prompts behind them — Midjourney, DALL·E, Sora and more. Browse the gallery and copy any prompt to try it yourself.";
+  "AI-generated results by Ahmed Raza with the exact prompts behind them. Browse the gallery and copy any prompt to try it yourself — premium AI prompts shared free of cost.";
 
 export const metadata: Metadata = {
   title,
