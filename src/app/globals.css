@@ -288,10 +288,64 @@ body::before {
 }
 
 @media print {
-  /* No page margin so the warm paper color reaches every edge (no white
-     border). The visual margins come from #pdf-root padding instead. */
+  /* Page margins reserve room for the running header/footer (drawn in the
+     @page margin boxes). The warm paper still reaches every edge because a
+     fixed .pdf-bg layer paints behind the margins (see below). The first
+     page is the title page, so its running header/footer are left blank. */
   @page {
-    margin: 0;
+    margin: 17mm 14mm 17mm;
+    @top-left {
+      content: "Ahmed Raza";
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #b85c1a;
+      vertical-align: bottom;
+      padding-bottom: 4mm;
+    }
+    @top-right {
+      content: "AI Solutions Expert";
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.06em;
+      color: #8a8175;
+      vertical-align: bottom;
+      padding-bottom: 4mm;
+    }
+    @bottom-left {
+      content: "irazaahmed.me";
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #b85c1a;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+    @bottom-right {
+      content: "Page " counter(page);
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.05em;
+      color: #8a8175;
+      vertical-align: top;
+      padding-top: 4mm;
+    }
+  }
+  @page :first {
+    @top-left {
+      content: "";
+    }
+    @top-right {
+      content: "";
+    }
+    @bottom-left {
+      content: "";
+    }
+    @bottom-right {
+      content: "";
+    }
   }
 
   html,
@@ -320,13 +374,24 @@ body::before {
   }
 
   /* The article flows in normal document order so it breaks across pages.
-     Padding here creates the inner margins while the paper color stays
-     edge-to-edge (since @page margin is 0). */
+     Gutters come from the @page margins, so no extra padding is needed. */
   #pdf-root {
-    padding: 14mm 15mm 16mm;
     color: #3a342b;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+
+  /* Fixed warm-paper layer painted behind everything on every page. Negative
+     insets push it under the @page margins too, so there is no white border
+     regardless of how fixed positioning resolves against the page box. */
+  .pdf-bg {
+    position: fixed;
+    top: -20mm;
+    left: -16mm;
+    right: -16mm;
+    bottom: -20mm;
+    background: #faf8f4;
+    z-index: -1;
   }
 
   /* Reveal the PDF-only branding */
@@ -334,78 +399,68 @@ body::before {
     display: block;
   }
 
-  /* Branded cover band at the top of the document */
+  /* Title page: cover fills the whole first page, content starts on page 2 */
   .pdf-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 215mm;
     text-align: center;
-    padding: 2mm 0 9mm;
-    margin-bottom: 9mm;
-    border-bottom: 1px solid rgba(233, 122, 44, 0.3);
-    break-after: avoid;
+    break-after: page;
   }
   .pdf-cover-bismillah {
-    font-size: 30pt;
+    font-size: 40pt;
     color: #c2611d;
     line-height: 1;
-    margin-bottom: 4mm;
+    margin-bottom: 8mm;
   }
   .pdf-cover-brand {
-    font-size: 20pt;
+    font-size: 26pt;
     font-weight: 800;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
     color: #1a1206;
   }
   .pdf-cover-role {
-    margin-top: 2mm;
-    font-size: 9.5pt;
-    letter-spacing: 0.18em;
+    margin-top: 3mm;
+    font-size: 10pt;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #c2611d;
   }
   .pdf-cover-rule {
-    width: 46mm;
+    width: 54mm;
     height: 2px;
-    margin: 6mm auto 0;
+    margin: 9mm auto;
     background: linear-gradient(90deg, transparent, #e97a2c, transparent);
   }
-
-  /* Compact closing line on the last page (in-flow, kept small and distinct
-     from the cover so it never reads as a repeated start page). */
-  .pdf-end {
-    margin-top: 9mm;
-    padding-top: 6mm;
-    border-top: 1px solid rgba(233, 122, 44, 0.3);
+  .pdf-cover-title {
+    max-width: 150mm;
+    font-size: 19pt;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #1a1206;
+  }
+  .pdf-cover .urdu-heading {
     text-align: center;
-    break-inside: avoid;
   }
-  .pdf-end-url {
+  .pdf-cover-meta {
+    margin-top: 5mm;
     font-size: 9.5pt;
-    font-weight: 600;
     letter-spacing: 0.05em;
-    color: #c2611d;
+    color: #7a7264;
   }
-  .pdf-end-tag {
-    margin-top: 1.5mm;
-    font-size: 7.5pt;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #8a8175;
+  .pdf-cover-tags {
+    margin-top: 4mm;
+    font-size: 8.5pt;
+    letter-spacing: 0.08em;
+    color: #b85c1a;
   }
 
-  /* Article header inside the PDF */
-  #pdf-root article header {
-    border-color: rgba(233, 122, 44, 0.35) !important;
-  }
-  #pdf-root article h1 {
-    color: #1a1206 !important;
-  }
-  #pdf-root article header time,
-  #pdf-root article header span {
-    color: #7a7264 !important;
-  }
-  #pdf-root article header .text-copper {
-    color: #b85c1a !important;
-    border-color: rgba(233, 122, 44, 0.45) !important;
-    background: rgba(233, 122, 44, 0.1) !important;
+  /* The on-screen article header (title/date/tags) is replaced by the title
+     page in the PDF, so hide it to avoid showing the title twice. */
+  #pdf-root article > header {
+    display: none !important;
   }
 
   /* Body typography tuned for print readability on warm paper */

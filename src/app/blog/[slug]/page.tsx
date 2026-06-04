@@ -131,12 +131,23 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
         </div>
 
         <div id="pdf-root">
-          {/* Branded cover band: visible only in the PDF */}
+          {/* Warm paper layer painted behind every PDF page */}
+          <div className="pdf-bg print-only" aria-hidden />
+          {/* Title page: visible only in the PDF */}
           <div className="pdf-cover print-only" aria-hidden>
             <div className="pdf-cover-bismillah">﷽</div>
             <div className="pdf-cover-brand">AHMED RAZA</div>
             <div className="pdf-cover-role">Islamic Scholar &amp; AI Solutions Expert</div>
             <div className="pdf-cover-rule" />
+            <div className={`pdf-cover-title ${isUrdu ? "urdu-heading" : ""}`}>
+              {post.title}
+            </div>
+            <div className="pdf-cover-meta">
+              {formatDate(post.date, post.lang)} &middot; {post.readingTime}
+            </div>
+            {post.tags.length > 0 && (
+              <div className="pdf-cover-tags">{post.tags.join("  •  ")}</div>
+            )}
           </div>
 
           <article dir={isUrdu ? "rtl" : "ltr"} lang={post.lang === "ur" ? "ur" : "en"}>
@@ -182,12 +193,6 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           </article>
-
-          {/* Compact closing line: ends the PDF without mimicking the cover */}
-          <div className="pdf-end print-only" aria-hidden>
-            <div className="pdf-end-url">irazaahmed.me</div>
-            <div className="pdf-end-tag">Ahmed Raza &middot; Execution Over Words</div>
-          </div>
         </div>
 
         <div className="no-print mt-14 border-t border-border pt-8">
