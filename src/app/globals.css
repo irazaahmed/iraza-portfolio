@@ -274,6 +274,212 @@ body::before {
   text-align: right;
 }
 
+/* ---------------------------------------------------------------------------
+   PDF / print stylesheet
+   The "Download PDF" button on blog posts calls window.print(). These rules
+   transform the page into a premium copper-on-black document of just the
+   article: a branded cover, full-bleed dark background, themed typography and
+   a running footer. The browser's "Save as PDF" then yields a designed file.
+--------------------------------------------------------------------------- */
+
+/* Print-only blocks are hidden on screen */
+.print-only {
+  display: none;
+}
+
+@media print {
+  /* Edge-to-edge page; the .pdf-bg layer paints the dark background */
+  @page {
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #0a0a0a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide the whole app, then reveal only the article subtree */
+  body * {
+    visibility: hidden;
+  }
+  #pdf-root,
+  #pdf-root * {
+    visibility: visible;
+  }
+  body::before {
+    display: none !important;
+  }
+
+  /* Pull the article to the top of the printed page with comfortable padding */
+  #pdf-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 13mm 16mm 20mm;
+    color: #cfcccc;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Anything explicitly marked no-print (e.g. the download button) is removed */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reveal the PDF-only branding */
+  #pdf-root .print-only {
+    display: block;
+  }
+
+  /* Full-bleed dark background, repeated on every printed page */
+  .pdf-bg {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(120% 70% at 50% 0%, rgba(233, 122, 44, 0.14), transparent 60%),
+      #0a0a0a;
+    z-index: -1;
+  }
+
+  /* Branded cover band at the top of the document */
+  .pdf-cover {
+    text-align: center;
+    padding: 4mm 0 7mm;
+    margin-bottom: 8mm;
+  }
+  .pdf-cover-bismillah {
+    font-size: 30pt;
+    color: #e97a2c;
+    line-height: 1;
+    margin-bottom: 4mm;
+  }
+  .pdf-cover-brand {
+    font-size: 20pt;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    color: #ffffff;
+  }
+  .pdf-cover-role {
+    margin-top: 2mm;
+    font-size: 9.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #e97a2c;
+  }
+  .pdf-cover-rule {
+    width: 46mm;
+    height: 2px;
+    margin: 6mm auto 0;
+    background: linear-gradient(90deg, transparent, #e97a2c, transparent);
+  }
+
+  /* Running footer fixed to the bottom of every printed page */
+  .pdf-running-footer {
+    position: fixed;
+    bottom: 7mm;
+    left: 16mm;
+    right: 16mm;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    color: #8a8580;
+    border-top: 1px solid rgba(233, 122, 44, 0.35);
+    padding-top: 2.5mm;
+  }
+  .pdf-running-footer span:first-child {
+    color: #e97a2c;
+    font-weight: 600;
+  }
+
+  /* Article header inside the PDF */
+  #pdf-root article header {
+    border-color: rgba(233, 122, 44, 0.35) !important;
+  }
+  #pdf-root article h1 {
+    color: #ffffff !important;
+  }
+  #pdf-root article header time,
+  #pdf-root article header span {
+    color: #a8a39c !important;
+  }
+  #pdf-root article header .text-copper {
+    color: #e97a2c !important;
+    border-color: rgba(233, 122, 44, 0.4) !important;
+    background: rgba(233, 122, 44, 0.08) !important;
+  }
+
+  /* Body typography tuned for print readability on the dark page */
+  #pdf-root .prose-blog {
+    color: #cfcccc !important;
+    font-size: 11pt;
+    line-height: 1.7;
+  }
+  #pdf-root .prose-blog h2 {
+    color: #f0a35a !important;
+    font-size: 15pt;
+    margin-top: 9mm;
+  }
+  #pdf-root .prose-blog h3 {
+    color: #ffffff !important;
+    font-size: 12.5pt;
+    margin-top: 7mm;
+  }
+  #pdf-root .prose-blog strong {
+    color: #ffffff !important;
+  }
+  #pdf-root .prose-blog a {
+    color: #e97a2c !important;
+  }
+  #pdf-root .prose-blog blockquote {
+    color: #ffffff !important;
+    border-color: #e97a2c !important;
+  }
+  #pdf-root .prose-blog code,
+  #pdf-root .prose-blog pre {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(233, 122, 44, 0.3) !important;
+    color: #e8e4df !important;
+  }
+  #pdf-root .prose-blog hr {
+    border-color: rgba(233, 122, 44, 0.3) !important;
+  }
+
+  /* Urdu (Nastaliq) sizing for print */
+  #pdf-root .prose-urdu {
+    font-size: 14pt;
+    line-height: 2.1;
+  }
+  #pdf-root .prose-urdu h2 {
+    font-size: 17pt;
+  }
+  #pdf-root .prose-urdu h3 {
+    font-size: 15pt;
+  }
+
+  /* Avoid awkward breaks: keep headings with their content, blocks intact */
+  #pdf-root .pdf-cover,
+  #pdf-root article header {
+    break-inside: avoid;
+  }
+  #pdf-root .prose-blog h2,
+  #pdf-root .prose-blog h3,
+  #pdf-root .prose-blog h4 {
+    break-after: avoid;
+  }
+  #pdf-root .prose-blog li,
+  #pdf-root .prose-blog blockquote,
+  #pdf-root .prose-blog pre,
+  #pdf-root .prose-blog img {
+    break-inside: avoid;
+  }
+}
+
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -14,6 +14,7 @@ import BlogHeader from "@/components/BlogHeader";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import DownloadPdfButton from "@/components/DownloadPdfButton";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -90,6 +91,11 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
       : post.lang === "ro"
         ? "Wapis sari tehreerain"
         : "Back to all posts",
+    download: isUrdu
+      ? "پی ڈی ایف ڈاؤن لوڈ کریں"
+      : post.lang === "ro"
+        ? "PDF Download Karein"
+        : "Download PDF",
   };
 
   const jsonLd = {
@@ -117,11 +123,24 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
           {labels.back}
         </Link>
 
-        <div className="mt-6">
-          <LanguageSwitcher slug={slug} current={post.lang} available={available} />
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex-1">
+            <LanguageSwitcher slug={slug} current={post.lang} available={available} />
+          </div>
+          <DownloadPdfButton label={labels.download} isUrdu={isUrdu} />
         </div>
 
-        <article dir={isUrdu ? "rtl" : "ltr"} lang={post.lang === "ur" ? "ur" : "en"}>
+        <div id="pdf-root">
+          {/* Full-bleed dark background + branded cover/footer: visible only in the PDF */}
+          <div className="pdf-bg print-only" aria-hidden />
+          <div className="pdf-cover print-only" aria-hidden>
+            <div className="pdf-cover-bismillah">﷽</div>
+            <div className="pdf-cover-brand">AHMED RAZA</div>
+            <div className="pdf-cover-role">Islamic Scholar &amp; AI Solutions Expert</div>
+            <div className="pdf-cover-rule" />
+          </div>
+
+          <article dir={isUrdu ? "rtl" : "ltr"} lang={post.lang === "ur" ? "ur" : "en"}>
           <header className="mb-10 border-b border-border pb-8">
             <div
               className={`flex flex-wrap items-center gap-2 text-xs text-muted ${
@@ -163,7 +182,14 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
             className={isUrdu ? "prose-blog prose-urdu" : "prose-blog"}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-        </article>
+          </article>
+
+          {/* Running footer repeated on every printed page */}
+          <div className="pdf-running-footer print-only" aria-hidden>
+            <span>irazaahmed.me</span>
+            <span>Execution Over Words</span>
+          </div>
+        </div>
 
         <div className="mt-14 border-t border-border pt-8">
           <Link
