@@ -288,10 +288,10 @@ body::before {
 }
 
 @media print {
-  /* Comfortable page margins; the warm paper background fills the full sheet
-     (including these margins) on every page via background propagation. */
+  /* No page margin so the warm paper color reaches every edge (no white
+     border). The visual margins come from #pdf-root padding instead. */
   @page {
-    margin: 16mm 15mm 18mm;
+    margin: 0;
   }
 
   html,
@@ -319,8 +319,11 @@ body::before {
     max-width: none !important;
   }
 
-  /* The article flows in normal document order so it breaks across pages */
+  /* The article flows in normal document order so it breaks across pages.
+     Padding here creates the inner margins while the paper color stays
+     edge-to-edge (since @page margin is 0). */
   #pdf-root {
+    padding: 14mm 15mm 16mm;
     color: #3a342b;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
