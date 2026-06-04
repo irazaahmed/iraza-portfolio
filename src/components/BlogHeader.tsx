@@ -7,7 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 /** Fixed header for the blog pages (separate from the homepage scroll-spy navbar). */
 export default function BlogHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-bg/70 backdrop-blur-md">
+    <header className="no-print fixed inset-x-0 top-0 z-50 border-b border-border bg-bg/70 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="group flex items-center gap-3">
           <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-copper/50 transition-all duration-300 group-hover:border-copper group-hover:glow-copper">

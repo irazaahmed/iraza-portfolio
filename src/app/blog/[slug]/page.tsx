@@ -117,13 +117,13 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
       <main id="main" className="relative z-10 mx-auto max-w-3xl px-6 pb-24 pt-32">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-copper transition-colors hover:text-copper-dark"
+          className="no-print inline-flex items-center gap-1.5 text-sm font-medium text-copper transition-colors hover:text-copper-dark"
         >
           <ArrowLeft size={16} />
           {labels.back}
         </Link>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="no-print mt-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex-1">
             <LanguageSwitcher slug={slug} current={post.lang} available={available} />
           </div>
@@ -131,8 +131,7 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
         </div>
 
         <div id="pdf-root">
-          {/* Full-bleed dark background + branded cover/footer: visible only in the PDF */}
-          <div className="pdf-bg print-only" aria-hidden />
+          {/* Branded cover band: visible only in the PDF */}
           <div className="pdf-cover print-only" aria-hidden>
             <div className="pdf-cover-bismillah">﷽</div>
             <div className="pdf-cover-brand">AHMED RAZA</div>
@@ -184,14 +183,17 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
           />
           </article>
 
-          {/* Running footer repeated on every printed page */}
-          <div className="pdf-running-footer print-only" aria-hidden>
-            <span>irazaahmed.me</span>
-            <span>Execution Over Words</span>
+          {/* Branded end card: closes the PDF on the last page */}
+          <div className="pdf-end print-only" aria-hidden>
+            <div className="pdf-end-rule" />
+            <div className="pdf-end-bismillah">﷽</div>
+            <div className="pdf-end-name">AHMED RAZA</div>
+            <div className="pdf-end-tag">Execution Over Words</div>
+            <div className="pdf-end-url">irazaahmed.me</div>
           </div>
         </div>
 
-        <div className="mt-14 border-t border-border pt-8">
+        <div className="no-print mt-14 border-t border-border pt-8">
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-copper transition-colors hover:text-copper-dark"

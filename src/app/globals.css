@@ -278,8 +278,9 @@ body::before {
    PDF / print stylesheet
    The "Download PDF" button on blog posts calls window.print(). These rules
    transform the page into a premium copper-on-black document of just the
-   article: a branded cover, full-bleed dark background, themed typography and
-   a running footer. The browser's "Save as PDF" then yields a designed file.
+   article: a branded cover, full-bleed dark background (painted by the root
+   background, so it repeats on every page), themed typography and a branded
+   end card. Content flows normally so the whole blog paginates across pages.
 --------------------------------------------------------------------------- */
 
 /* Print-only blocks are hidden on screen */
@@ -288,46 +289,34 @@ body::before {
 }
 
 @media print {
-  /* Edge-to-edge page; the .pdf-bg layer paints the dark background */
+  /* Comfortable page margins; the dark root background fills the full sheet
+     (including these margins) on every page via background propagation. */
   @page {
-    margin: 0;
+    margin: 16mm 15mm 18mm;
   }
 
   html,
   body {
     background: #0a0a0a !important;
+    color: #cfcccc !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-  }
-
-  /* Hide the whole app, then reveal only the article subtree */
-  body * {
-    visibility: hidden;
-  }
-  #pdf-root,
-  #pdf-root * {
-    visibility: visible;
   }
   body::before {
     display: none !important;
   }
 
-  /* Pull the article to the top of the printed page with comfortable padding */
+  /* Remove on-screen chrome (nav, footer, buttons, switcher, back links) */
+  .no-print,
+  .skip-link {
+    display: none !important;
+  }
+
+  /* The article flows in normal document order so it breaks across pages */
   #pdf-root {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 13mm 16mm 20mm;
     color: #cfcccc;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-  }
-
-  /* Anything explicitly marked no-print (e.g. the download button) is removed */
-  .no-print {
-    display: none !important;
   }
 
   /* Reveal the PDF-only branding */
@@ -335,21 +324,13 @@ body::before {
     display: block;
   }
 
-  /* Full-bleed dark background, repeated on every printed page */
-  .pdf-bg {
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(120% 70% at 50% 0%, rgba(233, 122, 44, 0.14), transparent 60%),
-      #0a0a0a;
-    z-index: -1;
-  }
-
   /* Branded cover band at the top of the document */
   .pdf-cover {
     text-align: center;
-    padding: 4mm 0 7mm;
-    margin-bottom: 8mm;
+    padding: 2mm 0 9mm;
+    margin-bottom: 9mm;
+    border-bottom: 1px solid rgba(233, 122, 44, 0.25);
+    break-after: avoid;
   }
   .pdf-cover-bismillah {
     font-size: 30pt;
@@ -377,24 +358,43 @@ body::before {
     background: linear-gradient(90deg, transparent, #e97a2c, transparent);
   }
 
-  /* Running footer fixed to the bottom of every printed page */
-  .pdf-running-footer {
-    position: fixed;
-    bottom: 7mm;
-    left: 16mm;
-    right: 16mm;
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 8pt;
-    letter-spacing: 0.08em;
-    color: #8a8580;
-    border-top: 1px solid rgba(233, 122, 44, 0.35);
-    padding-top: 2.5mm;
+  /* Branded end card on the last page (in-flow, so it never overlaps text) */
+  .pdf-end {
+    margin-top: 14mm;
+    padding-top: 9mm;
+    text-align: center;
+    break-inside: avoid;
   }
-  .pdf-running-footer span:first-child {
+  .pdf-end-rule {
+    width: 60mm;
+    height: 2px;
+    margin: 0 auto 7mm;
+    background: linear-gradient(90deg, transparent, #e97a2c, transparent);
+  }
+  .pdf-end-bismillah {
+    font-size: 18pt;
     color: #e97a2c;
-    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 3mm;
+  }
+  .pdf-end-name {
+    font-size: 13pt;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+  }
+  .pdf-end-tag {
+    margin-top: 2mm;
+    font-size: 8pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(233, 122, 44, 0.85);
+  }
+  .pdf-end-url {
+    margin-top: 4mm;
+    font-size: 9pt;
+    letter-spacing: 0.05em;
+    color: #e97a2c;
   }
 
   /* Article header inside the PDF */

@@ -19,7 +19,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-border px-6 py-10">
+    <footer className="no-print relative border-t border-border px-6 py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 text-center">
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
           {footerLinks.map((l) => (
