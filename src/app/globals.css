@@ -310,21 +310,12 @@ body::before {
     margin: 0;
   }
 
-  /* The PDF follows the site theme. Light palette (warm paper) is the default;
-     when the site is in dark mode (html.dark) the PDF turns copper-on-black. */
+  /* The PDF follows the site theme using the SAME rule the site itself uses:
+     the site is dark by default (:root/.dark) and only light when html.light
+     is present. So the PDF palette defaults to dark and switches to the warm
+     light paper only on html.light. This stays correct in "system" mode too,
+     where the site can render dark via :root without an explicit .dark class. */
   html {
-    --pdf-bg: #faf8f4;
-    --pdf-text: #3a342b;
-    --pdf-strong: #1a1206;
-    --pdf-accent: #b85c1a;
-    --pdf-title: #c4621c;
-    --pdf-muted: #7a7264;
-    --pdf-rule: rgba(233, 122, 44, 0.4);
-    --pdf-rule-soft: rgba(233, 122, 44, 0.3);
-    --pdf-code-bg: #f0ece3;
-    --pdf-watermark: rgba(233, 122, 44, 0.06);
-  }
-  html.dark {
     --pdf-bg: #0a0a0a;
     --pdf-text: #cfcccc;
     --pdf-strong: #ffffff;
@@ -335,6 +326,18 @@ body::before {
     --pdf-rule-soft: rgba(233, 122, 44, 0.35);
     --pdf-code-bg: rgba(255, 255, 255, 0.06);
     --pdf-watermark: rgba(233, 122, 44, 0.1);
+  }
+  html.light {
+    --pdf-bg: #faf8f4;
+    --pdf-text: #3a342b;
+    --pdf-strong: #1a1206;
+    --pdf-accent: #b85c1a;
+    --pdf-title: #c4621c;
+    --pdf-muted: #7a7264;
+    --pdf-rule: rgba(233, 122, 44, 0.4);
+    --pdf-rule-soft: rgba(233, 122, 44, 0.3);
+    --pdf-code-bg: #f0ece3;
+    --pdf-watermark: rgba(233, 122, 44, 0.06);
   }
 
   html,
