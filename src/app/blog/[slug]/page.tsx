@@ -183,13 +183,10 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
           />
           </article>
 
-          {/* Branded end card: closes the PDF on the last page */}
+          {/* Compact closing line: ends the PDF without mimicking the cover */}
           <div className="pdf-end print-only" aria-hidden>
-            <div className="pdf-end-rule" />
-            <div className="pdf-end-bismillah">﷽</div>
-            <div className="pdf-end-name">AHMED RAZA</div>
-            <div className="pdf-end-tag">Execution Over Words</div>
             <div className="pdf-end-url">irazaahmed.me</div>
+            <div className="pdf-end-tag">Ahmed Raza &middot; Execution Over Words</div>
           </div>
         </div>
 

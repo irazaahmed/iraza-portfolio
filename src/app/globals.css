@@ -277,10 +277,9 @@ body::before {
 /* ---------------------------------------------------------------------------
    PDF / print stylesheet
    The "Download PDF" button on blog posts calls window.print(). These rules
-   transform the page into a premium copper-on-black document of just the
-   article: a branded cover, full-bleed dark background (painted by the root
-   background, so it repeats on every page), themed typography and a branded
-   end card. Content flows normally so the whole blog paginates across pages.
+   transform the page into a premium light document on warm paper with copper
+   accents: a branded cover, themed typography and a compact closing line.
+   Content flows normally so the whole blog paginates across pages.
 --------------------------------------------------------------------------- */
 
 /* Print-only blocks are hidden on screen */
@@ -289,7 +288,7 @@ body::before {
 }
 
 @media print {
-  /* Comfortable page margins; the dark root background fills the full sheet
+  /* Comfortable page margins; the warm paper background fills the full sheet
      (including these margins) on every page via background propagation. */
   @page {
     margin: 16mm 15mm 18mm;
@@ -297,8 +296,8 @@ body::before {
 
   html,
   body {
-    background: #0a0a0a !important;
-    color: #cfcccc !important;
+    background: #faf8f4 !important;
+    color: #3a342b !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -312,9 +311,17 @@ body::before {
     display: none !important;
   }
 
+  /* Strip the on-screen <main> padding so there is no wasted space or a
+     stray trailing blank page in the PDF. */
+  #main {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
   /* The article flows in normal document order so it breaks across pages */
   #pdf-root {
-    color: #cfcccc;
+    color: #3a342b;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -329,12 +336,12 @@ body::before {
     text-align: center;
     padding: 2mm 0 9mm;
     margin-bottom: 9mm;
-    border-bottom: 1px solid rgba(233, 122, 44, 0.25);
+    border-bottom: 1px solid rgba(233, 122, 44, 0.3);
     break-after: avoid;
   }
   .pdf-cover-bismillah {
     font-size: 30pt;
-    color: #e97a2c;
+    color: #c2611d;
     line-height: 1;
     margin-bottom: 4mm;
   }
@@ -342,14 +349,14 @@ body::before {
     font-size: 20pt;
     font-weight: 800;
     letter-spacing: 0.22em;
-    color: #ffffff;
+    color: #1a1206;
   }
   .pdf-cover-role {
     margin-top: 2mm;
     font-size: 9.5pt;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #e97a2c;
+    color: #c2611d;
   }
   .pdf-cover-rule {
     width: 46mm;
@@ -358,43 +365,27 @@ body::before {
     background: linear-gradient(90deg, transparent, #e97a2c, transparent);
   }
 
-  /* Branded end card on the last page (in-flow, so it never overlaps text) */
+  /* Compact closing line on the last page (in-flow, kept small and distinct
+     from the cover so it never reads as a repeated start page). */
   .pdf-end {
-    margin-top: 14mm;
-    padding-top: 9mm;
+    margin-top: 9mm;
+    padding-top: 6mm;
+    border-top: 1px solid rgba(233, 122, 44, 0.3);
     text-align: center;
     break-inside: avoid;
   }
-  .pdf-end-rule {
-    width: 60mm;
-    height: 2px;
-    margin: 0 auto 7mm;
-    background: linear-gradient(90deg, transparent, #e97a2c, transparent);
-  }
-  .pdf-end-bismillah {
-    font-size: 18pt;
-    color: #e97a2c;
-    line-height: 1;
-    margin-bottom: 3mm;
-  }
-  .pdf-end-name {
-    font-size: 13pt;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    color: #ffffff;
+  .pdf-end-url {
+    font-size: 9.5pt;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #c2611d;
   }
   .pdf-end-tag {
-    margin-top: 2mm;
-    font-size: 8pt;
-    letter-spacing: 0.3em;
+    margin-top: 1.5mm;
+    font-size: 7.5pt;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: rgba(233, 122, 44, 0.85);
-  }
-  .pdf-end-url {
-    margin-top: 4mm;
-    font-size: 9pt;
-    letter-spacing: 0.05em;
-    color: #e97a2c;
+    color: #8a8175;
   }
 
   /* Article header inside the PDF */
@@ -402,49 +393,49 @@ body::before {
     border-color: rgba(233, 122, 44, 0.35) !important;
   }
   #pdf-root article h1 {
-    color: #ffffff !important;
+    color: #1a1206 !important;
   }
   #pdf-root article header time,
   #pdf-root article header span {
-    color: #a8a39c !important;
+    color: #7a7264 !important;
   }
   #pdf-root article header .text-copper {
-    color: #e97a2c !important;
-    border-color: rgba(233, 122, 44, 0.4) !important;
-    background: rgba(233, 122, 44, 0.08) !important;
+    color: #b85c1a !important;
+    border-color: rgba(233, 122, 44, 0.45) !important;
+    background: rgba(233, 122, 44, 0.1) !important;
   }
 
-  /* Body typography tuned for print readability on the dark page */
+  /* Body typography tuned for print readability on warm paper */
   #pdf-root .prose-blog {
-    color: #cfcccc !important;
+    color: #3a342b !important;
     font-size: 11pt;
     line-height: 1.7;
   }
   #pdf-root .prose-blog h2 {
-    color: #f0a35a !important;
+    color: #b85c1a !important;
     font-size: 15pt;
     margin-top: 9mm;
   }
   #pdf-root .prose-blog h3 {
-    color: #ffffff !important;
+    color: #1a1206 !important;
     font-size: 12.5pt;
     margin-top: 7mm;
   }
   #pdf-root .prose-blog strong {
-    color: #ffffff !important;
+    color: #1a1206 !important;
   }
   #pdf-root .prose-blog a {
-    color: #e97a2c !important;
+    color: #b85c1a !important;
   }
   #pdf-root .prose-blog blockquote {
-    color: #ffffff !important;
+    color: #1a1206 !important;
     border-color: #e97a2c !important;
   }
   #pdf-root .prose-blog code,
   #pdf-root .prose-blog pre {
-    background: rgba(255, 255, 255, 0.06) !important;
+    background: #f0ece3 !important;
     border-color: rgba(233, 122, 44, 0.3) !important;
-    color: #e8e4df !important;
+    color: #3a342b !important;
   }
   #pdf-root .prose-blog hr {
     border-color: rgba(233, 122, 44, 0.3) !important;
