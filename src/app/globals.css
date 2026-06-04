@@ -310,10 +310,37 @@ body::before {
     margin: 0;
   }
 
+  /* The PDF follows the site theme. Light palette (warm paper) is the default;
+     when the site is in dark mode (html.dark) the PDF turns copper-on-black. */
+  html {
+    --pdf-bg: #faf8f4;
+    --pdf-text: #3a342b;
+    --pdf-strong: #1a1206;
+    --pdf-accent: #b85c1a;
+    --pdf-title: #c4621c;
+    --pdf-muted: #7a7264;
+    --pdf-rule: rgba(233, 122, 44, 0.4);
+    --pdf-rule-soft: rgba(233, 122, 44, 0.3);
+    --pdf-code-bg: #f0ece3;
+    --pdf-watermark: rgba(233, 122, 44, 0.06);
+  }
+  html.dark {
+    --pdf-bg: #0a0a0a;
+    --pdf-text: #cfcccc;
+    --pdf-strong: #ffffff;
+    --pdf-accent: #ec9450;
+    --pdf-title: #f0a35a;
+    --pdf-muted: #9a958c;
+    --pdf-rule: rgba(233, 122, 44, 0.5);
+    --pdf-rule-soft: rgba(233, 122, 44, 0.35);
+    --pdf-code-bg: rgba(255, 255, 255, 0.06);
+    --pdf-watermark: rgba(233, 122, 44, 0.1);
+  }
+
   html,
   body {
-    background: #faf8f4 !important;
-    color: #3a342b !important;
+    background: var(--pdf-bg) !important;
+    color: var(--pdf-text) !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -339,7 +366,7 @@ body::before {
      thead/tfoot padding). The paper colour stays edge-to-edge. */
   #pdf-root {
     padding: 0 15mm;
-    color: #3a342b;
+    color: var(--pdf-text);
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -370,7 +397,7 @@ body::before {
     transform: translate(-50%, -50%);
     font-size: 150pt;
     line-height: 1;
-    color: rgba(233, 122, 44, 0.06);
+    color: var(--pdf-watermark);
     z-index: 0;
     white-space: nowrap;
   }
@@ -383,7 +410,7 @@ body::before {
   }
   .pdf-cover-bismillah {
     font-size: 26pt;
-    color: #c2611d;
+    color: var(--pdf-accent);
     line-height: 1;
   }
   .pdf-cover-brand {
@@ -391,20 +418,20 @@ body::before {
     font-size: 13pt;
     font-weight: 700;
     letter-spacing: 0.4em;
-    color: #1a1206;
+    color: var(--pdf-strong);
   }
   .pdf-cover-role {
     margin-top: 2.5mm;
     font-size: 8.5pt;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #c2611d;
+    color: var(--pdf-accent);
   }
   .pdf-cover-kicker {
     font-size: 9pt;
     letter-spacing: 0.45em;
     text-transform: uppercase;
-    color: #b85c1a;
+    color: var(--pdf-accent);
     margin-bottom: 7mm;
   }
   .pdf-cover-title {
@@ -414,7 +441,7 @@ body::before {
     font-weight: 800;
     line-height: 1.25;
     letter-spacing: -0.01em;
-    color: #c4621c;
+    color: var(--pdf-title);
   }
   .pdf-cover .urdu-heading {
     text-align: center;
@@ -430,18 +457,18 @@ body::before {
     margin-top: 8mm;
     font-size: 10pt;
     letter-spacing: 0.05em;
-    color: #6b6357;
+    color: var(--pdf-muted);
   }
   .pdf-cover-tags {
     margin-top: 4mm;
     font-size: 8.5pt;
     letter-spacing: 0.12em;
-    color: #b85c1a;
+    color: var(--pdf-accent);
   }
   .pdf-cover-foot {
     font-size: 9pt;
     letter-spacing: 0.18em;
-    color: #8a8175;
+    color: var(--pdf-muted);
   }
 
   /* --- Content pages: running header/footer via a repeating table ------- */
@@ -478,21 +505,21 @@ body::before {
   .pdf-rhead {
     padding: 12mm 0 4mm;
     margin-bottom: 8mm;
-    border-bottom: 1px solid rgba(233, 122, 44, 0.4);
+    border-bottom: 1px solid var(--pdf-rule);
   }
   .pdf-rfoot {
     padding: 4mm 0 12mm;
     margin-top: 8mm;
-    border-top: 1px solid rgba(233, 122, 44, 0.4);
+    border-top: 1px solid var(--pdf-rule);
   }
   .pdf-rhead-l,
   .pdf-rfoot-l {
-    color: #b85c1a;
+    color: var(--pdf-accent);
     font-weight: 600;
   }
   .pdf-rhead-r,
   .pdf-rfoot-r {
-    color: #8a8175;
+    color: var(--pdf-muted);
   }
 
   /* The on-screen article header (title/date/tags) is replaced by the title
@@ -501,40 +528,40 @@ body::before {
     display: none !important;
   }
 
-  /* Body typography tuned for print readability on warm paper */
+  /* Body typography, themed via the --pdf-* palette (light or dark) */
   #pdf-root .prose-blog {
-    color: #3a342b !important;
+    color: var(--pdf-text) !important;
     font-size: 11pt;
     line-height: 1.7;
   }
   #pdf-root .prose-blog h2 {
-    color: #b85c1a !important;
+    color: var(--pdf-accent) !important;
     font-size: 15pt;
     margin-top: 9mm;
   }
   #pdf-root .prose-blog h3 {
-    color: #1a1206 !important;
+    color: var(--pdf-strong) !important;
     font-size: 12.5pt;
     margin-top: 7mm;
   }
   #pdf-root .prose-blog strong {
-    color: #1a1206 !important;
+    color: var(--pdf-strong) !important;
   }
   #pdf-root .prose-blog a {
-    color: #b85c1a !important;
+    color: var(--pdf-accent) !important;
   }
   #pdf-root .prose-blog blockquote {
-    color: #1a1206 !important;
+    color: var(--pdf-strong) !important;
     border-color: #e97a2c !important;
   }
   #pdf-root .prose-blog code,
   #pdf-root .prose-blog pre {
-    background: #f0ece3 !important;
-    border-color: rgba(233, 122, 44, 0.3) !important;
-    color: #3a342b !important;
+    background: var(--pdf-code-bg) !important;
+    border-color: var(--pdf-rule-soft) !important;
+    color: var(--pdf-text) !important;
   }
   #pdf-root .prose-blog hr {
-    border-color: rgba(233, 122, 44, 0.3) !important;
+    border-color: var(--pdf-rule-soft) !important;
   }
 
   /* Urdu (Nastaliq) sizing for print */
