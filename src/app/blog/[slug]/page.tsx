@@ -131,26 +131,58 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
         </div>
 
         <div id="pdf-root">
-          {/* Warm paper layer painted behind every PDF page */}
-          <div className="pdf-bg print-only" aria-hidden />
           {/* Title page: visible only in the PDF */}
           <div className="pdf-cover print-only" aria-hidden>
-            <div className="pdf-cover-bismillah">﷽</div>
-            <div className="pdf-cover-brand">AHMED RAZA</div>
-            <div className="pdf-cover-role">Islamic Scholar &amp; AI Solutions Expert</div>
-            <div className="pdf-cover-rule" />
-            <div className={`pdf-cover-title ${isUrdu ? "urdu-heading" : ""}`}>
-              {post.title}
+            <div className="pdf-cover-watermark">﷽</div>
+            <div className="pdf-cover-top">
+              <div className="pdf-cover-bismillah">﷽</div>
+              <div className="pdf-cover-brand">AHMED RAZA</div>
+              <div className="pdf-cover-role">Islamic Scholar &amp; AI Solutions Expert</div>
             </div>
-            <div className="pdf-cover-meta">
-              {formatDate(post.date, post.lang)} &middot; {post.readingTime}
+            <div className="pdf-cover-main">
+              <div className="pdf-cover-kicker">Article</div>
+              <div className="pdf-cover-rule" />
+              <div className={`pdf-cover-title ${isUrdu ? "urdu-heading" : ""}`}>
+                {post.title}
+              </div>
+              <div className="pdf-cover-rule" />
+              <div className="pdf-cover-meta">
+                {formatDate(post.date, post.lang)} &middot; {post.readingTime}
+              </div>
+              {post.tags.length > 0 && (
+                <div className="pdf-cover-tags">{post.tags.join("  •  ")}</div>
+              )}
             </div>
-            {post.tags.length > 0 && (
-              <div className="pdf-cover-tags">{post.tags.join("  •  ")}</div>
-            )}
+            <div className="pdf-cover-foot">irazaahmed.me</div>
           </div>
 
-          <article dir={isUrdu ? "rtl" : "ltr"} lang={post.lang === "ur" ? "ur" : "en"}>
+          {/* Content pages. The table's thead/tfoot reprint on every PDF page
+              as the running header/footer (they are hidden on screen). */}
+          <table className="pdf-doc">
+            <thead>
+              <tr>
+                <td>
+                  <div className="pdf-rhead">
+                    <span className="pdf-rhead-l">Ahmed Raza</span>
+                    <span className="pdf-rhead-r">AI Solutions Expert</span>
+                  </div>
+                </td>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td>
+                  <div className="pdf-rfoot">
+                    <span className="pdf-rfoot-l">irazaahmed.me</span>
+                    <span className="pdf-rfoot-r">Execution Over Words</span>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>
+                  <article dir={isUrdu ? "rtl" : "ltr"} lang={post.lang === "ur" ? "ur" : "en"}>
           <header className="mb-10 border-b border-border pb-8">
             <div
               className={`flex flex-wrap items-center gap-2 text-xs text-muted ${
@@ -192,7 +224,11 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
             className={isUrdu ? "prose-blog prose-urdu" : "prose-blog"}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          </article>
+                  </article>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <div className="no-print mt-14 border-t border-border pt-8">

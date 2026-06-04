@@ -287,65 +287,27 @@ body::before {
   display: none;
 }
 
+/* The PDF running header/footer live in a <table> so they can reprint on
+   every page. On screen, flatten that table to normal blocks (so the article
+   reads normally) and hide the header/footer rows. */
+.pdf-doc,
+.pdf-doc tbody,
+.pdf-doc tr,
+.pdf-doc td {
+  display: block;
+}
+.pdf-doc thead,
+.pdf-doc tfoot {
+  display: none;
+}
+
 @media print {
-  /* Page margins reserve room for the running header/footer (drawn in the
-     @page margin boxes). The warm paper still reaches every edge because a
-     fixed .pdf-bg layer paints behind the margins (see below). The first
-     page is the title page, so its running header/footer are left blank. */
+  /* Zero page margin so the warm paper reaches every edge with NO white
+     border. The running header/footer and the visual page margins are
+     produced by a <table>'s repeating <thead>/<tfoot> instead (see below),
+     which the browser reprints on every page without overlapping content. */
   @page {
-    margin: 17mm 14mm 17mm;
-    @top-left {
-      content: "Ahmed Raza";
-      font-family: Inter, system-ui, sans-serif;
-      font-size: 8pt;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: #b85c1a;
-      vertical-align: bottom;
-      padding-bottom: 4mm;
-    }
-    @top-right {
-      content: "AI Solutions Expert";
-      font-family: Inter, system-ui, sans-serif;
-      font-size: 8pt;
-      letter-spacing: 0.06em;
-      color: #8a8175;
-      vertical-align: bottom;
-      padding-bottom: 4mm;
-    }
-    @bottom-left {
-      content: "irazaahmed.me";
-      font-family: Inter, system-ui, sans-serif;
-      font-size: 8pt;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: #b85c1a;
-      vertical-align: top;
-      padding-top: 4mm;
-    }
-    @bottom-right {
-      content: "Page " counter(page);
-      font-family: Inter, system-ui, sans-serif;
-      font-size: 8pt;
-      letter-spacing: 0.05em;
-      color: #8a8175;
-      vertical-align: top;
-      padding-top: 4mm;
-    }
-  }
-  @page :first {
-    @top-left {
-      content: "";
-    }
-    @top-right {
-      content: "";
-    }
-    @bottom-left {
-      content: "";
-    }
-    @bottom-right {
-      content: "";
-    }
+    margin: 0;
   }
 
   html,
@@ -373,25 +335,13 @@ body::before {
     max-width: none !important;
   }
 
-  /* The article flows in normal document order so it breaks across pages.
-     Gutters come from the @page margins, so no extra padding is needed. */
+  /* Horizontal gutters for all PDF content (top/bottom spacing comes from the
+     thead/tfoot padding). The paper colour stays edge-to-edge. */
   #pdf-root {
+    padding: 0 15mm;
     color: #3a342b;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-  }
-
-  /* Fixed warm-paper layer painted behind everything on every page. Negative
-     insets push it under the @page margins too, so there is no white border
-     regardless of how fixed positioning resolves against the page box. */
-  .pdf-bg {
-    position: fixed;
-    top: -20mm;
-    left: -16mm;
-    right: -16mm;
-    bottom: -20mm;
-    background: #faf8f4;
-    z-index: -1;
   }
 
   /* Reveal the PDF-only branding */
@@ -399,62 +349,150 @@ body::before {
     display: block;
   }
 
-  /* Title page: cover fills the whole first page, content starts on page 2 */
+  /* --- Title page: eye-catching, fills the whole first page ------------- */
   .pdf-cover {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 215mm;
+    justify-content: space-between;
+    min-height: 252mm;
+    padding: 16mm 0;
     text-align: center;
     break-after: page;
+    overflow: hidden;
+  }
+  /* Giant faint Bismillah watermark behind the title */
+  .pdf-cover-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150pt;
+    line-height: 1;
+    color: rgba(233, 122, 44, 0.06);
+    z-index: 0;
+    white-space: nowrap;
+  }
+  .pdf-cover-top,
+  .pdf-cover-main,
+  .pdf-cover-foot {
+    position: relative;
+    z-index: 1;
+    width: 100%;
   }
   .pdf-cover-bismillah {
-    font-size: 40pt;
+    font-size: 26pt;
     color: #c2611d;
     line-height: 1;
-    margin-bottom: 8mm;
   }
   .pdf-cover-brand {
-    font-size: 26pt;
-    font-weight: 800;
-    letter-spacing: 0.24em;
+    margin-top: 4mm;
+    font-size: 13pt;
+    font-weight: 700;
+    letter-spacing: 0.4em;
     color: #1a1206;
   }
   .pdf-cover-role {
-    margin-top: 3mm;
-    font-size: 10pt;
-    letter-spacing: 0.2em;
+    margin-top: 2.5mm;
+    font-size: 8.5pt;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #c2611d;
   }
+  .pdf-cover-kicker {
+    font-size: 9pt;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: #b85c1a;
+    margin-bottom: 7mm;
+  }
+  .pdf-cover-title {
+    max-width: 165mm;
+    margin: 0 auto;
+    font-size: 34pt;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: #c4621c;
+  }
+  .pdf-cover .urdu-heading {
+    text-align: center;
+    line-height: 1.7;
+  }
   .pdf-cover-rule {
-    width: 54mm;
+    width: 60mm;
     height: 2px;
     margin: 9mm auto;
     background: linear-gradient(90deg, transparent, #e97a2c, transparent);
   }
-  .pdf-cover-title {
-    max-width: 150mm;
-    font-size: 19pt;
-    font-weight: 700;
-    line-height: 1.35;
-    color: #1a1206;
-  }
-  .pdf-cover .urdu-heading {
-    text-align: center;
-  }
   .pdf-cover-meta {
-    margin-top: 5mm;
-    font-size: 9.5pt;
+    margin-top: 8mm;
+    font-size: 10pt;
     letter-spacing: 0.05em;
-    color: #7a7264;
+    color: #6b6357;
   }
   .pdf-cover-tags {
     margin-top: 4mm;
     font-size: 8.5pt;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     color: #b85c1a;
+  }
+  .pdf-cover-foot {
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    color: #8a8175;
+  }
+
+  /* --- Content pages: running header/footer via a repeating table ------- */
+  /* On screen the table behaves like plain blocks (article looks normal);
+     in print it becomes a real table whose thead/tfoot reprint per page. */
+  .pdf-doc {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pdf-doc thead {
+    display: table-header-group;
+  }
+  .pdf-doc tfoot {
+    display: table-footer-group;
+  }
+  .pdf-doc tbody {
+    display: table-row-group;
+  }
+  .pdf-doc tr {
+    display: table-row;
+  }
+  .pdf-doc td {
+    display: table-cell;
+  }
+  .pdf-rhead,
+  .pdf-rfoot {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 8pt;
+    letter-spacing: 0.06em;
+  }
+  .pdf-rhead {
+    padding: 12mm 0 4mm;
+    margin-bottom: 8mm;
+    border-bottom: 1px solid rgba(233, 122, 44, 0.4);
+  }
+  .pdf-rfoot {
+    padding: 4mm 0 12mm;
+    margin-top: 8mm;
+    border-top: 1px solid rgba(233, 122, 44, 0.4);
+  }
+  .pdf-rhead-l,
+  .pdf-rfoot-l {
+    color: #b85c1a;
+    font-weight: 600;
+  }
+  .pdf-rhead-r,
+  .pdf-rfoot-r {
+    color: #8a8175;
   }
 
   /* The on-screen article header (title/date/tags) is replaced by the title
