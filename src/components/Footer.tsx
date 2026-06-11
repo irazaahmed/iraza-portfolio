@@ -11,7 +11,7 @@ const iconMap = {
 
 const footerLinks = [
   { label: "About", href: "/#about" },
-  { label: "Projects", href: "/#projects" },
+  { label: "Projects", href: "/projects" },
   { label: "Blog", href: "/blog" },
   { label: "Prompts", href: "/prompts" },
   { label: "FAQ", href: "/faq" },

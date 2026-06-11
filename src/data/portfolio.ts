@@ -145,8 +145,11 @@ export type Project = {
   tech: string[];
   description: string;
   github: string;
+  /** Deployed, browsable URL. */
+  live?: string;
 };
 
+/** The homepage shows the first three; /projects lists them all. */
 export const projects: Project[] = [
   {
     name: "Quran Translation Management System",
@@ -154,6 +157,15 @@ export const projects: Project[] = [
     description:
       "Full-stack web app managing the end-to-end Quranic content translation workflow across 33 languages. Next.js frontend, Supabase backend database, deployed on Vercel for distributed translation teams.",
     github: "https://github.com/irazaahmed/quranic-translation-management-system",
+    live: "https://quranic-translation-management-syst.vercel.app/",
+  },
+  {
+    name: "Personal Professional Portfolio",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    description:
+      "This very site: personal brand portfolio with an AI chat assistant, multilingual blog, prompt gallery, and SEO-optimized pages, designed, built, and deployed end to end.",
+    github: "https://github.com/irazaahmed/iraza-portfolio",
+    live: "https://www.irazaahmed.me/",
   },
   {
     name: "Physical AI and Humanoid Robotics",
@@ -161,6 +173,23 @@ export const projects: Project[] = [
     description:
       "Explored physical AI concepts and humanoid robotics, implementing intelligent control and decision-making in robotic platforms.",
     github: "https://github.com/irazaahmed/physical-ai-humanoid-robotics",
+    live: "https://physical-ai-humanoid-robotics-ar.netlify.app/",
+  },
+  {
+    name: "Nike E-Commerce Platform",
+    tech: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS"],
+    description:
+      "Full e-commerce storefront with Sanity CMS product management, dynamic routing, and cart functionality.",
+    github: "https://github.com/irazaahmed/NextJSQ2-hackathon",
+    live: "https://nike-ecommerce-project.vercel.app/",
+  },
+  {
+    name: "Saylani Impact Portal",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    description:
+      "Web portal tracking and showcasing social impact metrics for Saylani Welfare with data visualization dashboards.",
+    github: "https://github.com/irazaahmed/saylami-impact-portal",
+    live: "https://impact-portal-saylani.netlify.app/",
   },
   {
     name: "Multiuser ToDo Application",
@@ -170,32 +199,12 @@ export const projects: Project[] = [
     github: "https://github.com/irazaahmed/multiple-user-todo-app",
   },
   {
-    name: "Saylani Impact Portal",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    name: "InfoNest Blogs",
+    tech: ["HTML", "CSS", "JavaScript"],
     description:
-      "Web portal tracking and showcasing social impact metrics for Saylani Welfare with data visualization dashboards.",
-    github: "https://github.com/irazaahmed/saylami-impact-portal",
-  },
-  {
-    name: "Nike E-Commerce Platform",
-    tech: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS"],
-    description:
-      "Full e-commerce storefront with Sanity CMS product management, dynamic routing, and cart functionality.",
-    github: "https://github.com/irazaahmed/NextJSQ2-hackathon",
-  },
-  {
-    name: "SMIT Virtual Assistant",
-    tech: ["Dialogflow", "FlowiseAI", "Node.js"],
-    description:
-      "Conversational AI assistant for SMIT handling student queries via intent-based and LLM-powered flows.",
-    github: "https://github.com/irazaahmed/AI-Hackathon",
-  },
-  {
-    name: "InfoNest Blog Platform",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    description:
-      "Content-rich blog platform with category filtering, dynamic post rendering, and SEO optimization.",
+      "Blog platform where I write and publish my own articles, with category filtering, dynamic post rendering, and a clean, fast reading experience.",
     github: "https://github.com/irazaahmed/InfoNest-Blogs",
+    live: "https://infonest-blogs.vercel.app/",
   },
 ];
 
