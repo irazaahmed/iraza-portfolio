@@ -5,6 +5,10 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import IslamicPattern from "./IslamicPattern";
+import Hero3D from "./Hero3D";
+import Magnetic from "./Magnetic";
+
+const NAME = "AHMED RAZA";
 
 /** Cycling typewriter that types and deletes each role in turn. */
 function useTypewriter(words: readonly string[]) {
@@ -50,6 +54,9 @@ export default function Hero() {
       {/* Islamic geometric watermark - faint copper star lattice */}
       <IslamicPattern />
 
+      {/* Real 3D layer: rotating khatim stars, orbit ring, copper particles */}
+      <Hero3D className="absolute inset-0 h-full w-full" />
+
       {/* Radial copper glow */}
       <div
         aria-hidden
@@ -66,14 +73,27 @@ export default function Hero() {
           Execution Over Words
         </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+        <h1
+          aria-label={NAME}
           className="text-glow-copper text-[2.75rem] font-extrabold leading-[1.05] tracking-tight text-fg sm:text-7xl md:text-8xl lg:text-9xl"
         >
-          AHMED RAZA
-        </motion.h1>
+          {NAME.split("").map((char, i) => (
+            <motion.span
+              key={i}
+              aria-hidden
+              initial={{ opacity: 0, y: 34, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                duration: 0.55,
+                delay: 0.1 + i * 0.045,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="inline-block"
+            >
+              {char === " " ? " " : char}
+            </motion.span>
+          ))}
+        </h1>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -100,20 +120,24 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <a
-            href="#projects"
-            className="glow-copper inline-flex items-center justify-center rounded-full bg-copper px-7 py-3 text-sm font-semibold text-black transition-all hover:bg-copper-dark hover:glow-copper-strong"
-          >
-            View Projects
-          </a>
-          <a
-            href={profile.cvFile}
-            download
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-copper/60 px-7 py-3 text-sm font-semibold text-copper transition-all hover:bg-copper/10 hover:border-copper"
-          >
-            <Download size={16} />
-            Download CV
-          </a>
+          <Magnetic>
+            <a
+              href="#projects"
+              className="btn-sheen glow-copper inline-flex items-center justify-center rounded-full bg-copper px-7 py-3 text-sm font-semibold text-black transition-all hover:bg-copper-dark hover:glow-copper-strong"
+            >
+              View Projects
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a
+              href={profile.cvFile}
+              download
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-copper/60 px-7 py-3 text-sm font-semibold text-copper transition-all hover:bg-copper/10 hover:border-copper"
+            >
+              <Download size={16} />
+              Download CV
+            </a>
+          </Magnetic>
         </motion.div>
       </div>
 

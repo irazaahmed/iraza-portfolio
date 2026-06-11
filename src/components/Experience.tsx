@@ -1,6 +1,7 @@
 import { experience } from "@/data/portfolio";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import TimelineBeam from "./TimelineBeam";
 
 export default function Experience() {
   return (
@@ -8,15 +9,18 @@ export default function Experience() {
       <SectionHeading eyebrow="Career Path" title="Experience" />
 
       <div className="relative">
-        {/* Vertical copper line */}
-        <div className="absolute left-3 top-2 h-full w-px bg-gradient-to-b from-copper via-copper/40 to-transparent md:left-3" />
+        {/* Scroll-linked copper line that draws itself downward */}
+        <TimelineBeam className="absolute left-3 top-2 h-full w-px" />
 
         <ol className="space-y-10">
           {experience.map((job, i) => (
             <li key={`${job.org}-${job.period}`} className="relative pl-12">
               {/* Dot marker */}
               <span className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center">
-                <span className="absolute h-6 w-6 rounded-full bg-copper/20" />
+                <span
+                  className="pulse-soft absolute h-6 w-6 rounded-full bg-copper/20"
+                  style={{ animationDelay: `${i * 0.4}s` }}
+                />
                 <span className="relative h-3 w-3 rounded-full bg-copper glow-copper" />
               </span>
 

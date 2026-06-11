@@ -4,6 +4,7 @@ import { highlights, profile } from "@/data/portfolio";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import CountUp from "./CountUp";
+import TiltCard from "./TiltCard";
 
 const iconMap = {
   scroll: ScrollText,
@@ -45,9 +46,12 @@ export default function About() {
         {highlights.map((h, i) => {
           const Icon = iconMap[h.icon];
           return (
-            <Reveal key={h.title} delay={i * 0.1}>
-              <div className="group h-full rounded-xl border border-border bg-bg-soft/60 p-6 transition-all duration-300 hover:border-copper/50 hover:glow-copper">
-                <div className="mb-4 inline-flex rounded-lg bg-copper/10 p-3 text-copper transition-colors group-hover:bg-copper/20">
+            <Reveal key={h.title} delay={i * 0.1} className="h-full">
+              <TiltCard className="h-full rounded-xl border border-border bg-bg-soft/60 p-6 hover:border-copper/50 hover:glow-copper">
+                <div
+                  className="animate-float-y mb-4 inline-flex rounded-lg bg-copper/10 p-3 text-copper transition-colors group-hover:bg-copper/20"
+                  style={{ animationDelay: `${i * 0.5}s` }}
+                >
                   <Icon size={24} />
                 </div>
                 <p className="text-2xl font-bold text-copper">
@@ -57,7 +61,7 @@ export default function About() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   {h.description}
                 </p>
-              </div>
+              </TiltCard>
             </Reveal>
           );
         })}

@@ -33,7 +33,7 @@ export default function Contact() {
                 href={c.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-xl border border-border bg-bg-soft/50 px-5 py-4 text-left transition-all duration-300 hover:border-copper/50 hover:glow-copper"
+                className="group flex items-center gap-4 rounded-xl border border-border bg-bg-soft/50 px-5 py-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-copper/50 hover:glow-copper-strong"
               >
                 <span className="inline-flex rounded-lg bg-copper/10 p-3 text-copper transition-colors group-hover:bg-copper/20">
                   <Icon size={20} />

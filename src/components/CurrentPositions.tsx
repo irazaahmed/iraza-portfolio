@@ -2,6 +2,7 @@ import { Briefcase } from "lucide-react";
 import { currentPositions } from "@/data/portfolio";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import TiltCard from "./TiltCard";
 
 export default function CurrentPositions() {
   return (
@@ -10,8 +11,8 @@ export default function CurrentPositions() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {currentPositions.map((pos, i) => (
-          <Reveal key={pos.org} delay={i * 0.12}>
-            <article className="group relative h-full overflow-hidden rounded-2xl border border-copper/30 bg-bg-soft/60 p-7 transition-all duration-300 hover:border-copper hover:glow-copper-strong">
+          <Reveal key={pos.org} delay={i * 0.12} className="h-full">
+            <TiltCard className="h-full rounded-2xl border border-copper/30 bg-bg-soft/60 p-7 hover:border-copper hover:glow-copper-strong">
               {/* corner glow */}
               <div
                 aria-hidden
@@ -33,7 +34,7 @@ export default function CurrentPositions() {
                   {pos.description}
                 </p>
               </div>
-            </article>
+            </TiltCard>
           </Reveal>
         ))}
       </div>

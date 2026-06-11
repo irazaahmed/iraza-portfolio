@@ -2,6 +2,7 @@ import { skills } from "@/data/portfolio";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import LanguageBars from "./LanguageBars";
+import TiltCard from "./TiltCard";
 
 export default function Skills() {
   return (
@@ -10,8 +11,8 @@ export default function Skills() {
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((cat, i) => (
-          <Reveal key={cat.category} delay={(i % 3) * 0.08}>
-            <div className="h-full rounded-2xl border border-copper/25 bg-bg-soft/50 p-6 transition-colors duration-300 hover:border-copper/60">
+          <Reveal key={cat.category} delay={(i % 3) * 0.08} className="h-full">
+            <TiltCard className="h-full rounded-2xl border border-copper/25 bg-bg-soft/50 p-6 hover:border-copper/60 hover:glow-copper">
               <h3 className="mb-4 text-base font-semibold uppercase tracking-wider text-copper">
                 {cat.category}
               </h3>
@@ -29,7 +30,7 @@ export default function Skills() {
                   ))}
                 </div>
               )}
-            </div>
+            </TiltCard>
           </Reveal>
         ))}
       </div>

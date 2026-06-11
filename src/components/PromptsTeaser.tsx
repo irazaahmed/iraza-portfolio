@@ -62,7 +62,7 @@ export default function PromptsTeaser() {
               )}
               <Link
                 href="/prompts"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-copper px-6 py-3 text-sm font-semibold text-black transition-all hover:glow-copper sm:w-auto"
+                className="btn-sheen inline-flex w-full items-center justify-center gap-2 rounded-lg bg-copper px-6 py-3 text-sm font-semibold text-black transition-all hover:glow-copper sm:w-auto"
               >
                 Explore Prompt Gallery
                 <ArrowRight size={16} />
