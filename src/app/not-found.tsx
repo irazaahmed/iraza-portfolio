@@ -16,12 +16,20 @@ export default function NotFound() {
       <p className="mt-3 max-w-md text-muted">
         The page you&rsquo;re looking for doesn&rsquo;t exist or has been moved.
       </p>
-      <Link
-        href="/"
-        className="glow-copper mt-8 inline-flex items-center justify-center rounded-full bg-copper px-7 py-3 text-sm font-semibold text-black transition-all hover:bg-copper-dark hover:glow-copper-strong"
-      >
-        Back to home
-      </Link>
+      <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <Link
+          href="/"
+          className="glow-copper inline-flex items-center justify-center rounded-full bg-copper px-7 py-3 text-sm font-semibold text-black transition-all hover:bg-copper-dark hover:glow-copper-strong"
+        >
+          Back to home
+        </Link>
+        <Link
+          href="/projects"
+          className="inline-flex items-center justify-center rounded-full border border-copper/60 px-7 py-3 text-sm font-semibold text-copper transition-all hover:border-copper hover:bg-copper/10"
+        >
+          View Projects
+        </Link>
+      </div>
     </main>
   );
 }
