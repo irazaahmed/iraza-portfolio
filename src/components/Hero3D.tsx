@@ -25,11 +25,18 @@ export default function Hero3D({ className = "" }: { className?: string }) {
       if (disposed || !mountRef.current) return;
 
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      /* lighter scene on touch / small screens so phones hold a steady frame rate */
+      const coarse = window.matchMedia("(pointer: coarse)").matches;
+      const lowPower = coarse || window.innerWidth < 768;
       const copper = new THREE.Color("#e97a2c");
       const copperBright = new THREE.Color("#f0a35a");
 
-      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      const renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true,
+        powerPreference: "high-performance",
+      });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, lowPower ? 1.5 : 2));
       renderer.setClearColor(0x000000, 0);
       mount.appendChild(renderer.domElement);
       renderer.domElement.style.display = "block";
@@ -44,7 +51,7 @@ export default function Hero3D({ className = "" }: { className?: string }) {
       scene.add(rig);
 
       /* ---- neural network: nodes spread in a wide ellipsoid ------------- */
-      const NODE_COUNT = 80;
+      const NODE_COUNT = lowPower ? 56 : 80;
       const nodes: InstanceType<typeof THREE.Vector3>[] = [];
       for (let i = 0; i < NODE_COUNT; i++) {
         /* rejection-sample a unit sphere, then stretch into a wide ellipsoid
@@ -118,7 +125,7 @@ export default function Hero3D({ className = "" }: { className?: string }) {
       rig.add(new THREE.Points(activeGeo, activeMat));
 
       /* data pulses: bright sparks traveling along random edges */
-      const PULSE_COUNT = 7;
+      const PULSE_COUNT = lowPower ? 5 : 7;
       const sparkGeo = new THREE.SphereGeometry(0.05, 10, 10);
       const sparkMat = new THREE.MeshBasicMaterial({ color: copperBright });
       type Pulse = {
@@ -141,7 +148,7 @@ export default function Hero3D({ className = "" }: { className?: string }) {
       }
 
       /* drifting ambient particles around the network */
-      const particleCount = 240;
+      const particleCount = lowPower ? 140 : 240;
       const positions = new Float32Array(particleCount * 3);
       for (let i = 0; i < particleCount; i++) {
         positions[i * 3] = (Math.random() - 0.5) * 15;
@@ -172,13 +179,13 @@ export default function Hero3D({ className = "" }: { className?: string }) {
       const ro = new ResizeObserver(resize);
       ro.observe(mount);
 
-      /* mouse parallax */
+      /* mouse parallax; touch devices get an autonomous sway since there is no cursor */
       const target = { x: 0, y: 0 };
       const onPointer = (e: PointerEvent) => {
         target.x = (e.clientX / window.innerWidth - 0.5) * 2;
         target.y = (e.clientY / window.innerHeight - 0.5) * 2;
       };
-      window.addEventListener("pointermove", onPointer, { passive: true });
+      if (!coarse) window.addEventListener("pointermove", onPointer, { passive: true });
 
       /* pause when offscreen */
       let visible = true;
@@ -224,7 +231,12 @@ export default function Hero3D({ className = "" }: { className?: string }) {
 
         particles.rotation.y = t * 0.018;
 
-        /* parallax toward the pointer (additive on top of the slow drift) */
+        if (coarse) {
+          target.x = Math.sin(t * 0.2) * 0.8;
+          target.y = Math.cos(t * 0.15) * 0.6;
+        }
+
+        /* parallax toward the pointer or sway target (additive on the slow drift) */
         rig.rotation.x += (target.y * 0.14 - rig.rotation.x) * 0.04;
         rig.rotation.z += (target.x * 0.06 - rig.rotation.z) * 0.04;
 
