@@ -17,7 +17,7 @@ export const profile = {
   ],
   tagline: "Bridging authentic Islamic knowledge with cutting-edge AI technology",
   summary:
-    "Active Islamic Scholar with 8+ years as an Asst. Shariah Advisor, simultaneously learning and applying modern technology - with the mission of combining Islam with tech to make authentic Islamic knowledge accessible, easy, and engaging for everyone. Currently Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم), leading a 33-language Quranic content translation pipeline, and Founder of Cybrum Solutions building AI-driven solutions across Pakistan. Brings deep grounding in Shariah advisory, jurisprudence, and Islamic academia, alongside hands-on proficiency in agentic AI systems, multi-agent workflows, full-stack development, and LLM integration.",
+    "Founder & CEO of Cybrum Solutions — an AI-Native company building intelligent automation, AI agents, and web systems that run real business workflows end to end. As a solo founder, Ahmed orchestrates an agentic AI workforce to deliver team-level output with one accountable builder. Also an active Islamic Scholar with 8+ years as an Asst. Shariah Advisor, and Team Lead Translation at Dawat-e-Islami leading a 33-language Quranic content translation pipeline. Bridges deep Islamic scholarship with modern AI engineering. Motto: Execution Over Words.",
   cvFile: "/Ahmed_Raza_CV.pdf",
   photo: "/ahmed.webp",
 } as const;
@@ -424,8 +424,6 @@ export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Prompts", href: "/prompts" },
   { label: "Skills", href: "#skills" },
-  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ] as const;

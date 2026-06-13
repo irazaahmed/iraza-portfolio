@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Cpu, Languages, ScrollText } from "lucide-react";
+import { Cpu, Languages, ScrollText, ArrowUpRight } from "lucide-react";
 import { highlights, profile } from "@/data/portfolio";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -40,6 +40,42 @@ export default function About() {
           <p className="text-lg leading-relaxed text-muted">{profile.summary}</p>
         </Reveal>
       </div>
+
+      {/* Cybrum Solutions showcase */}
+      <Reveal delay={0.2}>
+        <a
+          href="https://www.cybrumsolutions.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-12 flex w-full items-center justify-between gap-6 rounded-2xl border border-copper/30 bg-gradient-to-br from-copper/5 via-transparent to-transparent p-6 transition-all duration-300 hover:border-copper/60 hover:from-copper/10 hover:shadow-[0_0_40px_-12px_var(--color-copper)] sm:p-8"
+        >
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-copper/40 bg-copper/10 px-3 py-0.5 text-xs font-semibold uppercase tracking-widest text-copper">
+                Founder &amp; CEO
+              </span>
+              <span className="rounded-full border border-border bg-bg-soft px-3 py-0.5 text-xs font-medium text-muted">
+                AI-Native Company
+              </span>
+              <span className="rounded-full border border-border bg-bg-soft px-3 py-0.5 text-xs font-medium text-muted">
+                Est. Dec 2025
+              </span>
+            </div>
+            <h3 className="mt-1 text-2xl font-bold tracking-tight text-fg sm:text-3xl">
+              Cybrum Solutions
+            </h3>
+            <p className="max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+              One element. Every solution. — AI agents, automation, chatbots, and web systems built end to end for businesses that need things to actually run.
+            </p>
+          </div>
+          <div className="shrink-0">
+            <span className="inline-flex items-center gap-1.5 rounded-xl border border-copper/40 bg-copper/10 px-4 py-2.5 text-sm font-semibold text-copper transition-all duration-300 group-hover:bg-copper/20 group-hover:gap-2.5">
+              Visit
+              <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </span>
+          </div>
+        </a>
+      </Reveal>
 
       {/* Highlight cards */}
       <div className="mt-16 grid gap-6 sm:grid-cols-3">
