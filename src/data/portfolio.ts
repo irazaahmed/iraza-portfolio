@@ -168,6 +168,14 @@ export const projects: Project[] = [
     live: "https://www.irazaahmed.me/",
   },
   {
+    name: "LinkedIn Autonomous Agent",
+    tech: ["Playwright", "Python", "Groq"],
+    description:
+      "Autonomous Playwright agent that reacts to LinkedIn posts and writes persona-matched comments via an LLM, with relevance filtering and verified posting.",
+    github: "https://github.com/irazaahmed/linkedin-autonomous-agent",
+    live: "https://raw.githubusercontent.com/irazaahmed/linkedin-autonomous-agent/main/demo/agent_demo.webm",
+  },
+  {
     name: "Physical AI and Humanoid Robotics",
     tech: ["Python", "AI/ML Frameworks", "Robotics Integration"],
     description:
