@@ -168,6 +168,14 @@ export const projects: Project[] = [
     live: "https://www.irazaahmed.me/",
   },
   {
+    name: "AR Bank Limited — Banking Management System",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    description:
+      "A full-stack banking simulator: signup with a welcome bonus, instant peer-to-peer transfers, transaction history, and an admin panel showing total bank balance and every transaction system-wide. Built with Next.js Server Actions on a live Postgres database.",
+    github: "https://github.com/irazaahmed/bank-management-system",
+    live: "https://ar-bank-management-system.vercel.app/",
+  },
+  {
     name: "LinkedIn Autonomous Agent",
     tech: ["Playwright", "Python", "Groq"],
     description:
