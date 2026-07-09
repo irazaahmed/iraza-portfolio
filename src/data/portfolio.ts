@@ -152,12 +152,12 @@ export type Project = {
 /** The homepage shows the first three; /projects lists them all. */
 export const projects: Project[] = [
   {
-    name: "Quran Translation Management System",
-    tech: ["Next.js", "Supabase", "Vercel"],
+    name: "Translation Management System",
+    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     description:
-      "Full-stack web app managing the end-to-end Quranic content translation workflow across 33 languages. Next.js frontend, Supabase backend database, deployed on Vercel for distributed translation teams.",
-    github: "https://github.com/irazaahmed/quranic-translation-management-system",
-    live: "https://quranic-translation-management-syst.vercel.app/",
+      "Full-stack platform that runs two translation workflows in one real-time dashboard: Quranic translation across 25+ languages with weekly meeting scheduling and reports, and an 8-stage English production pipeline for books, speeches, booklets, and magazine articles.",
+    github: "https://github.com/irazaahmed/translation-management-system",
+    live: "https://tms-dawateislami.vercel.app/",
   },
   {
     name: "Personal Professional Portfolio",
@@ -166,6 +166,22 @@ export const projects: Project[] = [
       "This very site: personal brand portfolio with an AI chat assistant, multilingual blog, prompt gallery, and SEO-optimized pages, designed, built, and deployed end to end.",
     github: "https://github.com/irazaahmed/iraza-portfolio",
     live: "https://www.irazaahmed.me/",
+  },
+  {
+    name: "Lodhi Cooperative Housing Society",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Cloudinary", "Auth.js"],
+    description:
+      "Secure client document portal for a 360-plot housing society in Karachi. Clients sign in to view and download only their own legal documents, while the admin verifies signups, links plots, and manages every file. Private storage with short-lived signed URLs and strict per-client access control.",
+    github: "https://github.com/irazaahmed/builder-costumer-data",
+    live: "https://lodhisociety.com/",
+  },
+  {
+    name: "Hafeez Communication",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Auth.js", "Tailwind CSS"],
+    description:
+      "Full-stack shop management panel for a mobile accessories shop that also deals in used phones and JazzCash and EasyPaisa. Stock, fast sales, credit (udhaar) with WhatsApp reminders, printable invoices, wallet operations, expenses, and cash sessions, all reconciled through one live cash ledger. Public showcase page converts visitors to WhatsApp.",
+    github: "https://github.com/irazaahmed/hafeez-communication",
+    live: "https://hafeez-communication.vercel.app/",
   },
   {
     name: "AR Bank Limited — Banking Management System",
