@@ -43,6 +43,9 @@ export const metadata: Metadata = {
   verification: {
     google: "dB_ZqeUfYuOAQBFR8qYgWp43mN9teYMPgUkdUBXmNQI",
   },
+  other: {
+    "cybrum-verify": "e5494b7169428809cd5b20390b8c5f01",
+  },
   openGraph: {
     title,
     description,
