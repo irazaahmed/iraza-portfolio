@@ -15,7 +15,7 @@ export default function CountUp({ value }: { value: string }) {
   const suffix = match ? match[2] : "";
 
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.6 });
+  const inView = useInView(ref, { once: true, amount: 0.1 });
   const [n, setN] = useState(0);
 
   useEffect(() => {

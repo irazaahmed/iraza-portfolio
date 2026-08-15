@@ -7,7 +7,7 @@
 A personal portfolio for **Ahmed Raza** - Islamic Scholar, Team Lead Translation
 at Dawat-e-Islami, Founder & AI Solutions Expert at Cybrum Solutions, and Full
 Stack Developer. The site brings together two worlds that rarely meet: 8+ years
-of classical Islamic scholarship and hands-on work in modern AI engineering.
+of experience as an Islamic Scholar and hands-on work in modern AI engineering.
 
 ---
 
@@ -21,7 +21,7 @@ Solutions Expert, Full Stack Developer.*
 
 ### 👤 About
 A clear, honest introduction - who Ahmed Raza is, what he's spent the last
-decade doing, and how his Islamic scholarship background informs the way he
+decade doing, and how his background as an Islamic Scholar informs the way he
 builds AI systems today. Three quick-glance highlight cards summarise his
 identity: **8+ years as Islamic Scholar**, **Agentic AI engineer**, and **33-language Translation Lead**.
 

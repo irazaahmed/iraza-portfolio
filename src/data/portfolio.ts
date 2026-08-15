@@ -17,7 +17,7 @@ export const profile = {
   ],
   tagline: "Bridging authentic Islamic knowledge with cutting-edge AI technology",
   summary:
-    "Founder & CEO of Cybrum Solutions — an AI-Native company building intelligent automation, AI agents, and web systems that run real business workflows end to end. As a solo founder, Ahmed orchestrates an agentic AI workforce to deliver team-level output with one accountable builder. Also an active Islamic Scholar with 8+ years as an Asst. Shariah Advisor, and Team Lead Translation at Dawat-e-Islami leading a 33-language Quranic content translation pipeline. Bridges deep Islamic scholarship with modern AI engineering. Motto: Execution Over Words.",
+    "Founder & CEO of Cybrum Solutions, an AI-Native company building intelligent automation, AI agents, and web systems that run real business workflows end to end. As a solo founder, Ahmed Raza orchestrates an agentic AI workforce to deliver team-level output with one accountable builder. Also an active Islamic Scholar with 8+ years as an Asst. Shariah Advisor, and Team Lead Translation at Dawat-e-Islami leading a 33-language Quranic content translation pipeline. Bridges deep grounding in Islamic knowledge with modern AI engineering. Motto: Execution Over Words.",
   cvFile: "/Ahmed_Raza_CV.pdf",
   photo: "/ahmed.webp",
 } as const;
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     live: "https://hafeez-communication.vercel.app/",
   },
   {
-    name: "AR Bank Limited — Banking Management System",
+    name: "AR Bank Limited - Banking Management System",
     tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
     description:
       "A full-stack banking simulator: signup with a welcome bonus, instant peer-to-peer transfers, transaction history, and an admin panel showing total bank balance and every transaction system-wide. Built with Next.js Server Actions on a live Postgres database.",

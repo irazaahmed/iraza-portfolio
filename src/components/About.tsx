@@ -65,7 +65,7 @@ export default function About() {
               Cybrum Solutions
             </h3>
             <p className="max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-              One element. Every solution. — AI agents, automation, chatbots, and web systems built end to end for businesses that need things to actually run.
+              One element. Every solution. AI agents, automation, chatbots, and web systems built end to end for businesses that need things to actually run.
             </p>
           </div>
           <div className="shrink-0">
