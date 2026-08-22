@@ -34,7 +34,7 @@ SECTIONS TO BUILD (in order):
 2. HERO SECTION
 - Full viewport height
 - Large name: "AHMED RAZA" with copper glow
-- Animated typewriter effect cycling through: "Islamic Scholar", "Team Lead Translation", "AI Solutions Expert", "Full Stack Developer"
+- Animated typewriter effect cycling through: "Islamic Scholar", "Team Lead Translation", "Agentic AI Engineer", "Full Stack Developer"
 - Subtext: "Bridging authentic Islamic knowledge with cutting-edge AI technology"
 - Two CTA buttons: "View Projects" (copper filled) and "Download CV" (copper outlined)
 - Subtle Arabic watermark text in background (very low opacity)
@@ -47,7 +47,7 @@ SECTIONS TO BUILD (in order):
 4. CURRENT POSITIONS SECTION (title: "What I Do Now")
 - Two cards side by side
 - Card 1: Team Lead Translation - Dawat-e-Islami (Jan 2026 - Present)
-- Card 2: Founder & AI Solutions Expert - Cybrum Solutions (Nov 2025 - Present)
+- Card 2: Founder & Agentic AI Engineer - Cybrum Solutions (Nov 2025 - Present)
 - Copper border, black card background, hover glow effect
 
 5. EXPERIENCE TIMELINE SECTION
@@ -125,6 +125,7 @@ IMPORTANT NAMING/WORDING RULES (always apply — these OVERRIDE any default phra
 3. "Asst. Shariah Advisor" = "Assistant Shariah Advisor"; in Urdu use "معاون شرعی مشیر". Do not drop the "Assistant/Asst./معاون" qualifier.
 4. Designation: "Team Lead Translation" (NOT "Team Lead — Translation Department"). Department: "Translation Department" (English) / "شعبہ تراجم" (Urdu — plural, NOT the singular "شعبہ ترجمہ"). Org: Dawat-e-Islami. Natural phrasing: "Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم)".
 5. His ongoing mission line (use in About / bios / anchor blogs): He is an active Islamic Scholar who is simultaneously learning modern technology, with the goal of combining Islam with tech to make authentic Islamic knowledge accessible, easy, and engaging for everyone.
+6. Designation for his AI/tech work: "Agentic AI Engineer" (NOT "AI Solutions Expert"). Use "Founder & Agentic AI Engineer" for his Cybrum Solutions role.
 
 ---
 

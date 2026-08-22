@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { profile } from "@/data/portfolio";
 
-export const alt = "Ahmed Raza - Islamic Scholar & AI Solutions Expert";
+export const alt = "Ahmed Raza - Islamic Scholar & Agentic AI Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -56,7 +56,7 @@ export default function OpengraphImage() {
           AHMED RAZA
         </div>
         <div style={{ fontSize: 34, color: "#e97a2c", marginTop: 12 }}>
-          Islamic Scholar · AI Solutions Expert · Full Stack Developer
+          Islamic Scholar · Agentic AI Engineer · Full Stack Developer
         </div>
         <div
           style={{

@@ -5,7 +5,7 @@
 🔗 **Live site:** [www.irazaahmed.me](https://www.irazaahmed.me)
 
 A personal portfolio for **Ahmed Raza** - Islamic Scholar, Team Lead Translation
-at Dawat-e-Islami, Founder & AI Solutions Expert at Cybrum Solutions, and Full
+at Dawat-e-Islami, Founder & Agentic AI Engineer at Cybrum Solutions, and Full
 Stack Developer. The site brings together two worlds that rarely meet: 8+ years
 of experience as an Islamic Scholar and hands-on work in modern AI engineering.
 
@@ -16,8 +16,8 @@ of experience as an Islamic Scholar and hands-on work in modern AI engineering.
 ### 🏠 Home
 A premium dark-tech landing page with a copper-orange accent and a subtle
 animated grid. The hero introduces Ahmed Raza with a typewriter effect that
-rotates through his roles - *Islamic Scholar, Team Lead Translation, AI
-Solutions Expert, Full Stack Developer.*
+rotates through his roles - *Islamic Scholar, Team Lead Translation, Agentic
+AI Engineer, Full Stack Developer.*
 
 ### 👤 About
 A clear, honest introduction - who Ahmed Raza is, what he's spent the last
@@ -29,7 +29,7 @@ identity: **8+ years as Islamic Scholar**, **Agentic AI engineer**, and **33-lan
 The two current positions front-and-centre:
 
 - **Team Lead Translation @ Dawat-e-Islami's Translation Department (شعبہ تراجم)** (Jan 2026 → Present) - leading a 33-language Quranic content translation pipeline.
-- **Founder & AI Solutions Expert @ Cybrum Solutions** (Nov 2025 → Present) - building AI automation, WhatsApp chatbots, CRM workflows, and multi-agent systems for Islamic publishers, schools, and SMEs.
+- **Founder & Agentic AI Engineer @ Cybrum Solutions** (Nov 2025 → Present) - building AI automation, WhatsApp chatbots, CRM workflows, and multi-agent systems for Islamic publishers, schools, and SMEs.
 
 ### 🕰️ Experience Timeline
 A vertical timeline covering 11+ years of work across Shariah advisory,
@@ -107,7 +107,7 @@ opens - no overlap, no clipped buttons.
 ### ⚡ Fast & SEO-Ready
 - Lightning-fast load times via Vercel's global edge network
 - Built-in search-engine optimisation (sitemap, social-card image, structured data)
-- Indexed on Google for **Ahmed Raza**, **Ahmed Raza AI**, **Ahmed Raza AI Solutions Expert**
+- Indexed on Google for **Ahmed Raza**, **Ahmed Raza AI**, **Ahmed Raza Agentic AI Engineer**
 
 ### ♿ Accessible by Default
 Keyboard navigation, visible focus rings, a "Skip to content" link, and full

@@ -20,7 +20,7 @@ export default function JsonLd() {
     url: siteUrl,
     image: `${siteUrl}${profile.photo}`,
     jobTitle: [
-      "AI Solutions Expert",
+      "Agentic AI Engineer",
       "Team Lead Translation",
       "Islamic Scholar",
       "Full Stack Developer",
@@ -58,7 +58,7 @@ export default function JsonLd() {
     hasOccupation: [
       {
         "@type": "Occupation",
-        name: "AI Solutions Expert",
+        name: "Agentic AI Engineer",
         occupationalCategory: "15-2051.00 Data Scientists / AI Specialists",
       },
       {
@@ -98,9 +98,9 @@ export default function JsonLd() {
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     url: siteUrl,
-    name: "Ahmed Raza - AI Solutions Expert",
+    name: "Ahmed Raza - Agentic AI Engineer",
     description:
-      "Portfolio of Ahmed Raza, an Islamic Scholar and AI Solutions Expert bridging authentic Islamic knowledge with cutting-edge AI technology.",
+      "Portfolio of Ahmed Raza, an Islamic Scholar and Agentic AI Engineer bridging authentic Islamic knowledge with cutting-edge AI technology.",
     publisher: { "@id": personId },
     inLanguage: "en",
   };
@@ -109,7 +109,7 @@ export default function JsonLd() {
     "@type": "ProfilePage",
     "@id": `${siteUrl}/#profilepage`,
     url: siteUrl,
-    name: "Ahmed Raza - AI Solutions Expert & Islamic Scholar",
+    name: "Ahmed Raza - Agentic AI Engineer & Islamic Scholar",
     isPartOf: { "@id": `${siteUrl}/#website` },
     about: { "@id": personId },
     mainEntity: { "@id": personId },

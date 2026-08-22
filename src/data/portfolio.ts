@@ -12,7 +12,7 @@ export const profile = {
   roles: [
     "Islamic Scholar",
     "Team Lead Translation",
-    "AI Solutions Expert",
+    "Agentic AI Engineer",
     "Full Stack Developer",
   ],
   tagline: "Bridging authentic Islamic knowledge with cutting-edge AI technology",
@@ -69,7 +69,7 @@ export const currentPositions: Position[] = [
       "Leading a multilingual Quranic content translation operation across 33 target languages using a structured relay chain (Arabic → Urdu → English → 33 languages). Managing translator teams, setting quality benchmarks, and enforcing Islamic scholarly standards across all language outputs, while overseeing the complete workflow from translation to publishing.",
   },
   {
-    title: "Founder & AI Solutions Expert",
+    title: "Founder & Agentic AI Engineer",
     org: "Cybrum Solutions",
     period: "Nov 2025 - Present",
     description:
@@ -273,13 +273,13 @@ export const prompts: Prompt[] = [
     image: "/prompts/insta-view.jpg",
     prompt: `Create a hyper-realistic premium futuristic founder portrait using the uploaded photo. Preserve the EXACT facial identity - face structure, hairstyle, skin texture, beard, glasses, and overall likeness from Ahmed Raza's uploaded portrait. Do NOT alter, beautify, replace, or redesign the face; maintain 100% facial identity accuracy (non-negotiable). Output exactly 1080x1350 px (4:5 portrait for LinkedIn) or 1080x1080 px (1:1 square for WhatsApp/Facebook/Instagram).
 
-Subject - Ahmed Raza (Founder & AI Solutions Expert). Use the uploaded portrait as the exact reference; keep his glasses, beard, hairstyle, skin tone and baseline expression; photorealistic skin texture with natural pores; a subtle, genuine, confident smile (not exaggerated); direct eye contact; approachable yet authoritative energy. Pose: sitting elegantly on a sleek floating dark platform with a subtle copper edge glow; natural masculine posture - shoulders back, chin slightly up, one hand resting thoughtfully, the other casually placed; founder-grade authority, executive thought-leader (not influencer). Outfit: premium black tailored modern kurta or black turtleneck, optional dark charcoal blazer or overcoat with subtle copper-tone details, premium black trousers and polished leather shoes, optional minimalist watch with a copper accent - Tim Cook meets traditional Pakistani elegance; masculine, founder energy.
+Subject - Ahmed Raza (Founder & Agentic AI Engineer). Use the uploaded portrait as the exact reference; keep his glasses, beard, hairstyle, skin tone and baseline expression; photorealistic skin texture with natural pores; a subtle, genuine, confident smile (not exaggerated); direct eye contact; approachable yet authoritative energy. Pose: sitting elegantly on a sleek floating dark platform with a subtle copper edge glow; natural masculine posture - shoulders back, chin slightly up, one hand resting thoughtfully, the other casually placed; founder-grade authority, executive thought-leader (not influencer). Outfit: premium black tailored modern kurta or black turtleneck, optional dark charcoal blazer or overcoat with subtle copper-tone details, premium black trousers and polished leather shoes, optional minimalist watch with a copper accent - Tim Cook meets traditional Pakistani elegance; masculine, founder energy.
 
 Background - a holographic AI workspace. A giant curved holographic interface behind and beside him shows his AI work in copper-orange (#E97A2C) and dim white: LinkedIn profile with engagement metrics, a WhatsApp Business dashboard, agentic AI workflow diagrams with connected nodes, a subtly blurred Next.js/Python code editor, a Quranic translation pipeline, and copper analytics charts. Floating elements around the scene: glowing AI nodes connected by thin copper lines, stylized copper outline icons (reports, chats, charts - not emoji), floating Arabic/Urdu/English translation fragments, holographic engagement numbers, small API/automation indicators, and subtle pulsing live dots - all copper-orange outlines, semi-transparent (about 60%), with soft glow halos. Keep the futuristic dark UI integrated into the environment.
 
 Lighting and atmosphere: pure deep black base (#000000); a soft warm copper-orange key light from above-left on his face and shoulders (#E97A2C to #FFB347); counter-glow from the displays on the right (#D97426 rim light); a subtle backlight halo around his silhouette. Add soft volumetric copper light beams, warm golden particles drifting upward, copper bokeh in the deep background, very subtle warm fog, a reflective floor with soft copper bounce, a gentle corner vignette, and slight cinematic film grain. Absolutely NO electric blue, cyan, pink, purple, green, or bright-white tech lighting - copper-orange warm tones only.
 
-Top-left branding block (compact): a second small circular profile photo of Ahmed Raza, perfect 1:1 circular crop, thin glowing copper-orange ring (#E97A2C, 2-3px) with a soft outer halo, about 70-80px diameter, about 40px from the top and left. To its right, two stacked lines - line 1 bold white 'Ahmed Raza', line 2 smaller copper 'AI Solutions Expert | Team Lead Translation'.
+Top-left branding block (compact): a second small circular profile photo of Ahmed Raza, perfect 1:1 circular crop, thin glowing copper-orange ring (#E97A2C, 2-3px) with a soft outer halo, about 70-80px diameter, about 40px from the top and left. To its right, two stacked lines - line 1 bold white 'Ahmed Raza', line 2 smaller copper 'Agentic AI Engineer | Team Lead Translation'.
 
 Hero typography overlay (optional, upper-right): three lines - 'BUILDING THE', 'FUTURE' (dominant), 'WITH AI'. 'FUTURE' in a massive bold display serif, copper-orange (#E97A2C) with a strong glow halo (#FFB347), large but not competing with the subject, with a 3D embossed feel; the other two lines in a modern sans-serif, soft white, uppercase and letter-spaced, smaller than 'FUTURE'.
 
@@ -407,18 +407,18 @@ export type Faq = {
  * FAQ content - surfaced on /faq and emitted as FAQPage structured data.
  * Written in a direct, factual, entity-rich style so AI search engines
  * (Google AI Overviews, Gemini, Perplexity, ChatGPT) can quote it when
- * users ask about "Ahmed Raza", "Ahmed Raza AI", or "AI Solutions Expert".
+ * users ask about "Ahmed Raza", "Ahmed Raza AI", or "Agentic AI Engineer".
  */
 export const faqs: Faq[] = [
   {
     question: "Who is Ahmed Raza?",
     answer:
-      "Ahmed Raza is an active Islamic Scholar and AI Solutions Expert based in Karachi, Pakistan. He has 8+ years of experience as an Asst. Shariah Advisor and is currently Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم), leading a 33-language Quranic content translation pipeline. He is also the Founder of Cybrum Solutions, where he builds AI-driven solutions, and a full-stack developer. His mission is to combine Islam with technology to make authentic Islamic knowledge accessible, easy, and engaging for everyone.",
+      "Ahmed Raza is an active Islamic Scholar and Agentic AI Engineer based in Karachi, Pakistan. He has 8+ years of experience as an Asst. Shariah Advisor and is currently Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم), leading a 33-language Quranic content translation pipeline. He is also the Founder of Cybrum Solutions, where he builds AI-driven solutions, and a full-stack developer. His mission is to combine Islam with technology to make authentic Islamic knowledge accessible, easy, and engaging for everyone.",
   },
   {
-    question: "Is Ahmed Raza an AI Solutions Expert?",
+    question: "Is Ahmed Raza an Agentic AI Engineer?",
     answer:
-      "Yes. Ahmed Raza is an AI Solutions Expert and the Founder of Cybrum Solutions, where he builds and productizes AI automation for Islamic publishers, educational institutions, and Pakistani SMEs. He works hands-on with agentic AI systems, multi-agent workflows, LLM integration, RAG pipelines, and full-stack development using tools such as LangGraph, CrewAI, n8n, and the Claude API.",
+      "Yes. Ahmed Raza is an Agentic AI Engineer and the Founder of Cybrum Solutions, where he builds and productizes AI automation for Islamic publishers, educational institutions, and Pakistani SMEs. He works hands-on with agentic AI systems, multi-agent workflows, LLM integration, RAG pipelines, and full-stack development using tools such as LangGraph, CrewAI, n8n, and the Claude API.",
   },
   {
     question: "What AI solutions and services does Ahmed Raza offer?",

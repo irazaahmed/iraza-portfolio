@@ -1,11 +1,11 @@
 ---
 title: "How Islamic Scholars Can Use AI to Move Forward: A Practical Guide for Ulama and Madaris"
 date: "2026-06-02"
-excerpt: "AI is not a threat to Islamic scholars - it is a tool. As Ahmed Raza, an Islamic Scholar and AI Solutions Expert, here are the practical, halal ways ulama and madaris can adopt AI today, and the red lines that must never be crossed."
-tags: ["Ahmed Raza", "AI Solutions Expert", "Islamic Scholar", "AI for Ulama", "Agentic AI"]
+excerpt: "AI is not a threat to Islamic scholars - it is a tool. As Ahmed Raza, an Islamic Scholar and Agentic AI Engineer, here are the practical, halal ways ulama and madaris can adopt AI today, and the red lines that must never be crossed."
+tags: ["Ahmed Raza", "Agentic AI Engineer", "Islamic Scholar", "AI for Ulama", "Agentic AI"]
 ---
 
-Assalamu Alaikum. I'm **Ahmed Raza** - an active **Islamic Scholar** and an **AI Solutions Expert**, Founder of Cybrum Solutions and Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم).
+Assalamu Alaikum. I'm **Ahmed Raza** - an active **Islamic Scholar** and an **Agentic AI Engineer**, Founder of Cybrum Solutions and Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم).
 
 I sit in an unusual seat: I spend my mornings inside the Islamic sciences and my evenings building agentic AI systems. So the question I get asked most often by fellow scholars, teachers, and madaris administrators is this: *"Is AI something we should run from, or something we can actually use?"*
 

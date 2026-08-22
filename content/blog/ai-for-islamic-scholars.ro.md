@@ -2,7 +2,7 @@
 title: "Ulama AI Ko Kaise Apna Sakte Hain - Scholars Aur Madaris Ke Liye Aasan Baat"
 date: "2026-06-02"
 excerpt: "AI se darne ki zaroorat nahi. Mein, Ahmed Raza, aik aalim bhi hoon aur AI ka kaam bhi karta hoon. Aaiye seedhi aur aasan baat karte hain ke ulama aur madaris AI ko kaise sahi aur halal tareeqe se istemaal kar sakte hain."
-tags: ["Ahmed Raza", "AI Solutions Expert", "Islamic Scholar", "AI for Ulama", "Agentic AI"]
+tags: ["Ahmed Raza", "Agentic AI Engineer", "Islamic Scholar", "AI for Ulama", "Agentic AI"]
 ---
 
 Assalamu Alaikum. Mein **Ahmed Raza** hoon. Aik taraf mein deeni ilm se juda hoon, doosri taraf AI ka kaam karta hoon - Cybrum Solutions chalata hoon aur Dawat-e-Islami ke shobah-e-tarajim me tarjume ki team lead karta hoon.

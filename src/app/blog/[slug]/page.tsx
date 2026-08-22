@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
             <div className="pdf-cover-top">
               <div className="pdf-cover-bismillah">﷽</div>
               <div className="pdf-cover-brand">AHMED RAZA</div>
-              <div className="pdf-cover-role">Islamic Scholar &amp; AI Solutions Expert</div>
+              <div className="pdf-cover-role">Islamic Scholar &amp; Agentic AI Engineer</div>
             </div>
             <div className="pdf-cover-main">
               <div className="pdf-cover-kicker">Article</div>
@@ -164,7 +164,7 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
                 <td>
                   <div className="pdf-rhead">
                     <span className="pdf-rhead-l">Ahmed Raza</span>
-                    <span className="pdf-rhead-r">AI Solutions Expert</span>
+                    <span className="pdf-rhead-r">Agentic AI Engineer</span>
                   </div>
                 </td>
               </tr>

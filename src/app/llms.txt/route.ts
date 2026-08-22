@@ -21,7 +21,7 @@ export function GET() {
   lines.push("# Ahmed Raza");
   lines.push("");
   lines.push(
-    "> Islamic Scholar and AI Solutions Expert. Founder of Cybrum Solutions and Team Lead Translation at Dawat-e-Islami. Bridging authentic Islamic knowledge with cutting-edge AI technology."
+    "> Islamic Scholar and Agentic AI Engineer. Founder of Cybrum Solutions and Team Lead Translation at Dawat-e-Islami. Bridging authentic Islamic knowledge with cutting-edge AI technology."
   );
   lines.push("");
   lines.push(profile.summary);

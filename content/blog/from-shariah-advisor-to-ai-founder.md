@@ -2,10 +2,10 @@
 title: "From Shariah Advisory to Agentic AI: My Journey as Ahmed Raza, Founder of Cybrum Solutions"
 date: "2026-05-29"
 excerpt: "An honest look at how I, Ahmed Raza, moved from 8+ years as an Islamic Scholar and Asst. Shariah Advisor into building AI systems - and why I founded Cybrum Solutions to bring both worlds together."
-tags: ["Ahmed Raza", "AI Solutions Expert", "Cybrum Solutions", "Career", "Agentic AI"]
+tags: ["Ahmed Raza", "Agentic AI Engineer", "Cybrum Solutions", "Career", "Agentic AI"]
 ---
 
-Assalamu Alaikum. I'm **Ahmed Raza** - an active **Islamic Scholar** and an **AI Solutions Expert**. My mission is simple: combine classical Islamic knowledge with modern technology to make authentic Islamic teachings accessible, easy, and engaging for everyone.
+Assalamu Alaikum. I'm **Ahmed Raza** - an active **Islamic Scholar** and an **Agentic AI Engineer**. My mission is simple: combine classical Islamic knowledge with modern technology to make authentic Islamic teachings accessible, easy, and engaging for everyone.
 
 I'm the **Founder of Cybrum Solutions**, and currently **Team Lead Translation at Dawat-e-Islami's Translation Department (شعبہ تراجم)**, where I'm leading a 33-language Quranic content translation pipeline.
 
@@ -44,7 +44,7 @@ I lead a multilingual Quranic content translation pipeline across **33 target la
 
 This is where AI quietly becomes a force multiplier - not as an authority, never that, but as a tireless assistant for drafting, consistency checks, terminology drift detection, and workflow routing. (I unpacked this whole approach in [How AI Is Helping Translate Quranic Content Across 33 Languages](/blog/ai-quran-translation-33-languages).) The scholar is always at the centre. Always.
 
-### Founder & AI Solutions Expert at Cybrum Solutions
+### Founder & Agentic AI Engineer at Cybrum Solutions
 
 I founded **Cybrum Solutions** in November 2025 to bring AI automation to organisations that historically haven't had access to it - Islamic publishers, educational institutions, and Pakistani small and medium businesses.
 
