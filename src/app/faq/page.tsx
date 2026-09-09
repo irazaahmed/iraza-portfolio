@@ -5,9 +5,9 @@ import Reveal from "@/components/Reveal";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const title = "FAQ - Who is Ahmed Raza? | Agentic AI Engineer";
+const title = "FAQ - Who is Ahmed Raza? | Agentic AI Developer";
 const description =
-  "Answers to common questions about Ahmed Raza - Islamic Scholar, Agentic AI Engineer, Founder of Cybrum Solutions, and Team Lead Translation at Dawat-e-Islami.";
+  "Answers to common questions about Ahmed Raza - Islamic Scholar, Agentic AI Developer, Founder of Cybrum Solutions, and Team Lead Translation at Dawat-e-Islami.";
 
 export const metadata: Metadata = {
   title,

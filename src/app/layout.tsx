@@ -21,7 +21,7 @@ const nastaliq = Noto_Nastaliq_Urdu({
   weight: ["400", "500", "600", "700"],
 });
 
-const title = "Ahmed Raza - Agentic AI Engineer";
+const title = "Ahmed Raza - Agentic AI Developer";
 const description =
   "Portfolio of Ahmed Raza - bridging authentic Islamic knowledge with cutting-edge AI technology. Team Lead Translation at Dawat-e-Islami, Founder of Cybrum Solutions, full-stack developer.";
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   keywords: [
     "Ahmed Raza",
     "Islamic Scholar",
-    "Agentic AI Engineer",
+    "Agentic AI Developer",
     "Full Stack Developer",
     "Translation Lead",
     "Agentic AI",

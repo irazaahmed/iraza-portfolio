@@ -2,10 +2,10 @@
 title: "Shariah Advisory Se Agentic AI Tak: Mera Safar - Ahmed Raza, Founder Cybrum Solutions"
 date: "2026-05-29"
 excerpt: "Aik honest baat: kese mein, Ahmed Raza, 8+ saal Islamic Scholar aur Asst. Shariah Advisor ki zindagi se nikal ke AI systems banane laga, aur kyun Cybrum Solutions launch kiya."
-tags: ["Ahmed Raza", "Agentic AI Engineer", "Cybrum Solutions", "Career", "Agentic AI"]
+tags: ["Ahmed Raza", "Agentic AI Developer", "Cybrum Solutions", "Career", "Agentic AI"]
 ---
 
-Assalamu Alaikum. Mein **Ahmed Raza** hoon - aik active **Islamic Scholar** aur **Agentic AI Engineer**. Mera mission simple hai: classical Islamic ilm ko modern technology ke sath combine kar ke asli Islami taleemat ko har aam shakhs tak asaan, easy, aur engaging tareeqe se pohchana.
+Assalamu Alaikum. Mein **Ahmed Raza** hoon - aik active **Islamic Scholar** aur **Agentic AI Developer**. Mera mission simple hai: classical Islamic ilm ko modern technology ke sath combine kar ke asli Islami taleemat ko har aam shakhs tak asaan, easy, aur engaging tareeqe se pohchana.
 
 **Cybrum Solutions ka Founder** hoon, aur is waqt **Dawat-e-Islami ke Translation Department (شعبہ تراجم) me Team Lead Translation** ke tor per kaam kar raha hoon, jahan 33 zubaanon ki Qurani content translation pipeline lead karta hoon.
 
@@ -44,7 +44,7 @@ Ek multilingual Qurani content translation pipeline **33 zubaanon** me lead kar 
 
 Yahan AI quietly aik force multiplier ban jata hai - authority ke tor per nahi, kabhi nahi, lekin drafting, consistency checks, terminology drift detection, aur workflow routing ke liye aik na thakne wala assistant. (Is poori approach ko alag blog me detail me likha hai: [AI Kaise 33 Zubaanon Mein Qurani Content Translate Kar Raha Hai](/blog/ai-quran-translation-33-languages?lang=ro)). Scholar hamesha center me hota hai. Hamesha.
 
-### Founder & Agentic AI Engineer, Cybrum Solutions
+### Founder & Agentic AI Developer, Cybrum Solutions
 
 **Cybrum Solutions** November 2025 me launch kiya - un organisations tak AI automation pohchane ke liye jo historically iska access nahi rakhte the: Islamic publishers, educational institutions, aur Pakistani SMEs.
 
